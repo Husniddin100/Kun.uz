@@ -1,0 +1,3 @@
+### init admin
+GET localhost:8081/admin/initAdmin
+
