@@ -10,6 +10,7 @@ public class ExeptionHandlerController {
         return ResponseEntity.badRequest().body(e.getMessage());
     }
     @ExceptionHandler(RuntimeException.class)
+
     private ResponseEntity<?>handle(RuntimeException e){
         return ResponseEntity.internalServerError().body(e.getMessage());
     }

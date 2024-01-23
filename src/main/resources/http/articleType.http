@@ -1,0 +1,23 @@
+### create article type
+POST localhost:8081/articleType/create
+Content-Type: application/json
+
+{
+  "order_number": 3,
+  "language": "RU"
+}
+
+### update
+PUT localhost:8081/articleType/update/1
+Content-Type: application/json
+
+{
+  "order_number": 1,
+  "language": "UZ"
+}
+
+### delete
+DELETE localhost:8081/articleType/delete/1
+
+### get all paginations
+GET localhost:8081/articleType/all?page=1&size=10
