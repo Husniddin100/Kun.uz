@@ -16,4 +16,5 @@ public class BaseEntity2 {
     protected LocalDateTime createdDate = LocalDateTime.now();
     @Column(name = "visible")
     protected Boolean visible=true;
+
 }
