@@ -32,4 +32,5 @@ public class ArticleTypeController {
                                                @RequestParam(value = "size", defaultValue = "10") Integer size) {
         return ResponseEntity.ok(articleTypeService.getAllByPagination(page, size));
     }
+
 }

@@ -1,0 +1,23 @@
+### create
+POST localhost:8081/Region/create
+Content-Type:application/json
+
+{
+  "order_number": 2,
+  "language": "EN"
+}
+
+### update By id
+PUT localhost:8081/Region/update/1
+Content-Type: application/json
+
+{
+  "order_number": 2,
+  "language": "EN"
+}
+
+### Delete by id
+DELETE localhost:8081/Region/delete/1
+
+### get all
+GET localhost:8081/Region/all
