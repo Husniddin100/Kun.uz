@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.dto.ArticleTypeDTO;
 import com.example.dto.RegionDTO;
 import com.example.entity.RegionEntity;
 import com.example.service.RegionService;
@@ -8,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/Region")
@@ -30,5 +32,9 @@ public class RegionController {
     public ResponseEntity<List<RegionDTO>>getAll(){
         return ResponseEntity.ok(regionService.getAll());
     }
-
+    @GetMapping("/lang/{id}/{language}")
+    public ResponseEntity<Optional<RegionDTO>> getArticleTypesByLanguage(@PathVariable Integer id, @PathVariable String language) {
+        Optional<RegionDTO> region =regionService.getByLang(id,language);
+        return ResponseEntity.ok(region);
+    }
 }

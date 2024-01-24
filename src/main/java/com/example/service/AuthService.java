@@ -31,6 +31,4 @@ public class AuthService {
         dto.setRole(entity.getRole());
         return dto;
     }
-
-
 }

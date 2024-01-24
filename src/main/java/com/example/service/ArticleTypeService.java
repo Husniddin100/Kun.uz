@@ -20,7 +20,10 @@ public class ArticleTypeService {
     public ArticleTypeDTO create(ArticleTypeDTO dto) {
         ArticleTypeEntity entity = new ArticleTypeEntity();
         entity.setOrderNumber(dto.getOrder_number());
-        entity.setLanguage(dto.getLanguage());
+        entity.setName_en(dto.getName_en());
+        entity.setName_ru(dto.getName_ru());
+        entity.setName_uz(dto.getName_uz());
+
        Optional<ArticleTypeEntity> optional= Optional.of(articleTypeRepository.save(entity));
          if (optional.isEmpty()){
              throw new AppBadException("error");
@@ -38,7 +41,9 @@ public class ArticleTypeService {
         }
         ArticleTypeEntity entity=optional.get();
         entity.setOrderNumber(dto.getOrder_number());
-        entity.setLanguage(dto.getLanguage());
+        entity.setName_uz(dto.getName_uz());
+        entity.setName_ru(dto.getName_ru());
+        entity.setName_en(dto.getName_en());
         articleTypeRepository.save(entity);
         return true;
     }
@@ -67,10 +72,37 @@ public class ArticleTypeService {
         }
         return new PageImpl<>(dtoList, paging, totalElements);
     }
+
+    public Optional<ArticleTypeDTO> getByLanguage (Integer id, String language) {
+        Optional<ArticleTypeEntity> optional = articleTypeRepository.findById(id);
+        if (optional.isEmpty()){
+            throw new AppBadException("language not found");
+        }
+        ArticleTypeEntity articleType = optional.get();
+        ArticleTypeDTO articleTypeDTO = new ArticleTypeDTO();
+        articleTypeDTO.setId(articleType.getId());
+
+        switch (language) {
+            case "uz":
+                articleTypeDTO.setName_uz(articleType.getName_uz());
+                break;
+            case "ru":
+                articleTypeDTO.setName_ru(articleType.getName_ru());
+                break;
+            case "en":
+                articleTypeDTO.setName_en(articleType.getName_en());
+                break;
+            default:
+                throw new AppBadException("Invalid language: " + language);
+        }
+        return Optional.of(articleTypeDTO);
+    }
     public ArticleTypeDTO toDTO(ArticleTypeEntity entity) {
         ArticleTypeDTO dto = new ArticleTypeDTO();
         dto.setId(entity.getId());
-        dto.setLanguage(entity.getLanguage());
+        dto.setName_uz(entity.getName_uz());
+        dto.setName_ru(entity.getName_ru());
+        dto.setName_en(entity.getName_en());
         dto.setOrder_number(entity.getOrderNumber());
         dto.setVisible(entity.getVisible());
         dto.setCreatedDate(entity.getCreatedDate());

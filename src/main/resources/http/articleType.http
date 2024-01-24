@@ -3,17 +3,22 @@ POST localhost:8081/articleType/create
 Content-Type: application/json
 
 {
-  "order_number": 3,
-  "language": "RU"
+  "order_number": 1,
+  "name_uz": "Maqola",
+  "name_ru": "статья",
+  "name_en": "Article"
 }
+
 
 ### update
 PUT localhost:8081/articleType/update/1
 Content-Type: application/json
 
 {
-  "order_number": 1,
-  "language": "UZ"
+  "order_number": 2,
+  "name_uz": "sinov",
+  "name_ru": "тест",
+  "name_en": "test"
 }
 
 ### delete
@@ -21,3 +26,6 @@ DELETE localhost:8081/articleType/delete/1
 
 ### get all paginations
 GET localhost:8081/articleType/all?page=1&size=10
+
+### getByLang
+GET localhost:8081/articleType/lang/2/u

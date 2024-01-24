@@ -32,5 +32,10 @@ public class ArticleTypeController {
                                                @RequestParam(value = "size", defaultValue = "10") Integer size) {
         return ResponseEntity.ok(articleTypeService.getAllByPagination(page, size));
     }
-
+    @GetMapping("/lang/{id}/{language}")
+    public ResponseEntity<Optional<ArticleTypeDTO>> getArticleTypesByLanguage(@PathVariable Integer id, @PathVariable String language) {
+        Optional<ArticleTypeDTO> articleTypes =articleTypeService.getByLanguage(id,language);
+        return ResponseEntity.ok(articleTypes);
+    }
 }
+

@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.example.controller.ExeptionHandlerController;
 import com.example.dto.ArticleTypeDTO;
 import com.example.dto.RegionDTO;
 import com.example.entity.ArticleTypeEntity;
@@ -21,7 +22,9 @@ public class RegionService {
     public RegionDTO create(RegionDTO dto) {
         RegionEntity entity = new RegionEntity();
         entity.setOrderNumber(dto.getOrder_number());
-        entity.setLanguage(dto.getLanguage());
+        entity.setName_uz(dto.getName_uz());
+        entity.setName_ru(dto.getName_ru());
+        entity.setName_en(dto.getName_en());
         Optional<RegionEntity> optional= Optional.of(regionRepository.save(entity));
         if (optional.isEmpty()){
             throw new AppBadException("error");
@@ -37,10 +40,12 @@ public class RegionService {
         if (optional.isEmpty()){
             throw new AppBadException("not found");
         }
-        RegionEntity regionEntity=optional.get();
-        regionEntity.setOrderNumber(dto.getOrder_number());
-        regionEntity.setLanguage(dto.getLanguage());
-        regionRepository.save(regionEntity);
+        RegionEntity entity=optional.get();
+        entity.setOrderNumber(dto.getOrder_number());
+        entity.setName_uz(dto.getName_uz());
+        entity.setName_ru(dto.getName_ru());
+        entity.setName_en(dto.getName_en());
+        regionRepository.save(entity);
         return true;
     }
 
@@ -61,10 +66,37 @@ public class RegionService {
         }
         return dtoList;
     }
+    public Optional<RegionDTO> getByLang(Integer id, String language) {
+        Optional<RegionEntity> optional = regionRepository.findById(id);
+        if (optional.isEmpty()){
+            throw new AppBadException("not found");
+        }
+        RegionEntity regionEntity = optional.get();
+        RegionDTO regionDTO = new RegionDTO();
+        regionDTO.setId(regionEntity.getId());
+
+        switch (language) {
+            case "uz":
+                regionDTO.setName_uz(regionEntity.getName_uz());
+                break;
+            case "ru":
+                regionDTO.setName_ru(regionEntity.getName_ru());
+                break;
+            case "en":
+                regionDTO.setName_en(regionEntity.getName_en());
+                break;
+            default:
+                throw new AppBadException("Invalid language: "+language);
+        }
+        return Optional.of(regionDTO);
+    }
+
     public RegionDTO toDTO(RegionEntity entity) {
         RegionDTO dto = new RegionDTO();
         dto.setId(entity.getId());
-        dto.setLanguage(entity.getLanguage());
+        dto.setName_uz(entity.getName_uz());
+        dto.setName_ru(entity.getName_ru());
+        dto.setName_en(entity.getName_en());
         dto.setOrder_number(entity.getOrderNumber());
         dto.setVisible(entity.getVisible());
         dto.setCreatedDate(entity.getCreatedDate());
