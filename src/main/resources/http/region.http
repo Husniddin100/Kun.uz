@@ -5,9 +5,9 @@ Content-Type:application/json
 
 {
   "order_number": 1,
-  "name_uz": "Jahon",
-  "name_ru": "мир",
-  "name_en": "world"
+  "name_uz": "test",
+  "name_ru": "test",
+  "name_en": "test"
 }
 
 
@@ -17,13 +17,13 @@ Content-Type: application/json
 
 {
   "order_number": 1,
-  "name_uz": "test",
-  "name_ru": "test",
-  "name_en": "test"
+  "name_uz": "Toshkent",
+  "name_ru": "Ташкент",
+  "name_en": "Tashkent"
 }
 
 ### Delete by id
-DELETE localhost:8081/Region/delete/1
+DELETE localhost:8081/Region/delete/2
 
 ### get all
 GET localhost:8081/Region/all
