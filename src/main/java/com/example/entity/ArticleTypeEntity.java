@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "Article_type")
-public class ArticleTypeEntity extends BaseEntity2{
+public class ArticleTypeEntity extends BaseEntity{
     @Column
     private Integer orderNumber;
     @Column
@@ -17,5 +17,6 @@ public class ArticleTypeEntity extends BaseEntity2{
     private String name_ru;
     @Column
     private String name_en;
+
 
 }

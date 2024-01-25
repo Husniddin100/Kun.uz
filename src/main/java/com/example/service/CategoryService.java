@@ -55,7 +55,7 @@ public class CategoryService {
       if (optional.isEmpty()){
           throw new AppBadException("category not found"+id);
       }
-      categoryRepository.deleteById(id);
+      categoryRepository.delete(id);
       return true;
     }
 
@@ -64,7 +64,9 @@ public class CategoryService {
         Iterable<CategoryEntity> categoryList=categoryRepository.findAll(sort);
         List<CategoryDTO>dtoList=new LinkedList<>();
         for (CategoryEntity entity:categoryList){
-            dtoList.add(toDTO(entity));
+            if (entity.getVisible().equals(Boolean.TRUE)){
+                dtoList.add(toDTO(entity));
+            }
         }
         return dtoList;
     }

@@ -8,5 +8,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import java.util.Optional;
 
 public interface ArticleTypeRepository extends CrudRepository<ArticleTypeEntity, Integer>, PagingAndSortingRepository<ArticleTypeEntity,Integer> {
-
+    @Query("update ArticleTypeEntity set visible=FALSE where id=?1")
+     Optional<ArticleTypeEntity>delete(Integer id);
 }

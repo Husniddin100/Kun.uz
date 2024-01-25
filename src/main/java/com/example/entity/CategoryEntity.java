@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "category")
-public class CategoryEntity extends BaseEntity2{
+public class CategoryEntity extends BaseEntity{
     @Column
     private Integer orderNumber;
     @Column

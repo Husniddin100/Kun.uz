@@ -1,3 +1,15 @@
 ### init admin
 GET localhost:8081/admin/initAdmin
 
+### create profile
+POST localhost:8081/profile/create
+Content-Type: application/json
+
+{
+  "name": "Ali",
+  "surname": "Aliyev",
+  "email": "DD@gmail.com",
+  "password": "1234",
+  "status": "ACTIVE",
+  "role": "USER"
+}

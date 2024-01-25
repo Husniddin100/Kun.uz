@@ -1,9 +1,13 @@
 package com.example.controller;
 
 import com.example.dto.CategoryDTO;
+import com.example.dto.JWTDTO;
 import com.example.entity.CategoryEntity;
+import com.example.enums.ProfileRole;
 import com.example.service.CategoryService;
+import com.example.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,15 +20,30 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @PostMapping("/create")
-    public ResponseEntity<CategoryDTO>craete(@RequestBody CategoryDTO dto){
+    public ResponseEntity<CategoryDTO>craete(@RequestBody CategoryDTO dto,
+                                             @RequestHeader(value = "Authorization")String jwt){
+        JWTDTO jwtdto= JWTUtil.decode(jwt);
+        if (!jwtdto.getRole().equals(ProfileRole.ADMIN)){
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
         return ResponseEntity.ok(categoryService.create(dto));
     }
     @PutMapping("/update/{id}")
-    public ResponseEntity<Boolean> updateById(@PathVariable Integer id ,@RequestBody CategoryDTO dto){
+    public ResponseEntity<Boolean> updateById(@PathVariable Integer id ,@RequestBody CategoryDTO dto,
+                                              @RequestHeader(value = "Authorization")String jwt){
+        JWTDTO jwtdto= JWTUtil.decode(jwt);
+        if (!jwtdto.getRole().equals(ProfileRole.ADMIN)){
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
         return ResponseEntity.ok(categoryService.update(id,dto));
     }
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Boolean>deleteById(@PathVariable Integer id){
+    public ResponseEntity<Boolean>deleteById(@PathVariable Integer id,
+                                             @RequestHeader(value = "Authorization")String jwt){
+        JWTDTO jwtdto= JWTUtil.decode(jwt);
+        if (!jwtdto.getRole().equals(ProfileRole.ADMIN)){
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
         return ResponseEntity.ok(categoryService.delete(id));
     }
     @GetMapping("/all")

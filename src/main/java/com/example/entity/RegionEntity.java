@@ -1,5 +1,4 @@
 package com.example.entity;
-
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +7,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "region")
-public class RegionEntity extends BaseEntity2{
+public class RegionEntity extends BaseEntity{
     @Column
     private Integer orderNumber;
     @Column

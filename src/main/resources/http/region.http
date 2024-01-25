@@ -29,4 +29,4 @@ DELETE localhost:8081/Region/delete/2
 GET localhost:8081/Region/all
 
 ### get by lang
-GET localhost:8081/Region/lang/1/en
+GET localhost:8081/Region/lang/en

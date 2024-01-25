@@ -5,6 +5,7 @@ import com.example.dto.ProfileDTO;
 import com.example.entity.ProfileEntity;
 import com.example.exp.AppBadException;
 import com.example.repository.ProfileRepository;
+import com.example.util.JWTUtil;
 import com.example.util.MDUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,9 +27,11 @@ public class AuthService {
         ProfileEntity entity = optional.get();
 
         ProfileDTO dto = new ProfileDTO();
+
         dto.setName(entity.getName());
         dto.setSurname(entity.getSurname());
         dto.setRole(entity.getRole());
+        dto.setJwt(JWTUtil.encode(entity.getId(),entity.getRole()));
         return dto;
     }
 }

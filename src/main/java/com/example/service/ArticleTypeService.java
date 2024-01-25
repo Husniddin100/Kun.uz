@@ -1,7 +1,10 @@
 package com.example.service;
 
 import com.example.dto.ArticleTypeDTO;
+import com.example.dto.RegionDTO;
 import com.example.entity.ArticleTypeEntity;
+import com.example.entity.RegionEntity;
+import com.example.enums.LangEnum;
 import com.example.exp.AppBadException;
 import com.example.repository.ArticleTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +47,7 @@ public class ArticleTypeService {
         entity.setName_uz(dto.getName_uz());
         entity.setName_ru(dto.getName_ru());
         entity.setName_en(dto.getName_en());
+        entity.setVisible(Boolean.TRUE);
         articleTypeRepository.save(entity);
         return true;
     }
@@ -53,7 +57,7 @@ public class ArticleTypeService {
         if (optional.isEmpty()){
             throw new AppBadException("not found");
         }
-        articleTypeRepository.deleteById(id);
+        articleTypeRepository.delete(id);
         return true;
     }
 
@@ -68,34 +72,35 @@ public class ArticleTypeService {
 
         List<ArticleTypeDTO> dtoList = new LinkedList<>();
         for (ArticleTypeEntity articleType : entityList) {
-            dtoList.add(toDTO(articleType));
+            if (articleType.getVisible().equals(Boolean.TRUE)) {
+                dtoList.add(toDTO(articleType));
+            }
         }
         return new PageImpl<>(dtoList, paging, totalElements);
     }
 
-    public Optional<ArticleTypeDTO> getByLanguage (Integer id, String language) {
-        Optional<ArticleTypeEntity> optional = articleTypeRepository.findById(id);
-        if (optional.isEmpty()){
-            throw new AppBadException("language not found");
-        }
-        ArticleTypeEntity articleType = optional.get();
-        ArticleTypeDTO articleTypeDTO = new ArticleTypeDTO();
-        articleTypeDTO.setId(articleType.getId());
+    public List<ArticleTypeDTO> getByLanguage ( LangEnum language) {
+        LinkedList<ArticleTypeDTO>list=new LinkedList<>();
+        Iterable<ArticleTypeEntity> getAll=articleTypeRepository.findAll();
 
-        switch (language) {
-            case "uz":
-                articleTypeDTO.setName_uz(articleType.getName_uz());
-                break;
-            case "ru":
-                articleTypeDTO.setName_ru(articleType.getName_ru());
-                break;
-            case "en":
-                articleTypeDTO.setName_en(articleType.getName_en());
-                break;
-            default:
-                throw new AppBadException("Invalid language: " + language);
+        for (ArticleTypeEntity entity:getAll){
+            ArticleTypeDTO dto=new ArticleTypeDTO();
+            dto.setId(entity.getId());
+            switch (language) {
+                case ru:
+                    dto.setName(entity.getName_ru());
+                    break;
+                case en:
+                    dto.setName(entity.getName_en());
+                    break;
+                default:
+                    dto.setName(entity.getName_uz());
+            }
+            if (entity.getVisible().equals(Boolean.TRUE)) {
+                list.add(dto);
+            }
         }
-        return Optional.of(articleTypeDTO);
+        return list;
     }
     public ArticleTypeDTO toDTO(ArticleTypeEntity entity) {
         ArticleTypeDTO dto = new ArticleTypeDTO();
