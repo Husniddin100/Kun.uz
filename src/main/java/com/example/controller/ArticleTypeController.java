@@ -21,7 +21,7 @@ public class ArticleTypeController {
     private ArticleTypeService articleTypeService;
     @PostMapping("/create")
     public ResponseEntity<ArticleTypeDTO> create(@RequestBody ArticleTypeDTO dto,
-                                                 @RequestHeader(value = "Authorization")String jwt){
+                                                 @RequestHeader(value = "profileRole")String jwt){
         JWTDTO jwtdto= JWTUtil.decode(jwt);
         if (!jwtdto.getRole().equals(ProfileRole.ADMIN)){
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
@@ -31,7 +31,7 @@ public class ArticleTypeController {
     @PutMapping("/update/{id}")
     public ResponseEntity<Boolean>update(@PathVariable("id") Integer id,
                                                 @RequestBody ArticleTypeDTO dto,
-                                         @RequestHeader(value = "Authorization")String jwt){
+                                         @RequestHeader(value = "profileRole")String jwt){
         JWTDTO jwtdto= JWTUtil.decode(jwt);
         if (!jwtdto.getRole().equals(ProfileRole.ADMIN)){
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
@@ -40,7 +40,7 @@ public class ArticleTypeController {
     }
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Boolean>delete(@PathVariable("id") Integer id,
-                                         @RequestHeader(value = "Authorization")String jwt){
+                                         @RequestHeader(value = "profileRole")String jwt){
         JWTDTO jwtdto= JWTUtil.decode(jwt);
         if (!jwtdto.getRole().equals(ProfileRole.ADMIN)){
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
@@ -50,7 +50,7 @@ public class ArticleTypeController {
     @GetMapping("/all")
     public ResponseEntity<PageImpl> getAllByPagination(@RequestParam(value = "page", defaultValue = "1") Integer page,
                                                @RequestParam(value = "size", defaultValue = "10") Integer size,
-                                                       @RequestHeader(value = "Authorization")String jwt) {
+                                                       @RequestHeader(value = "profileRole")String jwt) {
         JWTDTO jwtdto= JWTUtil.decode(jwt);
         if (!jwtdto.getRole().equals(ProfileRole.ADMIN)){
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();

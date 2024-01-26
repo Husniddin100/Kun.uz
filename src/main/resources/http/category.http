@@ -2,13 +2,16 @@
 POST localhost:8081/category/create
 Content-Type: application/json
 
-
 {
   "order_number": 1,
-  "name_uz": "test",
-  "name_ru": "te",
-  "name_en": "st"
+  "name_uz": "Jahon",
+  "name_ru": "Mir ru",
+  "name_en": "world"
 }
 
 ### get all
 GET localhost:8081/category/all
+
+### getByLang
+GET localhost:8081/category/lang?lang=en
+Content-Type: application/json

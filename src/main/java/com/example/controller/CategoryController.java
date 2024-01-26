@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.dto.CategoryDTO;
 import com.example.dto.JWTDTO;
 import com.example.entity.CategoryEntity;
+import com.example.enums.LangEnum;
 import com.example.enums.ProfileRole;
 import com.example.service.CategoryService;
 import com.example.util.JWTUtil;
@@ -50,6 +51,12 @@ public class CategoryController {
     public ResponseEntity<List<CategoryDTO>>getAll(){
         List<CategoryDTO> categoryList=categoryService.getAll();
         return ResponseEntity.ok(categoryList);
+    }
+    @GetMapping("/lang}")
+    public ResponseEntity<List<CategoryDTO>>lang(@RequestParam(value = "lang",defaultValue = "uz") LangEnum lang){
+        List<CategoryDTO>langlist=categoryService.getLang(lang);
+        return ResponseEntity.ok(langlist);
+
     }
 }
 

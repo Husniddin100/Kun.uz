@@ -13,3 +13,43 @@ Content-Type: application/json
   "status": "ACTIVE",
   "role": "USER"
 }
+
+###update user
+PUT localhost:8081/profile/updateUser/2
+Content-Type: application/json
+
+{
+  "name": "Vali",
+  "surname": "Valiyev",
+  "email": "haha@gmail.com",
+  "password": "0000"
+}
+
+###update user
+PUT localhost:8081/profile/updateAdmin/2
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYxMjE4NTUsImlkIjoyLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyMDgyNTUsImlzcyI6Ikt1blV6VGVzdCJ9.j0fE0SE8WEC1OQ-5crLzUjP5agosZ49xLRrwUcyZZF0R2fY_HdcZt3AuSW-yaPYF7vWOFLYTOwyk3C9RiK2cXw
+
+{
+  "name": "Ali",
+  "surname": "Aliyev",
+  "email": "EE@gmail.com",
+  "password": "1111"
+}
+
+### get allBy paginations
+GET localhost:8081/profile/all?page=1&size=10
+
+### filter
+POST localhost:8081/profile/filter?pago=1&size=10
+Content-Type: application/json
+
+{
+  "name": "Ali",
+  "surname": "Aliyev",
+  "email": "DD@gmail.com",
+  "password": "1234",
+  "status": "ACTIVE",
+  "role": "USER"
+}
+

@@ -4,6 +4,7 @@ import com.example.dto.CategoryDTO;
 import com.example.dto.RegionDTO;
 import com.example.entity.CategoryEntity;
 import com.example.entity.RegionEntity;
+import com.example.enums.LangEnum;
 import com.example.exp.AppBadException;
 import com.example.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,5 +81,21 @@ public class CategoryService {
         dto.setVisible(entity.getVisible());
         dto.setCreatedDate(entity.getCreatedDate());
         return dto;
+    }
+
+    public List<CategoryDTO> getLang(LangEnum lang) {
+        List<CategoryDTO>dtoList=new LinkedList<>();
+        Iterable<CategoryEntity> entityList=categoryRepository.findAll();
+        for (CategoryEntity entity:entityList){
+            CategoryDTO dto=new CategoryDTO();
+            dto.setId(entity.getId());
+            switch (lang){
+                case en -> dto.setName(entity.getName_en());
+                case ru -> dto.setName(entity.getName_ru());
+                default -> dto.setName(entity.getName_uz());
+            }
+            dtoList.add(dto);
+        }
+        return dtoList;
     }
 }
