@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/profile")
 public class ProfileController {
-    @Autowired
+    @Autowired  
     private ProfileService profileService;
     @PostMapping("/create")
     public ResponseEntity<ProfileDTO>create(@RequestBody ProfileDTO dto,

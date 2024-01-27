@@ -52,7 +52,7 @@ public class CategoryController {
         List<CategoryDTO> categoryList=categoryService.getAll();
         return ResponseEntity.ok(categoryList);
     }
-    @GetMapping("/lang}")
+    @GetMapping("/lang")
     public ResponseEntity<List<CategoryDTO>>lang(@RequestParam(value = "lang",defaultValue = "uz") LangEnum lang){
         List<CategoryDTO>langlist=categoryService.getLang(lang);
         return ResponseEntity.ok(langlist);
