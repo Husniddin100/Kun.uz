@@ -6,7 +6,9 @@ import com.example.entity.CategoryEntity;
 import com.example.enums.LangEnum;
 import com.example.enums.ProfileRole;
 import com.example.service.CategoryService;
+import com.example.util.HttpRequestUtil;
 import com.example.util.JWTUtil;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,13 +22,10 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @PostMapping("/create")
+    @PostMapping("/create/adm")
     public ResponseEntity<CategoryDTO>craete(@RequestBody CategoryDTO dto,
-                                             @RequestHeader(value = "Authorization")String jwt){
-        JWTDTO jwtdto= JWTUtil.decode(jwt);
-        if (!jwtdto.getRole().equals(ProfileRole.ADMIN)){
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-        }
+                                             HttpServletRequest request){
+         HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
         return ResponseEntity.ok(categoryService.create(dto));
     }
     @PutMapping("/update/{id}")

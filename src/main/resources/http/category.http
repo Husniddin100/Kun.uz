@@ -1,6 +1,7 @@
 ### craeate category
-POST localhost:8081/category/create
+POST localhost:8081/category/create/adm
 Content-Type: application/json
+Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY1OTQwOTgsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDY2ODA0OTgsImlzcyI6Ikt1blV6VGVzdCJ9.ThJZRrR5ItEenb_qNLrDew_5PTd82n2uyHQ9GWY5PRHIl1loef_FglkXRvRVG3R8N2lnTm9MWg0NFO8jkOSkXw
 
 {
   "order_number": 1,

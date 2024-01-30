@@ -16,7 +16,7 @@ import java.util.Optional;
 public class AuthService {
     @Autowired
     private ProfileRepository profileRepository;
-    public ProfileDTO auth(AuthDTO profile) { // login
+    public ProfileDTO auth(AuthDTO profile) {
         Optional<ProfileEntity> optional = profileRepository.findByEmailAndPassword(profile.getEmail(),
                 MDUtil.encode(profile.getPassword()));
 
@@ -34,4 +34,5 @@ public class AuthService {
         dto.setJwt(JWTUtil.encode(entity.getId(),entity.getRole()));
         return dto;
     }
+    
 }

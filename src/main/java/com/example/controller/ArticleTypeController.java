@@ -19,7 +19,7 @@ import java.util.List;
 public class ArticleTypeController {
     @Autowired
     private ArticleTypeService articleTypeService;
-    @PostMapping("/create")
+    @PostMapping("/adm/create")
     public ResponseEntity<ArticleTypeDTO> create(@RequestBody ArticleTypeDTO dto,
                                                  @RequestHeader(value = "profileRole")String jwt){
         JWTDTO jwtdto= JWTUtil.decode(jwt);
@@ -28,7 +28,7 @@ public class ArticleTypeController {
         }
         return ResponseEntity.ok(articleTypeService.create(dto));
     }
-    @PutMapping("/update/{id}")
+    @PutMapping("/adm/update/{id}")
     public ResponseEntity<Boolean>update(@PathVariable("id") Integer id,
                                                 @RequestBody ArticleTypeDTO dto,
                                          @RequestHeader(value = "profileRole")String jwt){
@@ -38,7 +38,8 @@ public class ArticleTypeController {
         }
         return ResponseEntity.ok(articleTypeService.update(id,dto));
     }
-    @DeleteMapping("/delete/{id}")
+
+    @DeleteMapping("/adm/delete/{id}")
     public ResponseEntity<Boolean>delete(@PathVariable("id") Integer id,
                                          @RequestHeader(value = "profileRole")String jwt){
         JWTDTO jwtdto= JWTUtil.decode(jwt);
@@ -47,7 +48,7 @@ public class ArticleTypeController {
         }
         return ResponseEntity.ok(articleTypeService.delete(id));
     }
-    @GetMapping("/all")
+    @GetMapping("/adm/all")
     public ResponseEntity<PageImpl> getAllByPagination(@RequestParam(value = "page", defaultValue = "1") Integer page,
                                                @RequestParam(value = "size", defaultValue = "10") Integer size,
                                                        @RequestHeader(value = "profileRole")String jwt) {
