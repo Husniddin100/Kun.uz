@@ -9,16 +9,16 @@ import java.util.Date;
 
 public class JWTUtil {
     private static final int tokenLiveTime = 1000 * 3600 * 24; // 1-day
-    private static final String secretKey = "mazgikotttttaaaaaaaaaaaaallllllllllllaaaaaaaaaaaaaaaaaaassssssshhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh";
+    private static final String secretKey = "mazgi123mazgidasdasdkja1dkjas7dksdakjshdkahsdkjahsdkahs7kjhaskjdh2skjdhadasdasg7fgdfgdfd";
 
     public static String encode(Integer profileId, ProfileRole role) {
         JwtBuilder jwtBuilder = Jwts.builder();
         jwtBuilder.issuedAt(new Date());
+
         SignatureAlgorithm sa = SignatureAlgorithm.HS512;
         SecretKeySpec secretKeySpec = new SecretKeySpec(secretKey.getBytes(), sa.getJcaName());
 
         jwtBuilder.signWith(secretKeySpec);
-
 
         jwtBuilder.claim("id", profileId);
         jwtBuilder.claim("role", role);
@@ -27,8 +27,8 @@ public class JWTUtil {
         jwtBuilder.issuer("KunUzTest");
         return jwtBuilder.compact();
     }
-    public static JWTDTO decode(String token) {
 
+    public static JWTDTO decode(String token) {
         SignatureAlgorithm sa = SignatureAlgorithm.HS512;
         SecretKeySpec secretKeySpec = new SecretKeySpec(secretKey.getBytes(), sa.getJcaName());
         JwtParser jwtParser = Jwts.parser()
@@ -44,6 +44,4 @@ public class JWTUtil {
 
         return new JWTDTO(id, profileRole);
     }
-
-
 }

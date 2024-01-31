@@ -3,6 +3,18 @@ POST localhost:8081/auth/login
 Content-Type: application/json
 
 {
-  "email": "admin@mail.ru",
+  "email": "uchanal10@gmail.com",
   "password": "12345"
+}
+
+###
+POST localhost:8081/auth/registration
+Content-Type:application/json
+
+{
+  "name": "ali",
+  "surname": "vali",
+  "email": "jamol3904@gmail.com",
+  "password": "12",
+  "phone": "1"
 }

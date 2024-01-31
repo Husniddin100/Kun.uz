@@ -1,7 +1,7 @@
 ### create article type
-POST localhost:8081/articleType/create
+POST localhost:8081/articleType/adm
 Content-Type: application/json
-
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY2MDY0OTAsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDY2OTI4OTAsImlzcyI6Ikt1blV6VGVzdCJ9.XkEyhGCH_VUdfivc0IUmfqzlUhaYIUPRb8rtfFS63EL2kBM0vPDpltjKX51fPAalfh18BppxTS5m1Yw8wMDg8Q
 
 {
   "order_number": 1,

@@ -17,6 +17,12 @@ public class SecurityConfig {
         bean.setFilter(tokenFilter);
         bean.addUrlPatterns("/region/adm");
         bean.addUrlPatterns("/region/adm/*");
+        bean.addUrlPatterns("/articleType/adm");
+        bean.addUrlPatterns("/articleType/adm/*");
+        bean.addUrlPatterns("/category/adm");
+        bean.addUrlPatterns("/category/adm/*");
+        bean.addUrlPatterns("/profile/adm");
+        bean.addUrlPatterns("/profile/adm/*");
         return bean;
     }
 

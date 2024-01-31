@@ -26,6 +26,7 @@ public class ArticleTypeService {
         entity.setName_en(dto.getName_en());
         entity.setName_ru(dto.getName_ru());
         entity.setName_uz(dto.getName_uz());
+        entity.setVisible(true);
 
        Optional<ArticleTypeEntity> optional= Optional.of(articleTypeRepository.save(entity));
          if (optional.isEmpty()){

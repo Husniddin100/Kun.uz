@@ -22,38 +22,36 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @PostMapping("/create/adm")
-    public ResponseEntity<CategoryDTO>craete(@RequestBody CategoryDTO dto,
-                                             HttpServletRequest request){
-         HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
+    @PostMapping("/adm")
+    public ResponseEntity<CategoryDTO> craete(@RequestBody CategoryDTO dto,
+                                              HttpServletRequest request) {
+        HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
         return ResponseEntity.ok(categoryService.create(dto));
     }
-    @PutMapping("/update/{id}")
-    public ResponseEntity<Boolean> updateById(@PathVariable Integer id ,@RequestBody CategoryDTO dto,
-                                              @RequestHeader(value = "Authorization")String jwt){
-        JWTDTO jwtdto= JWTUtil.decode(jwt);
-        if (!jwtdto.getRole().equals(ProfileRole.ADMIN)){
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-        }
-        return ResponseEntity.ok(categoryService.update(id,dto));
+
+    @PutMapping("/adm/update/{id}")
+    public ResponseEntity<Boolean> updateById(@PathVariable Integer id, @RequestBody CategoryDTO dto,
+                                              HttpServletRequest request) {
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
+        return ResponseEntity.ok(categoryService.update(id, dto));
     }
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Boolean>deleteById(@PathVariable Integer id,
-                                             @RequestHeader(value = "Authorization")String jwt){
-        JWTDTO jwtdto= JWTUtil.decode(jwt);
-        if (!jwtdto.getRole().equals(ProfileRole.ADMIN)){
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-        }
+
+    @DeleteMapping("/adm/delete/{id}")
+    public ResponseEntity<Boolean> deleteById(@PathVariable Integer id,
+                                              HttpServletRequest request) {
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
         return ResponseEntity.ok(categoryService.delete(id));
     }
+
     @GetMapping("/all")
-    public ResponseEntity<List<CategoryDTO>>getAll(){
-        List<CategoryDTO> categoryList=categoryService.getAll();
+    public ResponseEntity<List<CategoryDTO>> getAll() {
+        List<CategoryDTO> categoryList = categoryService.getAll();
         return ResponseEntity.ok(categoryList);
     }
+
     @GetMapping("/lang")
-    public ResponseEntity<List<CategoryDTO>>lang(@RequestParam(value = "lang",defaultValue = "uz") LangEnum lang){
-        List<CategoryDTO>langlist=categoryService.getLang(lang);
+    public ResponseEntity<List<CategoryDTO>> lang(@RequestParam(value = "lang", defaultValue = "uz") LangEnum lang) {
+        List<CategoryDTO> langlist = categoryService.getLang(lang);
         return ResponseEntity.ok(langlist);
 
     }

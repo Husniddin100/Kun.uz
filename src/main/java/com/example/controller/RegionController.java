@@ -20,36 +20,29 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/Region")
+@RequestMapping("/region")
 public class RegionController {
     @Autowired
     private RegionService regionService;
 
-    @PostMapping("/adm/create")
+    @PostMapping("/adm")
     public ResponseEntity<RegionDTO> create(@RequestBody RegionDTO dto,
                                             HttpServletRequest request) {
-        Integer id = HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN,ProfileRole.MODERATOR);
+        Integer id = HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
         return ResponseEntity.ok(regionService.create(dto));
     }
 
     @PutMapping("/update/{id}")
     public ResponseEntity<Boolean> update(@PathVariable("id") Integer id, @RequestBody RegionDTO dto,
-                                          @RequestHeader(value = "Authorization") String jwt) {
-        JWTDTO jwtdto = JWTUtil.decode(jwt);
-        if (!jwtdto.getRole().equals(ProfileRole.ADMIN)) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-        }
-
+                                          HttpServletRequest request) {
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
         return ResponseEntity.ok(regionService.update(id, dto));
     }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Boolean> deleteById(@PathVariable("id") Integer id,
-                                              @RequestHeader(value = "Authorization") String jwt) {
-        JWTDTO jwtdto = JWTUtil.decode(jwt);
-        if (!jwtdto.getRole().equals(ProfileRole.ADMIN)) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-        }
+                                              HttpServletRequest request) {
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
         return ResponseEntity.ok(regionService.delete(id));
     }
 

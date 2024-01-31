@@ -27,6 +27,7 @@ public class RegionService {
         entity.setName_uz(dto.getName_uz());
         entity.setName_ru(dto.getName_ru());
         entity.setName_en(dto.getName_en());
+        entity.setVisible(true);
         Optional<RegionEntity> optional = Optional.of(regionRepository.save(entity));
         if (optional.isEmpty()) {
             throw new AppBadException("error");

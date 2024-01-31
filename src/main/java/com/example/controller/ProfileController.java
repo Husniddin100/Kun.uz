@@ -5,7 +5,9 @@ import com.example.dto.ProfileDTO;
 import com.example.dto.ProfileFilterDTO;
 import com.example.enums.ProfileRole;
 import com.example.service.ProfileService;
+import com.example.util.HttpRequestUtil;
 import com.example.util.JWTUtil;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.http.HttpStatus;
@@ -19,36 +21,27 @@ import java.util.List;
 public class ProfileController {
     @Autowired  
     private ProfileService profileService;
-    @PostMapping("/create")
+    @PostMapping("/adm")
     public ResponseEntity<ProfileDTO>create(@RequestBody ProfileDTO dto,
-                                            @RequestHeader(value = "Authorization")String jwt){
-        JWTDTO jwtdto= JWTUtil.decode(jwt);
-        if (!jwtdto.getRole().equals(ProfileRole.ADMIN)){
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-        }
+                                            HttpServletRequest request){
+                 HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN);
         return ResponseEntity.ok(profileService.create(dto));
     }
-    @PutMapping("/updateAdmin/{id}")
+    @PutMapping("/adm/updateAdmin/{id}")
     public ResponseEntity<Boolean> update(@PathVariable Integer id , @RequestBody ProfileDTO dto,
-                                          @RequestHeader(value ="Authorization")String jwt){
-        JWTDTO jwtdto= JWTUtil.decode(jwt);
-        if (!jwtdto.getRole().equals(ProfileRole.ADMIN)){
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-        }
+                                          HttpServletRequest request){
+                 HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
         return ResponseEntity.ok(profileService.updateAdmin(id,dto));
     }
     @PutMapping("/updateUser/{id}")
     public ResponseEntity<Boolean> update(@PathVariable Integer id , @RequestBody ProfileDTO dto){
         return ResponseEntity.ok(profileService.updateUser(id,dto));
     }
-    @GetMapping("/all")
+    @GetMapping("/adm/all")
     public ResponseEntity<PageImpl> getAll(@RequestParam(value = "page", defaultValue = "1") Integer page,
                                                        @RequestParam(value = "size", defaultValue = "10") Integer size,
-                                                       @RequestHeader(value = "profileRole")String jwt) {
-        JWTDTO jwtdto= JWTUtil.decode(jwt);
-        if (!jwtdto.getRole().equals(ProfileRole.ADMIN)){
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-        }
+                                           HttpServletRequest request) {
+                 HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
         return ResponseEntity.ok(profileService.getAll(page, size));
     }
     @DeleteMapping("/delete/{id}")

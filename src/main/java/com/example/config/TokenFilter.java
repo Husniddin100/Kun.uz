@@ -16,7 +16,9 @@ import java.io.IOException;
 @Component
 public class TokenFilter extends GenericFilterBean {
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+    public void doFilter(ServletRequest servletRequest,
+                         ServletResponse servletResponse,
+                         FilterChain filterChain) throws IOException, ServletException {
         final HttpServletRequest request = (HttpServletRequest) servletRequest;
         final HttpServletResponse response = (HttpServletResponse) servletResponse;
 
@@ -26,6 +28,7 @@ public class TokenFilter extends GenericFilterBean {
             response.setHeader("Message", "Token Not Found.");
             return;
         }
+
         String token = authHeader.substring(7);
         JWTDTO jwtDto;
         try {

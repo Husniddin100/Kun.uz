@@ -1,11 +1,11 @@
 ### create
-POST localhost:8081/Region/create
+POST localhost:8081/region/adm
 Content-Type:application/json
-Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY0MjY1MjAsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDY1MTI5MjAsImlzcyI6Ikt1blV6VGVzdCJ9.5KWaICurDCb802paHasJ4B4eCxWkNIa12IWcnVd_Ec_hk1IKrObxEiaQiOYy-_N0ELaicscPX22U-dnIoQH6fw
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY2MDY0OTAsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDY2OTI4OTAsImlzcyI6Ikt1blV6VGVzdCJ9.XkEyhGCH_VUdfivc0IUmfqzlUhaYIUPRb8rtfFS63EL2kBM0vPDpltjKX51fPAalfh18BppxTS5m1Yw8wMDg8Q
 
 {
   "order_number": 1,
-  "name_uz": "test",
+  "name_uz": "jah",
   "name_ru": "test",
   "name_en": "test"
 }
