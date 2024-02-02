@@ -67,7 +67,6 @@ public class AuthService {
         String text = "Hello. \n To complete registration please link to the following link\n"
                 + "http://localhost:8081/auth/verification/email/" + jwt;
         mailSenderService.sendEmail(dto.getEmail(), "Complete registration", text);
-
         return true;
     }
 
