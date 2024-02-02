@@ -23,6 +23,10 @@ public class SecurityConfig {
         bean.addUrlPatterns("/category/adm/*");
         bean.addUrlPatterns("/profile/adm");
         bean.addUrlPatterns("/profile/adm/*");
+        bean.addUrlPatterns("/email_history/adm");
+        bean.addUrlPatterns("/email_history/adm/*");
+        bean.addUrlPatterns("/sms_history/adm");
+        bean.addUrlPatterns("/sms_history/adm/*");
         return bean;
     }
 

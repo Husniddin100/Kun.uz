@@ -1,0 +1,8 @@
+### get by email
+GET localhost:8081/email_history/getByEmail/jamol3904@gmail.com
+### get by Date
+GET localhost:8081/email_history/get/2024-02-02T11:11:30.785654
+### ge atll pagination
+GET localhost:8081/email_history/adm/all
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY4NjA0NzQsImlkIjo3LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDY5NDY4NzQsImlzcyI6Ikt1blV6VGVzdCJ9.p4gdD2pIasJ4bMymtDZw61WxLho1JLhVNr3FsQIL-jJ-t1fMu3i8Gcdi10iYbVzmsEcBfO-_UTnMMVLeIPUFFw
+

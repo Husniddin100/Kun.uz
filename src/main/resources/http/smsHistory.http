@@ -1,0 +1,9 @@
+###
+GET localhost:8081/sms_history/getByPhone/998990413341
+###
+GET localhost:8081/sms_history/getByDate/2024-02-02T12:37:41.427946
+
+### get all pagination
+GET localhost:8081/sms_history/adm/all
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY4NjA0NzQsImlkIjo3LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDY5NDY4NzQsImlzcyI6Ikt1blV6VGVzdCJ9.p4gdD2pIasJ4bMymtDZw61WxLho1JLhVNr3FsQIL-jJ-t1fMu3i8Gcdi10iYbVzmsEcBfO-_UTnMMVLeIPUFFw
+

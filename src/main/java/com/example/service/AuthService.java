@@ -1,12 +1,16 @@
 package com.example.service;
 
 import com.example.dto.*;
+import com.example.entity.EmailHistoryEntinty;
 import com.example.entity.ProfileEntity;
+import com.example.entity.SmsHistoryEntity;
 import com.example.enums.ProfileRole;
 import com.example.enums.ProfileStatus;
+import com.example.enums.SmsStatus;
 import com.example.exp.AppBadException;
 import com.example.repository.EmailHistoryRepository;
 import com.example.repository.ProfileRepository;
+import com.example.repository.SmsHistoryRepository;
 import com.example.util.JWTUtil;
 import com.example.util.MDUtil;
 import com.example.util.RandomUtil;
@@ -14,6 +18,7 @@ import io.jsonwebtoken.JwtException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -26,6 +31,8 @@ public class AuthService {
     private EmailHistoryRepository emailHistoryRepository;
     @Autowired
     private SmsServerServices smsServerService;
+    @Autowired
+    private SmsHistoryRepository smsHistoryRepository;
 
     public ProfileDTO auth(AuthDTO profile) {
         Optional<ProfileEntity> optional = profileRepository.findByEmailAndPassword(profile.getEmail(),
@@ -67,6 +74,11 @@ public class AuthService {
         String text = "Hello. \n To complete registration please link to the following link\n"
                 + "http://localhost:8081/auth/verification/email/" + jwt;
         mailSenderService.sendEmail(dto.getEmail(), "Complete registration", text);
+        EmailHistoryEntinty entinty = new EmailHistoryEntinty();
+        entinty.setEmail(dto.getEmail());
+        entinty.setMassage(text);
+        entinty.setCreatedDate(LocalDateTime.now());
+        emailHistoryRepository.save(entinty);
         return true;
     }
 
@@ -87,20 +99,16 @@ public class AuthService {
         }
         return null;
     }
-    public Boolean registrationSms(RegistrationDTO dto) {
-        // validation
-        // check
+
+    public Boolean registrationPone(RegistrationDTO dto) {
         Optional<ProfileEntity> optional = profileRepository.findByEmail(dto.getEmail());
         if (optional.isPresent()) {
             if (optional.get().getStatus().equals(ProfileStatus.REGISTRATION)) {
                 profileRepository.delete(optional.get()); // delete
-                // or
-                //send verification code (email/sms)
             } else {
                 throw new AppBadException("Email exists");
             }
         }
-        // create
         ProfileEntity entity = new ProfileEntity();
         entity.setName(dto.getName());
         entity.setSurname(dto.getSurname());
@@ -112,8 +120,14 @@ public class AuthService {
         profileRepository.save(entity);
 
         String code = RandomUtil.getRandomSmsCode();
-        smsServerService.send(dto.getPhone(), " test ", code);
+        String massage = "KUN.uz test";
+        smsServerService.send(dto.getPhone(), massage, code);
+        SmsHistoryEntity smsHistoryEntity = new SmsHistoryEntity();
+        smsHistoryEntity.setStatus(SmsStatus.USED);
+        smsHistoryEntity.setPhone(dto.getPhone());
+        smsHistoryEntity.setMassage(massage);
+        smsHistoryEntity.setCreatedDate(LocalDateTime.now());
+        smsHistoryRepository.save(smsHistoryEntity);
         return true;
     }
-
 }
