@@ -8,13 +8,26 @@ Content-Type: application/json
 }
 
 ###
+POST localhost:8081/auth/registrationSms
+Content-Type:application/json
+
+{
+  "name": "Ahaha",
+  "surname": "vali",
+  "email": "jamol3904@gmail.com",
+  "password": "12",
+  "phone": "998332700219"
+}
+
+
+###
 POST localhost:8081/auth/registration
 Content-Type:application/json
 
 {
-  "name": "ali",
+  "name": "Ahaha",
   "surname": "vali",
   "email": "jamol3904@gmail.com",
   "password": "12",
-  "phone": "1"
+  "phone": "99833270021"
 }

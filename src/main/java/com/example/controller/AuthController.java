@@ -21,6 +21,14 @@ public class AuthController {
     public ResponseEntity<Boolean> registration(@RequestBody RegistrationDTO dto){
         return ResponseEntity.ok(authService.registration(dto));
     }
+    @PostMapping("/registrationSms")
+    public ResponseEntity<Boolean> registrationSms(@RequestBody RegistrationDTO dto){
+        return ResponseEntity.ok(authService.registrationSms(dto));
+    }
+    @GetMapping("/verification/email/{jwt}")
+    public ResponseEntity<String> emailVerification(@PathVariable("jwt") String jwt) {
+        return ResponseEntity.ok(authService.emailVerification(jwt));
+    }
 
 
 }

@@ -13,12 +13,14 @@ import lombok.Setter;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Table(name = "profile")
 public class ProfileEntity extends BaseEntity {
-    @Column(nullable = false)
+    @Column
     private String name;
     @Column(nullable = false)
     private String surname;
     @Column(unique = true, nullable = false)
     private String email;
+    @Column
+    private String phone;
     @Column(nullable = false)
     private String password;
 

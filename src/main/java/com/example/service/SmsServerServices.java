@@ -3,10 +3,11 @@ package com.example.service;
 import okhttp3.*;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-
-public class SmsService {
+@Service
+public class SmsServerServices {
     @Value("${my.eskiz.uz.email}")
     private String email;
     @Value("${my.eskiz.uz.password}")

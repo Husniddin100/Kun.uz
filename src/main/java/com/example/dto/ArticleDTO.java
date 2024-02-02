@@ -1,6 +1,5 @@
 package com.example.dto;
 
-import com.example.entity.ArticleStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,7 +18,6 @@ public class ArticleDTO {
     private Integer categoryId;
     private Integer moderatorId;
     private Integer publisherId;
-    private ArticleStatus status;
     private LocalDateTime createdDate;
     private LocalDateTime publishedDate;
     private Boolean visible;
