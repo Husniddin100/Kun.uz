@@ -3,6 +3,7 @@ package com.example.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.rmi.server.UID;
 import java.time.LocalDateTime;
@@ -12,16 +13,16 @@ import java.time.LocalDateTime;
 @Table(name = "attach")
 public class AttachEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    private String id;
     @Column(name = "original_name")
-    private String original_name;
+    private String originalName;
     @Column
     private String path;
     @Column
     private Long size;
     @Column
-    private Long extension;
-    @Column
-    private LocalDateTime created_date;
+    private String extension;
+    @Column(name = "created_date")
+    private LocalDateTime createdData;
 }

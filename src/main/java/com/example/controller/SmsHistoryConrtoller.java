@@ -33,7 +33,6 @@ public class SmsHistoryConrtoller {
                                                        @RequestParam(value = "size", defaultValue = "10") Integer size,
                                                        HttpServletRequest request) {
         HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
-
         return ResponseEntity.ok(smsHistoryService.getAllByPagination(page, size));
     }
 }

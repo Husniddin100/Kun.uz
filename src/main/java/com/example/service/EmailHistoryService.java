@@ -1,8 +1,6 @@
 package com.example.service;
 
-import com.example.dto.ArticleTypeDTO;
 import com.example.dto.EmailHistoryDTO;
-import com.example.entity.ArticleTypeEntity;
 import com.example.entity.EmailHistoryEntinty;
 import com.example.exp.AppBadException;
 import com.example.repository.EmailHistoryRepository;
@@ -13,7 +11,6 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class EmailHistoryService {

@@ -3,8 +3,8 @@ POST localhost:8081/auth/login
 Content-Type: application/json
 
 {
-  "email": "uchanal10@gmail.com",
-  "password": "12345"
+  "email": "DdD@gmail.com",
+  "password": ""
 }
 
 ###
@@ -16,13 +16,13 @@ Content-Type:application/json
   "surname": "vali",
   "email": "jamol3904@gmail.com",
   "password": "12",
-  "phone": "998990413341"
+  "phone": "998337200219"
 }
 
 
 ###
 POST localhost:8081/auth/registration
-Content-Type:application/json
+ConteyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcxMTA4MTQsImlkIjoxOSwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzE5NzIxNCwiaXNzIjoiS3VuVXpUZXN0In0.Kj7Um4wjmPkEGRRkvHJupJEGYubOcxAgra4a0wcoS9ZEUxTHxQ4gglzMJRtqpJvWrIpqfkkTI4QwZCvdD5DIuQent-Type:application/json
 
 {
   "name": "Ahaha",

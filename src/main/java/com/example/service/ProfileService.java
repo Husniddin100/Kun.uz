@@ -1,10 +1,8 @@
 package com.example.service;
 
-import com.example.dto.ArticleTypeDTO;
 import com.example.dto.PaginationResultDTO;
 import com.example.dto.ProfileDTO;
 import com.example.dto.ProfileFilterDTO;
-import com.example.entity.ArticleTypeEntity;
 import com.example.entity.ProfileEntity;
 import com.example.exp.AppBadException;
 import com.example.repository.ProfileCustomRepository;
@@ -125,4 +123,14 @@ public class ProfileService {
         return dto;
     }
 
+    public ProfileEntity get(Integer id) {
+        if (id==null){
+            throw new AppBadException("id null");
+        }
+        Optional<ProfileEntity>optional=profileRepository.findById(id);
+        if (optional.isEmpty()){
+            throw new AppBadException("moderatorId not found");
+        }
+        return optional.get();
+    }
 }

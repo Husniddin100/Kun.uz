@@ -6,13 +6,15 @@ import lombok.Setter;
 
 import java.rmi.server.UID;
 import java.time.LocalDateTime;
+
 @Setter
 @Getter
 public class AttachDTO {
-     private UID id;
-     private String original_name;
-     private String path;
-     private Long size;
-     private Long extension;
-     private LocalDateTime created_date;
+    private String id;
+    private String originalName;
+    private String path;
+    private Long size;
+    private String extension;
+    private LocalDateTime createdDate;
+    private String url;
 }

@@ -1,0 +1,23 @@
+### create article
+POST localhost:8081/article/adm
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcxMTA4MTQsImlkIjoxOSwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzE5NzIxNCwiaXNzIjoiS3VuVXpUZXN0In0.Kj7Um4wjmPkEGRRkvHJupJEGYubOcxAgra4a0wcoS9ZEUxTHxQ4gglzMJRtqpJvWrIpqfkkTI4QwZCvdD5DIuQ
+
+{
+  "title": "Германияда иш ўринлари, ўқитувчилар ҳақида қонун ва сотилган Magic City — ҳафта дайжести",
+  "description": "Германия ўзбекистонликлар учун 50 мингта иш ўрнини таклиф қилмоқда. Ватандошларимиз энди Қозоғистонда 1 ой регистрациядан ўтмай яшаши мумкин",
+  "content": "Ўзбекистон фуқароларининг Қозоғистон ҳудудида рўйхатдан ўтмасдан бўлиб туриш муддати 5 кундан 30 кунга узайтирилди. Худди шундай тартиб Ўзбекистонга келган қозоғистонликлар учун ҳам амал қилади. Шу билан бирга, фуқароларнинг қўшни мамлакатда вақтинча бўлиб туриш муддати 6 ой давомида жами 90 кундан ошмаслиги керак. Бу ҳақдаги келишувни 31 январ куни Қозоғистон парламенти тасдиқлади.",
+  "regionId": 1,
+  "categoryId": 1,
+  "imageId": "3243dc92-0808-4730-aaa7-4829b99e190b",
+  "articletype": "test,maqola"
+}
+### delete article
+PUT localhost:8081/article/adm/delete/80a5eaf1-8083-4db8-ac55-f7f49d09ba84
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcxMTA4MTQsImlkIjoxOSwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzE5NzIxNCwiaXNzIjoiS3VuVXpUZXN0In0.Kj7Um4wjmPkEGRRkvHJupJEGYubOcxAgra4a0wcoS9ZEUxTHxQ4gglzMJRtqpJvWrIpqfkkTI4QwZCvdD5DIuQ
+
+### change status article
+PUT localhost:8081/article/adm/change_status/80a5eaf1-8083-4db8-ac55-f7f49d09ba84
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcxMTA4MTQsImlkIjoxOSwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzE5NzIxNCwiaXNzIjoiS3VuVXpUZXN0In0.Kj7Um4wjmPkEGRRkvHJupJEGYubOcxAgra4a0wcoS9ZEUxTHxQ4gglzMJRtqpJvWrIpqfkkTI4QwZCvdD5DIuQ
+
+

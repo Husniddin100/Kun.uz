@@ -1,9 +1,7 @@
 package com.example.service;
 
 import com.example.dto.ArticleTypeDTO;
-import com.example.dto.RegionDTO;
-import com.example.entity.ArticleTypeEntity;
-import com.example.entity.RegionEntity;
+import com.example.entity.TypeEntity;
 import com.example.enums.LangEnum;
 import com.example.exp.AppBadException;
 import com.example.repository.ArticleTypeRepository;
@@ -21,14 +19,14 @@ public class ArticleTypeService {
     private ArticleTypeRepository articleTypeRepository;
 
     public ArticleTypeDTO create(ArticleTypeDTO dto) {
-        ArticleTypeEntity entity = new ArticleTypeEntity();
+        TypeEntity entity = new TypeEntity();
         entity.setOrderNumber(dto.getOrder_number());
         entity.setName_en(dto.getName_en());
         entity.setName_ru(dto.getName_ru());
         entity.setName_uz(dto.getName_uz());
         entity.setVisible(true);
 
-       Optional<ArticleTypeEntity> optional= Optional.of(articleTypeRepository.save(entity));
+       Optional<TypeEntity> optional= Optional.of(articleTypeRepository.save(entity));
          if (optional.isEmpty()){
              throw new AppBadException("error");
          }
@@ -39,11 +37,11 @@ public class ArticleTypeService {
     }
 
     public Boolean update(Integer id, ArticleTypeDTO dto) {
-        Optional<ArticleTypeEntity> optional=articleTypeRepository.findById(id);
+        Optional<TypeEntity> optional=articleTypeRepository.findById(id);
         if (optional.isEmpty()){
             throw new AppBadException("not found");
         }
-        ArticleTypeEntity entity=optional.get();
+        TypeEntity entity=optional.get();
         entity.setOrderNumber(dto.getOrder_number());
         entity.setName_uz(dto.getName_uz());
         entity.setName_ru(dto.getName_ru());
@@ -54,7 +52,7 @@ public class ArticleTypeService {
     }
 
     public Boolean delete(Integer id) {
-     Optional<ArticleTypeEntity>optional = articleTypeRepository.findById(id);
+     Optional<TypeEntity>optional = articleTypeRepository.findById(id);
         if (optional.isEmpty()){
             throw new AppBadException("not found");
         }
@@ -66,13 +64,13 @@ public class ArticleTypeService {
         Sort sort = Sort.by(Sort.Direction.DESC, "id");
 
         Pageable paging = PageRequest.of(page - 1, size, sort);
-        Page<ArticleTypeEntity> studentPage = articleTypeRepository.findAll(paging);
+        Page<TypeEntity> studentPage = articleTypeRepository.findAll(paging);
 
-        List<ArticleTypeEntity> entityList = studentPage.getContent();
+        List<TypeEntity> entityList = studentPage.getContent();
         Long totalElements = studentPage.getTotalElements();
 
         List<ArticleTypeDTO> dtoList = new LinkedList<>();
-        for (ArticleTypeEntity articleType : entityList) {
+        for (TypeEntity articleType : entityList) {
             if (articleType.getVisible().equals(Boolean.TRUE)) {
                 dtoList.add(toDTO(articleType));
             }
@@ -82,9 +80,9 @@ public class ArticleTypeService {
 
     public List<ArticleTypeDTO> getByLanguage ( LangEnum language) {
         LinkedList<ArticleTypeDTO>list=new LinkedList<>();
-        Iterable<ArticleTypeEntity> getAll=articleTypeRepository.findAll();
+        Iterable<TypeEntity> getAll=articleTypeRepository.findAll();
 
-        for (ArticleTypeEntity entity:getAll){
+        for (TypeEntity entity:getAll){
             ArticleTypeDTO dto=new ArticleTypeDTO();
             dto.setId(entity.getId());
             switch (language) {
@@ -103,7 +101,8 @@ public class ArticleTypeService {
         }
         return list;
     }
-    public ArticleTypeDTO toDTO(ArticleTypeEntity entity) {
+
+    public ArticleTypeDTO toDTO(TypeEntity entity) {
         ArticleTypeDTO dto = new ArticleTypeDTO();
         dto.setId(entity.getId());
         dto.setName_uz(entity.getName_uz());

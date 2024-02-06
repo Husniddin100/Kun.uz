@@ -1,6 +1,5 @@
 package com.example.repository;
 
-import com.example.entity.ArticleTypeEntity;
 import com.example.entity.RegionEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

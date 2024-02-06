@@ -120,7 +120,7 @@ public class AuthService {
         profileRepository.save(entity);
 
         String code = RandomUtil.getRandomSmsCode();
-        String massage = "KUN.uz test";
+        String massage = "Haha";
         smsServerService.send(dto.getPhone(), massage, code);
         SmsHistoryEntity smsHistoryEntity = new SmsHistoryEntity();
         smsHistoryEntity.setStatus(SmsStatus.USED);

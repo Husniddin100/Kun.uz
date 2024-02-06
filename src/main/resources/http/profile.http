@@ -4,14 +4,15 @@ GET localhost:8081/admin/initAdmin
 ### create profile
 POST localhost:8081/profile/adm
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcxMTAyMTMsImlkIjo3LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDcxOTY2MTMsImlzcyI6Ikt1blV6VGVzdCJ9.B0OIr68FRIlnieimpaQQu1ZXqmgyrXy8JryDwaWT9Y2ITQP7EP81IcerOl3oAW_DrUB2L-ETWs3Hzw49ylS0-g
 
 {
-  "name": "Ali",
+  "name": "Moder",
   "surname": "Aliyev",
-  "email": "DD@gmail.com",
-  "password": "1234",
+  "email": "dDdD@gmail.com",
+  "password": "12345",
   "status": "ACTIVE",
-  "role": "USER"
+  "role": "PUBLISHER"
 }
 
 ###update user

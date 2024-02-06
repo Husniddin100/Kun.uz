@@ -1,9 +1,6 @@
 package com.example.service;
 
-import com.example.controller.ExeptionHandlerController;
-import com.example.dto.ArticleTypeDTO;
 import com.example.dto.RegionDTO;
-import com.example.entity.ArticleTypeEntity;
 import com.example.entity.RegionEntity;
 import com.example.enums.LangEnum;
 import com.example.exp.AppBadException;
@@ -11,7 +8,6 @@ import com.example.repository.RegionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -105,4 +101,13 @@ public class RegionService {
         dto.setCreatedDate(entity.getCreatedDate());
         return dto;
     }
+
+    public RegionEntity get(Integer regionId) {
+        Optional<RegionEntity>optional=regionRepository.findById(regionId);
+        if (optional.isEmpty()){
+            throw new AppBadException("region not found");
+        }
+        return optional.get();
+    }
+
 }

@@ -98,4 +98,12 @@ public class CategoryService {
         }
         return dtoList;
     }
+
+    public CategoryEntity get(Integer categoryId) {
+        Optional<CategoryEntity>optional=categoryRepository.findById(categoryId);
+        if (optional.isEmpty()){
+            throw new AppBadException("category not found");
+        }
+        return optional.get();
+    }
 }

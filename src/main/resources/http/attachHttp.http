@@ -1,0 +1,16 @@
+### Create
+POST http://localhost:8081/attach/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="test.jpg"
+
+< D:/test.jpg
+
+
+### upload
+GET localhost:8081/attach/open/test.jpg
+
+###
+GET localhost:8081/attach/open_general/test
+

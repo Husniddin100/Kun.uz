@@ -4,6 +4,7 @@ import com.example.dto.AuthDTO;
 import com.example.dto.ProfileDTO;
 import com.example.dto.RegistrationDTO;
 import com.example.service.AuthService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,7 @@ public class AuthController {
     @Autowired
     private AuthService authService;
     @PostMapping("/login")
-    public ResponseEntity<ProfileDTO> login(@RequestBody AuthDTO authDTO){
+    public ResponseEntity<ProfileDTO> login(@Valid @RequestBody AuthDTO authDTO){
         return ResponseEntity.ok(authService.auth(authDTO));
     }
     @PostMapping("/registration")
@@ -29,6 +30,4 @@ public class AuthController {
     public ResponseEntity<String> emailVerification(@PathVariable("jwt") String jwt) {
         return ResponseEntity.ok(authService.emailVerification(jwt));
     }
-
-
 }
