@@ -1,7 +1,7 @@
 ### create article
 POST localhost:8081/article/adm
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcxMTA4MTQsImlkIjoxOSwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzE5NzIxNCwiaXNzIjoiS3VuVXpUZXN0In0.Kj7Um4wjmPkEGRRkvHJupJEGYubOcxAgra4a0wcoS9ZEUxTHxQ4gglzMJRtqpJvWrIpqfkkTI4QwZCvdD5DIuQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcyMTc0ODAsImlkIjozLCJyb2xlIjoiTU9ERVJBVE9SIiwiZXhwIjoxNzA3MzAzODgwLCJpc3MiOiJLdW5VelRlc3QifQ.ojotQzkRZXTqLXYBmb31vnNxYWTq3PZYlCMHoRyosOd9bprPH6J0xJIhDjl2JvSMdekj01-IG8VtV9iyLyOdwQ
 
 {
   "title": "Германияда иш ўринлари, ўқитувчилар ҳақида қонун ва сотилган Magic City — ҳафта дайжести",
@@ -10,14 +10,18 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcxMTA4MTQsImlkIjoxOSwic
   "regionId": 1,
   "categoryId": 1,
   "imageId": "3243dc92-0808-4730-aaa7-4829b99e190b",
-  "articletype": "test,maqola"
+  "article type": [
+    1,
+    2
+  ],
+  "photoId": "e8aaa3ca-f15c-46f8-a7f3-52be248e278f"
 }
+
 ### delete article
-PUT localhost:8081/article/adm/delete/80a5eaf1-8083-4db8-ac55-f7f49d09ba84
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcxMTA4MTQsImlkIjoxOSwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzE5NzIxNCwiaXNzIjoiS3VuVXpUZXN0In0.Kj7Um4wjmPkEGRRkvHJupJEGYubOcxAgra4a0wcoS9ZEUxTHxQ4gglzMJRtqpJvWrIpqfkkTI4QwZCvdD5DIuQ
+PUT localhost:8081/article/adm/delete/dc5d523a-d930-4408-a9ad-f473af147948
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcyMDgwMDAsImlkIjoxOSwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzI5NDQwMCwiaXNzIjoiS3VuVXpUZXN0In0.7ihVbIHVxBbwoo3FEvvEbiUpCF0rq_OVltJYjkhmNoGS1fTl9qzvSWFYfeerIIsTXCq8gS_tKTH0M48H9TQQ4Q
 
 ### change status article
-PUT localhost:8081/article/adm/change_status/80a5eaf1-8083-4db8-ac55-f7f49d09ba84
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcxMTA4MTQsImlkIjoxOSwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzE5NzIxNCwiaXNzIjoiS3VuVXpUZXN0In0.Kj7Um4wjmPkEGRRkvHJupJEGYubOcxAgra4a0wcoS9ZEUxTHxQ4gglzMJRtqpJvWrIpqfkkTI4QwZCvdD5DIuQ
-
+PUT localhost:8081/article/adm/change_status/5ce426a2-b1b4-466b-b77a-4f1b31182b23/status?status=NotPublished
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcyMTczOTMsImlkIjoyLCJyb2xlIjoiUFVCTElTSEVSIiwiZXhwIjoxNzA3MzAzNzkzLCJpc3MiOiJLdW5VelRlc3QifQ.g1D1Np0ZZ3g33Vnti7PyUoeDKd8BIYpX_V_hQcjdAad8UvsrSFtAbtbYlPEc1tJxYjurk551RvwwtBIlhj_Ejg
 

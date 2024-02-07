@@ -1,7 +1,9 @@
 package com.example.controller;
 
-import com.example.dto.ArticleDTO;
+import com.example.dto.ArticleTypeDTO;
+import com.example.dto.CreateArticleDTO;
 import com.example.enums.ArticleStatus;
+import com.example.enums.LangEnum;
 import com.example.enums.ProfileRole;
 import com.example.service.ArticleService;
 import com.example.util.HttpRequestUtil;
@@ -10,37 +12,46 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/article")
 public class ArticleController {
     @Autowired
     private ArticleService articleService;
+
     @PostMapping("/adm")
-    public ResponseEntity<ArticleDTO>createArticle(@RequestBody  ArticleDTO dto,
-                                                   HttpServletRequest request){
+    public ResponseEntity<CreateArticleDTO> createArticle(@RequestBody CreateArticleDTO dto,
+                                                          HttpServletRequest request) {
         HttpRequestUtil.getJWTDTO(request, ProfileRole.MODERATOR);
-        return ResponseEntity.ok(articleService.create(dto));
+        Integer moderatorId = HttpRequestUtil.getProfileId(request, ProfileRole.MODERATOR);
+        return ResponseEntity.ok(articleService.create(dto, moderatorId));
     }
+
     @PutMapping("/adm/update/{id}")
-    public ResponseEntity<ArticleDTO>update(@PathVariable String id,@RequestBody ArticleDTO dto,
-                                             HttpServletRequest request ){
+    public ResponseEntity<CreateArticleDTO> update(@PathVariable String id, @RequestBody CreateArticleDTO dto,
+                                                   HttpServletRequest request) {
         HttpRequestUtil.getJWTDTO(request, ProfileRole.MODERATOR);
-       return ResponseEntity.ok(articleService.update(id,dto));
+        return ResponseEntity.ok(articleService.update(id, dto));
     }
+
     @PutMapping("/adm/delete/{id}")
-    public ResponseEntity<Boolean>delete(@PathVariable String id,
-                                         HttpServletRequest request){
+    public ResponseEntity<Boolean> changeVisible(@PathVariable String id,
+                                                 HttpServletRequest request) {
         HttpRequestUtil.getJWTDTO(request, ProfileRole.MODERATOR);
         return ResponseEntity.ok(articleService.delete(id));
     }
-    @PutMapping("/adm/change_status/{id}")
-    public ResponseEntity<Boolean>changeStatus(@PathVariable String id,
-                                                  HttpServletRequest request){
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.MODERATOR);
-        return ResponseEntity.ok(articleService.changeStatus(id));
+
+    @PutMapping("/adm/change_status/{id}/status")
+    public ResponseEntity<Boolean> changeStatus(@PathVariable String id,
+                                                HttpServletRequest request, @RequestParam(value = "status", defaultValue = "Published") ArticleStatus status) {
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.PUBLISHER);
+        Integer publisherId = HttpRequestUtil.getProfileId(request, ProfileRole.PUBLISHER);
+        return ResponseEntity.ok(articleService.changeStatusSave(id, publisherId, status));
     }
-   /* @GetMapping("/orderBy5/{type}")
-    public ResponseEntity<ArticleDTO>orderByCreatedDate5(@PathVariable ArticleStatus...status){
-    return ResponseEntity.ok(articleService.orderBy5(status));
-    }*/
+
+    @GetMapping("/getByIdandLang/{id}")
+    public ResponseEntity<CreateArticleDTO> getByLangAndId(@PathVariable("id") String id, @RequestParam(value = "lang", defaultValue = "uz") LangEnum lang) {
+        Optional<CreateArticleDTO> optional = articleService.getByLangAndId(id, lang);
+    }
 }

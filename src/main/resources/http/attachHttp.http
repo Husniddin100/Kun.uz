@@ -12,5 +12,8 @@ Content-Disposition: form-data; name="file"; filename="test.jpg"
 GET localhost:8081/attach/open/test.jpg
 
 ###
-GET localhost:8081/attach/open_general/test
+GET localhost:8081/attach/open_general/test.jpg
+
+###
+GET localhost:8081/attach/open/test.jpg
 
