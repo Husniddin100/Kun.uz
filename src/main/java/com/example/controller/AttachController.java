@@ -2,7 +2,9 @@ package com.example.controller;
 
 import com.example.dto.AttachDTO;
 import com.example.service.AttachService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
+@Slf4j
+@Tag(name = "Attach Api list", description = "Api list for Attach")
 @RequestMapping("/attach")
 public class AttachController {
     @Autowired
@@ -29,6 +33,7 @@ public class AttachController {
                 return this.attachService.loadImage(fileName);
             } catch (Exception e) {
                 e.printStackTrace();
+
                 return new byte[0];
             }
         }
@@ -46,6 +51,7 @@ public class AttachController {
 
     @GetMapping("/download/{fineName}")
     public ResponseEntity<Resource> download(@PathVariable("fineName") String fileName) {
+        log.info("download file {}",fileName);
         return attachService.download(fileName);
     }
 

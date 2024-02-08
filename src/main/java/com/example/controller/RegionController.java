@@ -9,8 +9,11 @@ import com.example.enums.ProfileRole;
 import com.example.service.RegionService;
 import com.example.util.HttpRequestUtil;
 import com.example.util.JWTUtil;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,15 +23,19 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@Slf4j
+@Tag(name = "Region Api list", description = "Api list for Region")
 @RequestMapping("/region")
 public class RegionController {
     @Autowired
     private RegionService regionService;
 
+    @Operation(summary = "Api for Create Region", description = "this api used for creating region")
     @PostMapping("/adm")
     public ResponseEntity<RegionDTO> create(@RequestBody RegionDTO dto,
                                             HttpServletRequest request) {
         Integer id = HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
+        log.info("create region{}", dto.getName_uz());
         return ResponseEntity.ok(regionService.create(dto));
     }
 

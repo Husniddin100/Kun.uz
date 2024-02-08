@@ -1,12 +1,14 @@
 package com.example.service;
 
-import com.example.dto.CategoryDTO;
+import com.example.controller.ArticleController;
+import com.example.dto.ArticleTypeDTO;
 import com.example.dto.CreateArticleDTO;
 import com.example.entity.*;
 import com.example.enums.ArticleStatus;
 import com.example.enums.LangEnum;
 import com.example.exp.AppBadException;
 import com.example.repository.ArticleRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +17,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-
+@Slf4j
 @Service
 public class ArticleService {
     @Autowired
@@ -66,6 +68,7 @@ public class ArticleService {
         if (optional.isEmpty()) {
             throw new AppBadException("article not found");
         }
+        log.warn("delete article");
         articleRepository.deleteById(id);
         return true;
     }
@@ -89,16 +92,24 @@ public class ArticleService {
         return true;
     }
 
-    public Optional<CreateArticleDTO> getByLangAndId(String id, LangEnum lang) {
-        return null;
 
-
+    public List<CreateArticleDTO> getTypeArticleList() {
+        List<ArticleEntity> list = articleRepository.getTypeArticleList();
+        List<CreateArticleDTO>entityList=new LinkedList<>();
+        for (ArticleEntity entity : list) {
+           entityList.add(toDTO(entity));
+        }
+        return entityList;
     }
 
-   /* public CreateArticleDTO orderBy5(ArticleStatus[] status) {
-        if (status==null ){
-            throw new AppBadException("status is null");
-        }
-        return articleRepository.
-    }*/
+    public CreateArticleDTO toDTO(ArticleEntity entity) {
+        CreateArticleDTO dto = new CreateArticleDTO();
+        dto.setRegionId(entity.getRegionId());
+        dto.setDescription(entity.getDescription());
+        dto.setTitle(entity.getTitle());
+        dto.setContent(entity.getContent());
+        dto.setPhotoId(entity.getPhotoId());
+        dto.setPhotoId(entity.getPhotoId());
+        return dto;
+    }
 }

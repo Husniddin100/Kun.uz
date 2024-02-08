@@ -5,6 +5,7 @@ import com.example.entity.TypeEntity;
 import com.example.enums.LangEnum;
 import com.example.exp.AppBadException;
 import com.example.repository.ArticleTypeRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @Service
 public class ArticleTypeService {
     @Autowired
@@ -26,22 +28,22 @@ public class ArticleTypeService {
         entity.setName_uz(dto.getName_uz());
         entity.setVisible(true);
 
-       Optional<TypeEntity> optional= Optional.of(articleTypeRepository.save(entity));
-         if (optional.isEmpty()){
-             throw new AppBadException("error");
-         }
-         dto.setId(entity.getId());
-         dto.setCreatedDate(entity.getCreatedDate());
-         dto.setVisible(entity.getVisible());
-         return dto;
+        Optional<TypeEntity> optional = Optional.of(articleTypeRepository.save(entity));
+        if (optional.isEmpty()) {
+            throw new AppBadException("error");
+        }
+        dto.setId(entity.getId());
+        dto.setCreatedDate(entity.getCreatedDate());
+        dto.setVisible(entity.getVisible());
+        return dto;
     }
 
     public Boolean update(Integer id, ArticleTypeDTO dto) {
-        Optional<TypeEntity> optional=articleTypeRepository.findById(id);
-        if (optional.isEmpty()){
+        Optional<TypeEntity> optional = articleTypeRepository.findById(id);
+        if (optional.isEmpty()) {
             throw new AppBadException("not found");
         }
-        TypeEntity entity=optional.get();
+        TypeEntity entity = optional.get();
         entity.setOrderNumber(dto.getOrder_number());
         entity.setName_uz(dto.getName_uz());
         entity.setName_ru(dto.getName_ru());
@@ -52,10 +54,11 @@ public class ArticleTypeService {
     }
 
     public Boolean delete(Integer id) {
-     Optional<TypeEntity>optional = articleTypeRepository.findById(id);
-        if (optional.isEmpty()){
+        Optional<TypeEntity> optional = articleTypeRepository.findById(id);
+        if (optional.isEmpty()) {
             throw new AppBadException("not found");
         }
+        log.info("delete article Type {}", id);
         articleTypeRepository.delete(id);
         return true;
     }
@@ -78,12 +81,11 @@ public class ArticleTypeService {
         return new PageImpl<>(dtoList, paging, totalElements);
     }
 
-    public List<ArticleTypeDTO> getByLanguage ( LangEnum language) {
-        LinkedList<ArticleTypeDTO>list=new LinkedList<>();
-        Iterable<TypeEntity> getAll=articleTypeRepository.findAll();
-
-        for (TypeEntity entity:getAll){
-            ArticleTypeDTO dto=new ArticleTypeDTO();
+    public List<ArticleTypeDTO> getByLanguage(LangEnum language) {
+        LinkedList<ArticleTypeDTO> list = new LinkedList<>();
+        Iterable<TypeEntity> getAll = articleTypeRepository.findAll();
+        for (TypeEntity entity : getAll) {
+            ArticleTypeDTO dto = new ArticleTypeDTO();
             dto.setId(entity.getId());
             switch (language) {
                 case ru:
