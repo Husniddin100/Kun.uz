@@ -17,19 +17,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+
 @Slf4j
 @Service
 public class ArticleService {
     @Autowired
     private ArticleRepository articleRepository;
-    @Autowired
-    private RegionService regionService;
-    @Autowired
-    private CategoryService categoryService;
-    @Autowired
-    private AttachService attachService;
-    @Autowired
-    private ProfileService profileService;
 
     public CreateArticleDTO create(CreateArticleDTO dto, Integer moderatorId) {
         ArticleEntity entity = new ArticleEntity();
@@ -95,9 +88,9 @@ public class ArticleService {
 
     public List<CreateArticleDTO> getTypeArticleList() {
         List<ArticleEntity> list = articleRepository.getTypeArticleList();
-        List<CreateArticleDTO>entityList=new LinkedList<>();
+        List<CreateArticleDTO> entityList = new LinkedList<>();
         for (ArticleEntity entity : list) {
-           entityList.add(toDTO(entity));
+            entityList.add(toDTO(entity));
         }
         return entityList;
     }
@@ -112,4 +105,5 @@ public class ArticleService {
         dto.setPhotoId(entity.getPhotoId());
         return dto;
     }
+
 }

@@ -26,4 +26,8 @@ public interface ArticleRepository extends CrudRepository<ArticleEntity, String>
 
     @Query("select a from ArticleEntity a where 1=1 order by a.createdDate desc limit 5")
     List<ArticleEntity> getTypeArticleList();
+   @Modifying
+   @Transactional
+    @Query("select a from ArticleEntity a where a.id!=?1 order by a.id desc limit 8")
+    List<ArticleEntity> getLast8(String[] id);
 }

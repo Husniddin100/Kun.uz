@@ -1,9 +1,6 @@
 package com.example.controller;
 
-import com.example.dto.ArticleTypeDTO;
 import com.example.dto.CreateArticleDTO;
-import com.example.entity.ArticleEntity;
-import com.example.entity.TypeEntity;
 import com.example.enums.ArticleStatus;
 import com.example.enums.ProfileRole;
 import com.example.service.ArticleService;
@@ -16,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Type;
 import java.util.List;
 
 @RestController
@@ -44,7 +40,9 @@ public class ArticleController {
         HttpRequestUtil.getJWTDTO(request, ProfileRole.MODERATOR);
         log.info("update article {}", dto.getTitle());
         return ResponseEntity.ok(articleService.update(id, dto));
+
     }
+
     @Operation(summary = "Api for delete Article", description = "this api used for delete byId article")
     @PutMapping("/adm/delete/{id}")
     public ResponseEntity<Boolean> changeVisible(@PathVariable String id,
@@ -68,5 +66,7 @@ public class ArticleController {
         List<CreateArticleDTO> list = articleService.getTypeArticleList();
         return ResponseEntity.ok(list);
     }
+
+
 
 }
