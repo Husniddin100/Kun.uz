@@ -27,6 +27,7 @@ public class ArticleLikeEntity {
     private ArticleEntity article;
     @Column
     private LocalDateTime createdDate;
+    @Enumerated(EnumType.STRING)
     @Column
     private LikeStatus status;
 }

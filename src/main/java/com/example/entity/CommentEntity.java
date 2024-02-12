@@ -4,11 +4,16 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @Entity
 @Table(name = "comment")
-public class CommentEntity extends BaseEntity {
+public class CommentEntity  {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     @Column(name = "profile_id")
     private Integer profileId;
     @JoinColumn(name = "profile_id", updatable = false, insertable = false)
@@ -24,4 +29,10 @@ public class CommentEntity extends BaseEntity {
     /// maybe join profile
     @Column
     private Integer replyId;
+    @Column(name = "created_date")
+    private LocalDateTime createdDate = LocalDateTime.now();
+    @Column(name = "updated_date")
+    private LocalDateTime updatedDate;
+    @Column(name = "visible")
+    private Boolean visible=true;
 }

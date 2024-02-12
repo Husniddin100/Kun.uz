@@ -26,7 +26,6 @@ import java.util.List;
 public class ArticleTypeController {
     @Autowired
     private ArticleTypeService articleTypeService;
-
     @Operation(summary = "api for creat articleType", description = "this api only created articleType")
     @PostMapping("/adm")
     public ResponseEntity<ArticleTypeDTO> create(@RequestBody ArticleTypeDTO dto,

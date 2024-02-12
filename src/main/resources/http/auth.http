@@ -22,7 +22,8 @@ Content-Type:application/json
 
 ###
 POST localhost:8081/auth/registration
-ConteyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcxMTA4MTQsImlkIjoxOSwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzE5NzIxNCwiaXNzIjoiS3VuVXpUZXN0In0.Kj7Um4wjmPkEGRRkvHJupJEGYubOcxAgra4a0wcoS9ZEUxTHxQ4gglzMJRtqpJvWrIpqfkkTI4QwZCvdD5DIuQent-Type:application/json
+Content-Type: application/json
+Authorization: Bearer ConteyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcxMTA4MTQsImlkIjoxOSwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzE5NzIxNCwiaXNzIjoiS3VuVXpUZXN0In0.Kj7Um4wjmPkEGRRkvHJupJEGYubOcxAgra4a0wcoS9ZEUxTHxQ4gglzMJRtqpJvWrIpqfkkTI4QwZCvdD5DIuQ
 
 {
   "name": "Ahaha",

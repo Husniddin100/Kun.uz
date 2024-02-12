@@ -34,7 +34,6 @@ public class RegionController {
     @PostMapping("/adm")
     public ResponseEntity<RegionDTO> create(@RequestBody RegionDTO dto,
                                             HttpServletRequest request) {
-        Integer id = HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
         log.info("create region{}", dto.getName_uz());
         return ResponseEntity.ok(regionService.create(dto));
     }

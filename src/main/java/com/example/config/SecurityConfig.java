@@ -31,6 +31,5 @@ public class SecurityConfig {
         bean.addUrlPatterns("/article/adm/*");
         return bean;
     }
-
-
 }
+

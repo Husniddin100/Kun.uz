@@ -2,18 +2,17 @@ package com.example.dto;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.time.LocalDateTime;
-
 @Getter
 @Setter
-public class CommentDTO {
+public class CommentListDTO {
     private Integer id;
     private LocalDateTime createdDate;
-    private LocalDateTime updateDate;
+    private LocalDateTime updatedDate;
     private Integer profileId;
-    private String content;
-    private String articleId;
-    private Integer replyId;
-    private Boolean visible;
+    private String name;
+    private String surname;
+
 }

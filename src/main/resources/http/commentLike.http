@@ -1,0 +1,12 @@
+### create like
+POST localhost:8081/commentLike/create
+Content-Type: application/json
+
+{
+  "profileId": 2,
+  "commentId": 1,
+  "status": "DISLIKE"
+}
+
+### delete like
+DELETE localhost:8081/commentLike/remove/1/2

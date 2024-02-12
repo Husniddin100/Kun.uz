@@ -27,6 +27,7 @@ public class CommentLikeEntity {
     private CommentEntity comment;
     @Column
     private LocalDateTime createdDate;
+    @Enumerated(EnumType.STRING)
     @Column
     private LikeStatus status;
 }

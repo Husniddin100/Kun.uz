@@ -1,0 +1,15 @@
+### create comment
+POST localhost:8081/comment/create
+Content-Type: application/json
+
+{
+  "content": "Hi",
+  "articleId": "dc5d523a-d930-4408-a9ad-f473af147948",
+  "replyId": 1,
+  "profileId": 1
+}
+
+###get list
+GET localhost:8081/comment/commentList/dc5d523a-d930-4408-a9ad-f473af147948
+
+
