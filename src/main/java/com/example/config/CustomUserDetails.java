@@ -1,6 +1,6 @@
-/*
 package com.example.config;
 
+import com.example.entity.ProfileEntity;
 import com.example.enums.ProfileRole;
 import com.example.enums.ProfileStatus;
 import org.springframework.security.core.GrantedAuthority;
@@ -22,13 +22,14 @@ public class CustomUserDetails implements UserDetails {
         this.id = id;
         this.email = email;
         this.password = password;
+        this.status = status;
         this.role = role;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> list = new LinkedList<>();
-        list.add(new SimpleGrantedAuthority(role.name()));
+        list.add(new SimpleGrantedAuthority(role.name())); // ROLE
         return list;
     }
 
@@ -61,5 +62,12 @@ public class CustomUserDetails implements UserDetails {
     public boolean isEnabled() {
         return status.equals(ProfileStatus.ACTIVE);
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public ProfileRole getRole() {
+        return role;
+    }
 }
-*/

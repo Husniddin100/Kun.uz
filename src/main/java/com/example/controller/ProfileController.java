@@ -32,7 +32,7 @@ public class ProfileController {
     public ResponseEntity<ProfileDTO> create(@RequestBody ProfileDTO dto,
                                              HttpServletRequest request) {
         log.info("Created profile {}{}", dto.getEmail(), dto.getName());
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN);
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.ROLE_ADMIN);
         return ResponseEntity.ok(profileService.create(dto));
     }
 
@@ -40,7 +40,7 @@ public class ProfileController {
     @PutMapping("/adm/updateAdmin/{id}")
     public ResponseEntity<Boolean> update(@PathVariable Integer id, @RequestBody ProfileDTO dto,
                                           HttpServletRequest request) {
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.ROLE_ADMIN, ProfileRole.ROLE_MODERATOR);
         return ResponseEntity.ok(profileService.updateAdmin(id, dto));
     }
 
@@ -53,7 +53,7 @@ public class ProfileController {
     public ResponseEntity<PageImpl> getAll(@RequestParam(value = "page", defaultValue = "1") Integer page,
                                            @RequestParam(value = "size", defaultValue = "10") Integer size,
                                            HttpServletRequest request) {
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.ROLE_ADMIN, ProfileRole.ROLE_MODERATOR);
         return ResponseEntity.ok(profileService.getAll(page, size));
     }
 

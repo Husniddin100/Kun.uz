@@ -1,8 +1,9 @@
 package com.example.util;
 
+
 import com.example.dto.JWTDTO;
 import com.example.enums.ProfileRole;
-import com.example.exp.ForbiddenExeption;
+import com.example.exp.AppBadException;
 import jakarta.servlet.http.HttpServletRequest;
 
 public class HttpRequestUtil {
@@ -18,7 +19,7 @@ public class HttpRequestUtil {
                 return id;
             }
         }
-        throw new ForbiddenExeption("Method not allowed");
+        throw new AppBadException("Method not allowed");
     }
 
     public static JWTDTO getJWTDTO(HttpServletRequest request, ProfileRole... requiredRoleList) {
@@ -30,6 +31,6 @@ public class HttpRequestUtil {
                 return dto;
             }
         }
-        throw new ForbiddenExeption("Method not allowed");
+        throw new AppBadException("Method not allowed");
     }
 }

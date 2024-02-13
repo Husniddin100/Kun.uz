@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class RandomUtil {
     private static Random random = new Random();
+
     public static String getRandomSmsCode() {
         String parol = "123456789";
         StringBuilder password = new StringBuilder();

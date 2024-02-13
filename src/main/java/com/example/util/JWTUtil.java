@@ -1,5 +1,6 @@
 package com.example.util;
 
+
 import com.example.dto.JWTDTO;
 import com.example.enums.ProfileRole;
 import io.jsonwebtoken.*;
@@ -29,6 +30,34 @@ public class JWTUtil {
         return jwtBuilder.compact();
     }
 
+    public static String encode(String email, ProfileRole role) {
+        JwtBuilder jwtBuilder = Jwts.builder();
+        jwtBuilder.issuedAt(new Date());
+
+        SignatureAlgorithm sa = SignatureAlgorithm.HS512;
+        SecretKeySpec secretKeySpec = new SecretKeySpec(secretKey.getBytes(), sa.getJcaName());
+
+        jwtBuilder.signWith(secretKeySpec);
+
+        jwtBuilder.claim("email", email);
+        jwtBuilder.claim("role", role);
+
+        jwtBuilder.expiration(new Date(System.currentTimeMillis() + (tokenLiveTime)));
+        jwtBuilder.issuer("KunUzTest");
+        return jwtBuilder.compact();
+    }
+
+    public static String encodeForEmail(Integer profileId) {
+        JwtBuilder jwtBuilder = Jwts.builder();
+        jwtBuilder.issuedAt(new Date());
+        SignatureAlgorithm sa = SignatureAlgorithm.HS512;
+        SecretKeySpec secretKeySpec = new SecretKeySpec(secretKey.getBytes(), sa.getJcaName());
+        jwtBuilder.signWith(secretKeySpec);
+        jwtBuilder.claim("id", profileId);
+        jwtBuilder.expiration(new Date(System.currentTimeMillis() + (emailTokenLiveTime)));
+        jwtBuilder.issuer("KunUzTest");
+        return jwtBuilder.compact();
+    }
     public static JWTDTO decode(String token) {
         SignatureAlgorithm sa = SignatureAlgorithm.HS512;
         SecretKeySpec secretKeySpec = new SecretKeySpec(secretKey.getBytes(), sa.getJcaName());
@@ -48,15 +77,19 @@ public class JWTUtil {
         return new JWTDTO(id);
     }
 
-    public static String encodeForEmail(Integer profileId) {
-        JwtBuilder jwtBuilder = Jwts.builder();
-        jwtBuilder.issuedAt(new Date());
+    public static JWTDTO decodeForSpringSecurity(String token) {
         SignatureAlgorithm sa = SignatureAlgorithm.HS512;
         SecretKeySpec secretKeySpec = new SecretKeySpec(secretKey.getBytes(), sa.getJcaName());
-        jwtBuilder.signWith(secretKeySpec);
-        jwtBuilder.claim("id", profileId);
-        jwtBuilder.expiration(new Date(System.currentTimeMillis() + (emailTokenLiveTime)));
-        jwtBuilder.issuer("KunUzTest");
-        return jwtBuilder.compact();
+        JwtParser jwtParser = Jwts.parser()
+                .verifyWith(secretKeySpec)
+                .build();
+
+        Jws<Claims> jws = jwtParser.parseSignedClaims(token);
+        Claims claims = jws.getPayload();
+
+        String email = (String) claims.get("email");
+        String role = (String) claims.get("role");
+        ProfileRole profileRole = ProfileRole.valueOf(role);
+        return new JWTDTO(email, profileRole);
     }
 }

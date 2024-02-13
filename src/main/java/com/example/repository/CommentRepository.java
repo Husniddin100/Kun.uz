@@ -1,13 +1,11 @@
 package com.example.repository;
 
-import com.example.dto.CommentListDTO;
 import com.example.entity.CommentEntity;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface CommentRepository extends CrudRepository<CommentEntity, Integer> {
@@ -19,9 +17,11 @@ public interface CommentRepository extends CrudRepository<CommentEntity, Integer
     @Query("delete from CommentEntity where profileId=?1 and articleId=?2")
     void deleteLike(Integer profileId, String articleId);
 
+   @Modifying
+   @Transactional
     @Query("update CommentEntity set visible=FALSE where id=?1")
     void visibleFalse(Integer id);
 
-    @Query("select p,c from CommentEntity c inner join ProfileEntity p on p.id=c.id where c.articleId=?1")
+    @Query("select c from CommentEntity c  where c.articleId=?1")
     Iterable<CommentEntity> getAll(String id);
 }

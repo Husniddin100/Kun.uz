@@ -20,9 +20,7 @@ public class CommentService {
 
     public boolean createComment(CommentDTO dto) {
         Optional<Boolean> optional = commentRepository.findByProfileIdAndArticleId(dto.getProfileId(), dto.getArticleId());
-        if (optional.isPresent()) {
-            throw new AppBadException("you have already clicked like");
-        }
+
         CommentEntity entity = new CommentEntity();
         entity.setContent(dto.getContent());
         entity.setArticleId(dto.getArticleId());
@@ -40,13 +38,13 @@ public class CommentService {
         }
         CommentEntity entity = optional.get();
         entity.setContent(dto.getContent());
-        entity.setProfileId(dto.getProfileId());
-        entity.setCreatedDate(LocalDateTime.now());
+        entity.setArticleId(dto.getArticleId());
+        entity.setUpdatedDate(LocalDateTime.now());
         commentRepository.save(entity);
         return true;
     }
 
-    public Boolean deleteComment(Integer id) {
+    public Boolean visibleUpdate(Integer id) {
         Optional<CommentEntity> optional = commentRepository.findById(id);
         if (optional.isEmpty()) {
             throw new AppBadException("comment not found");
@@ -59,7 +57,7 @@ public class CommentService {
         Iterable<CommentEntity> list = commentRepository.getAll(id);
         List<CommentListDTO> dtoList = new LinkedList<>();
         for (CommentEntity commentEntity : list) {
-            if (commentEntity != null && commentEntity.getVisible().equals(Boolean.TRUE)) {
+            if (commentEntity != null) {
                 dtoList.add(toDTO(commentEntity));
             }
         }
@@ -73,6 +71,7 @@ public class CommentService {
         dto.setCreatedDate(entity.getCreatedDate());
         dto.setUpdatedDate(entity.getUpdatedDate());
         dto.setProfileId(entity.getProfileId());
+        dto.setUpdatedDate(entity.getUpdatedDate());
         dto.setName(entity.getProfile().getName());
         dto.setSurname(entity.getProfile().getSurname());
         return dto;

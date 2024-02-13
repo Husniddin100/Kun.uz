@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Setter
 @Entity
 @Table(name = "comment")
-public class CommentEntity  {
+public class CommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -26,13 +26,15 @@ public class CommentEntity  {
     @JoinColumn(name = "article_id", updatable = false, insertable = false)
     @ManyToOne
     private ArticleEntity article;
-    /// maybe join profile
-    @Column
+    @Column(name = "reply_id")
     private Integer replyId;
+    @JoinColumn(insertable = false, updatable = false, name = "reply_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private CommentEntity comment;
     @Column(name = "created_date")
     private LocalDateTime createdDate = LocalDateTime.now();
     @Column(name = "updated_date")
     private LocalDateTime updatedDate;
     @Column(name = "visible")
-    private Boolean visible=true;
+    private Boolean visible = true;
 }

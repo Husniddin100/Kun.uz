@@ -1,7 +1,6 @@
 ### create article
 POST localhost:8081/article/adm
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDczODI0NTQsImlkIjozLCJyb2xlIjoiTU9ERVJBVE9SIiwiZXhwIjoxNzA3NDY4ODU0LCJpc3MiOiJLdW5VelRlc3QifQ.AynSIPa4dDVZd07sTUjPxXiG_Xabh0mP4gU1L57spYY8sHV7MQGQtgN-boD8s4goO3qNjZM9LW5QZ35mSK8a8Q
 
 {
   "title": "Германияда иш ўринлари, ўқитувчилар ҳақида қонун ва сотилган Magic City — ҳафта дайжести",
@@ -9,12 +8,11 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDczODI0NTQsImlkIjozLCJyb
   "content": "Ўзбекистон фуқароларининг Қозоғистон ҳудудида рўйхатдан ўтмасдан бўлиб туриш муддати 5 кундан 30 кунга узайтирилди. Худди шундай тартиб Ўзбекистонга келган қозоғистонликлар учун ҳам амал қилади. Шу билан бирга, фуқароларнинг қўшни мамлакатда вақтинча бўлиб туриш муддати 6 ой давомида жами 90 кундан ошмаслиги керак. Бу ҳақдаги келишувни 31 январ куни Қозоғистон парламенти тасдиқлади.",
   "regionId": 1,
   "categoryId": 1,
-  "imageId": "3243dc92-0808-4730-aaa7-4829b99e190b",
   "article type": [
     1,
     2
   ],
-  "photoId": "e8aaa3ca-f15c-46f8-a7f3-52be248e278f"
+  "photoId": "78884a33-5723-4638-ae0a-6df5d1bdae86"
 }
 
 ### delete article

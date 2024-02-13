@@ -30,7 +30,7 @@ public class ArticleTypeController {
     @PostMapping("/adm")
     public ResponseEntity<ArticleTypeDTO> create(@RequestBody ArticleTypeDTO dto,
                                                  HttpServletRequest request) {
-        Integer id = HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
+        Integer id = HttpRequestUtil.getProfileId(request, ProfileRole.ROLE_ADMIN, ProfileRole.ROLE_MODERATOR);
         log.info("create articleType {}", dto.getName_uz());
         return ResponseEntity.ok(articleTypeService.create(dto));
     }
@@ -39,7 +39,7 @@ public class ArticleTypeController {
     public ResponseEntity<Boolean> update(@PathVariable("id") Integer id,
                                           @RequestBody ArticleTypeDTO dto,
                                           HttpServletRequest request) {
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.ROLE_ADMIN, ProfileRole.ROLE_MODERATOR);
 
         return ResponseEntity.ok(articleTypeService.update(id, dto));
     }
@@ -47,7 +47,7 @@ public class ArticleTypeController {
     @DeleteMapping("/adm/delete/{id}")
     public ResponseEntity<Boolean> delete(@PathVariable("id") Integer id,
                                           HttpServletRequest request) {
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.ROLE_ADMIN, ProfileRole.ROLE_MODERATOR);
 
         return ResponseEntity.ok(articleTypeService.delete(id));
     }
@@ -56,7 +56,7 @@ public class ArticleTypeController {
     public ResponseEntity<PageImpl> getAllByPagination(@RequestParam(value = "page", defaultValue = "1") Integer page,
                                                        @RequestParam(value = "size", defaultValue = "10") Integer size,
                                                        HttpServletRequest request) {
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.ROLE_ADMIN, ProfileRole.ROLE_MODERATOR);
         return ResponseEntity.ok(articleTypeService.getAllByPagination(page, size));
     }
 

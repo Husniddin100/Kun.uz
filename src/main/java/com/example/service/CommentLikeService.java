@@ -8,6 +8,8 @@ import com.example.exp.AppBadException;
 import com.example.repository.CommentLikeRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -28,6 +30,7 @@ public class CommentLikeService {
         if (optional1.isPresent()) {
             remove(dto.getCommentId(),dto.getProfileId());
         }
+
 
         CommentLikeEntity entity = new CommentLikeEntity();
         entity.setProfileId(dto.getProfileId());

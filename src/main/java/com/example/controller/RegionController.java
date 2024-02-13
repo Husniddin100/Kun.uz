@@ -17,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +31,7 @@ public class RegionController {
     @Autowired
     private RegionService regionService;
 
+    @PreAuthorize("hasRole('ADMIN')")
     @Operation(summary = "Api for Create Region", description = "this api used for creating region")
     @PostMapping("/adm")
     public ResponseEntity<RegionDTO> create(@RequestBody RegionDTO dto,
@@ -41,14 +43,14 @@ public class RegionController {
     @PutMapping("/update/{id}")
     public ResponseEntity<Boolean> update(@PathVariable("id") Integer id, @RequestBody RegionDTO dto,
                                           HttpServletRequest request) {
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.ROLE_ADMIN, ProfileRole.ROLE_MODERATOR);
         return ResponseEntity.ok(regionService.update(id, dto));
     }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Boolean> deleteById(@PathVariable("id") Integer id,
                                               HttpServletRequest request) {
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.ROLE_ADMIN, ProfileRole.ROLE_MODERATOR);
         return ResponseEntity.ok(regionService.delete(id));
     }
 

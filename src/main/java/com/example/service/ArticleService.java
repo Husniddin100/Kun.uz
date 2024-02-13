@@ -1,11 +1,8 @@
 package com.example.service;
 
-import com.example.controller.ArticleController;
-import com.example.dto.ArticleTypeDTO;
 import com.example.dto.CreateArticleDTO;
 import com.example.entity.*;
 import com.example.enums.ArticleStatus;
-import com.example.enums.LangEnum;
 import com.example.exp.AppBadException;
 import com.example.repository.ArticleRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -24,7 +21,7 @@ public class ArticleService {
     @Autowired
     private ArticleRepository articleRepository;
 
-    public CreateArticleDTO create(CreateArticleDTO dto, Integer moderatorId) {
+    public CreateArticleDTO create(CreateArticleDTO dto) {
         ArticleEntity entity = new ArticleEntity();
         entity.setId(String.valueOf(UUID.randomUUID()));
         entity.setTitle(dto.getTitle());
@@ -35,7 +32,9 @@ public class ArticleService {
         entity.setCreatedDate(LocalDateTime.now());
         entity.setCategoryId(dto.getCategoryId());
         entity.setStatus(ArticleStatus.NotPublished);
+/*
         entity.setModeratorId(moderatorId);
+*/
         articleRepository.save(entity);
         return dto;
     }

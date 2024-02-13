@@ -1,7 +1,7 @@
 ### create
 POST localhost:8081/region/adm
 Content-Type:application/json
-Authorization: Basic dXNlcjo3YTZmYTlkYy01YmE1LTQ5ZWItYTdiNi0xMWY2ZDNjODlhYjE=
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc4MDcwNTMsImVtYWlsIjoidWNoYW5hbDEwQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA3ODkzNDUzLCJpc3MiOiJLdW5VelRlc3QifQ.UMs1fczJuuHbM39YRoFw-MP_a3G5aXgsBzA3yd-Wt3fwZ6wTPiIvqtM8elxwp4CanNsTDCpEdYjUP-CYZSHPTA
 
 {
   "order_number": 1,

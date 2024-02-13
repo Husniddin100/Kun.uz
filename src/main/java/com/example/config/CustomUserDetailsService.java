@@ -1,6 +1,4 @@
-/*
 package com.example.config;
-
 
 import com.example.entity.ProfileEntity;
 import com.example.exp.AppBadException;
@@ -15,9 +13,9 @@ import java.util.Optional;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
-
     @Autowired
     private ProfileRepository profileRepository;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         // login/phone/email
@@ -30,4 +28,4 @@ public class CustomUserDetailsService implements UserDetailsService {
         return new CustomUserDetails(profile.getId(), profile.getEmail(),
                 profile.getPassword(), profile.getStatus(), profile.getRole());
     }
-}*/
+}

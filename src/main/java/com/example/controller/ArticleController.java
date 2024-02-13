@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,19 +26,20 @@ public class ArticleController {
 
     @Operation(summary = "Api for Create Article", description = "this api used for creating article")
     @PostMapping("/adm")
-    public ResponseEntity<CreateArticleDTO> createArticle(@RequestBody CreateArticleDTO dto,
-                                                          HttpServletRequest request) {
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.MODERATOR);
-        Integer moderatorId = HttpRequestUtil.getProfileId(request, ProfileRole.MODERATOR);
+    public ResponseEntity<CreateArticleDTO> createArticle(@RequestBody CreateArticleDTO dto
+                                                          ) {
+      /*  HttpRequestUtil.getJWTDTO(request, ProfileRole.ROLE_MODERATOR);
+        Integer moderatorId = HttpRequestUtil.getProfileId(request, ProfileRole.ROLE_MODERATOR);*/
         log.info("Creat article ");
-        return ResponseEntity.ok(articleService.create(dto, moderatorId));
+        return ResponseEntity.ok(articleService.create(dto));
     }
 
     @Operation(summary = "Api for Update Article", description = "this api used for Updating article")
+    @PreAuthorize("hasAnyRole('ADMIN','MODERATOR')")
     @PutMapping("/adm/update/{id}")
     public ResponseEntity<CreateArticleDTO> update(@PathVariable String id, @RequestBody CreateArticleDTO dto,
                                                    HttpServletRequest request) {
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.MODERATOR);
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.ROLE_MODERATOR);
         log.info("update article {}", dto.getTitle());
         return ResponseEntity.ok(articleService.update(id, dto));
 
@@ -47,7 +49,7 @@ public class ArticleController {
     @PutMapping("/adm/delete/{id}")
     public ResponseEntity<Boolean> changeVisible(@PathVariable String id,
                                                  HttpServletRequest request) {
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.MODERATOR);
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.ROLE_MODERATOR);
         return ResponseEntity.ok(articleService.delete(id));
     }
 
@@ -55,8 +57,8 @@ public class ArticleController {
     @PutMapping("/adm/change_status/{id}/status")
     public ResponseEntity<Boolean> changeStatus(@PathVariable String id,
                                                 HttpServletRequest request, @RequestParam(value = "status", defaultValue = "Published") ArticleStatus status) {
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.PUBLISHER);
-        Integer publisherId = HttpRequestUtil.getProfileId(request, ProfileRole.PUBLISHER);
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.ROLE_PUBLISHER);
+        Integer publisherId = HttpRequestUtil.getProfileId(request, ProfileRole.ROLE_PUBLISHER);
         log.info("Article status changed {}", status.toString());
         return ResponseEntity.ok(articleService.changeStatusSave(id, publisherId, status));
     }
@@ -66,7 +68,6 @@ public class ArticleController {
         List<CreateArticleDTO> list = articleService.getTypeArticleList();
         return ResponseEntity.ok(list);
     }
-
 
 
 }

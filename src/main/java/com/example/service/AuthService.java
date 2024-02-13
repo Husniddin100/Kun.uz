@@ -49,7 +49,7 @@ public class AuthService {
         dto.setName(entity.getName());
         dto.setSurname(entity.getSurname());
         dto.setRole(entity.getRole());
-        dto.setJwt(JWTUtil.encode(entity.getId(), entity.getRole()));
+        dto.setJwt(JWTUtil.encode(entity.getEmail(), entity.getRole()));
         return dto;
     }
 
@@ -68,7 +68,7 @@ public class AuthService {
         entity.setEmail(dto.getEmail());
         entity.setPassword(MDUtil.encode(dto.getPassword()));
         entity.setStatus(ProfileStatus.REGISTRATION);
-        entity.setRole(ProfileRole.USER);
+        entity.setRole(ProfileRole.ROLE_USER);
         profileRepository.save(entity);
         String jwt = JWTUtil.encodeForEmail(entity.getId());
         String text = "Hello. \n To complete registration please link to the following link\n"
@@ -84,7 +84,7 @@ public class AuthService {
 
     public String emailVerification(String jwt) {
         try {
-            JWTDTO jwtDTO = JWTUtil.decode(jwt);
+            JWTDTO jwtDTO = JWTUtil.decodeForSpringSecurity(jwt);
             Optional<ProfileEntity> optional = profileRepository.findById(jwtDTO.getId());
             if (!optional.isPresent()) {
                 throw new AppBadException("Profile not found");
@@ -116,7 +116,7 @@ public class AuthService {
         entity.setPhone(dto.getPhone());
         entity.setPassword(MDUtil.encode(dto.getPassword()));
         entity.setStatus(ProfileStatus.REGISTRATION);
-        entity.setRole(ProfileRole.USER);
+        entity.setRole(ProfileRole.ROLE_USER);
         profileRepository.save(entity);
 
         String code = RandomUtil.getRandomSmsCode();

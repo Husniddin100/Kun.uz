@@ -15,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,11 +27,11 @@ import java.util.List;
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
+    @PreAuthorize("hasRole('ADMIN')")
     @Operation(summary = "Api for Create Category", description = "this api used for creating category")
     @PostMapping("/adm")
     public ResponseEntity<CategoryDTO> craete(@RequestBody CategoryDTO dto,
                                               HttpServletRequest request) {
-        HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
         log.info("create category {}", dto.getId());
         return ResponseEntity.ok(categoryService.create(dto));
     }
@@ -38,14 +39,14 @@ public class CategoryController {
     @PutMapping("/adm/update/{id}")
     public ResponseEntity<Boolean> updateById(@PathVariable Integer id, @RequestBody CategoryDTO dto,
                                               HttpServletRequest request) {
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.ROLE_ADMIN, ProfileRole.ROLE_MODERATOR);
         return ResponseEntity.ok(categoryService.update(id, dto));
     }
 
     @DeleteMapping("/adm/delete/{id}")
     public ResponseEntity<Boolean> deleteById(@PathVariable Integer id,
                                               HttpServletRequest request) {
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
+        HttpRequestUtil.getJWTDTO(request, ProfileRole.ROLE_ADMIN, ProfileRole.ROLE_MODERATOR);
         return ResponseEntity.ok(categoryService.delete(id));
     }
 
