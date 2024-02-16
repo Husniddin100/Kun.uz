@@ -39,9 +39,7 @@ public class SmsHistoryConrtoller {
 
     @GetMapping("/adm/all")
     public ResponseEntity<PageImpl> getAllByPagination(@RequestParam(value = "page", defaultValue = "1") Integer page,
-                                                       @RequestParam(value = "size", defaultValue = "10") Integer size,
-                                                       HttpServletRequest request) {
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.ROLE_ADMIN, ProfileRole.ROLE_MODERATOR);
+                                                       @RequestParam(value = "size", defaultValue = "10") Integer size) {
         return ResponseEntity.ok(smsHistoryService.getAllByPagination(page, size));
     }
 }

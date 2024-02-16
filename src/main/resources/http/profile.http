@@ -4,7 +4,7 @@ GET localhost:8081/admin/initAdmin
 ### create profile
 POST localhost:8081/profile/adm
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcyMTcwNzQsImlkIjo3LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDczMDM0NzQsImlzcyI6Ikt1blV6VGVzdCJ9.eljD7cZRTHHTu_nmHJX-qgfPR5Uq7ckb8i0hHgIy1SMt0VTdGvxMTKeUawiE1lrjblOgUNmFQIXt-f-95Fg65g
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc5MTg2NTIsImVtYWlsIjoidWNoYW5hbDEwQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA4MDA1MDUyLCJpc3MiOiJLdW5VelRlc3QifQ.f3tpySnll0yQWQXp05M_jqbr8gcdcquA6I6SLoMOcY0Xgy5l7ACtoP4OLmJGMhOb4l3yKEv2nJva-zQSz4mCjw
 
 {
   "name": "Moder",
@@ -12,7 +12,7 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcyMTcwNzQsImlkIjo3LCJyb
   "email": "edD@gmail.com",
   "password": "12345",
   "status": "ACTIVE",
-  "role": "PUBLISHER"
+  "role": "ROLE_PUBLISHER"
 }
 
 ###update user

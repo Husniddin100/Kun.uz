@@ -1,8 +1,8 @@
 package com.example.service;
 
 import com.example.dto.PaginationResultDTO;
-import com.example.dto.ProfileDTO;
-import com.example.dto.ProfileFilterDTO;
+import com.example.dto.profileDTO.ProfileDTO;
+import com.example.dto.profileDTO.ProfileFilterDTO;
 import com.example.entity.ProfileEntity;
 import com.example.exp.AppBadException;
 import com.example.repository.ProfileCustomRepository;

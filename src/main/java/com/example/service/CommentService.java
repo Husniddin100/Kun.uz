@@ -1,11 +1,16 @@
 package com.example.service;
 
-import com.example.dto.CommentDTO;
-import com.example.dto.CommentListDTO;
+import com.example.dto.*;
+import com.example.dto.commentDTO.CommentDTO;
+import com.example.dto.commentDTO.CommentFilterDTO;
+import com.example.dto.commentDTO.CommentListDTO;
+import com.example.dto.commentDTO.CommentToDTO;
 import com.example.entity.CommentEntity;
 import com.example.exp.AppBadException;
+import com.example.repository.CommentCustomRepository;
 import com.example.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -17,6 +22,8 @@ import java.util.Optional;
 public class CommentService {
     @Autowired
     private CommentRepository commentRepository;
+    @Autowired
+    private CommentCustomRepository commentCustomRepository;
 
     public boolean createComment(CommentDTO dto) {
         Optional<Boolean> optional = commentRepository.findByProfileIdAndArticleId(dto.getProfileId(), dto.getArticleId());
@@ -58,14 +65,55 @@ public class CommentService {
         List<CommentListDTO> dtoList = new LinkedList<>();
         for (CommentEntity commentEntity : list) {
             if (commentEntity != null) {
-                dtoList.add(toDTO(commentEntity));
+                dtoList.add(toListDTO(commentEntity));
             }
         }
         return dtoList;
     }
 
+    public PageImpl getAllByPagination(Integer page, Integer size) {
+        Sort sort = Sort.by(Sort.Direction.DESC, "id");
 
-    public CommentListDTO toDTO(CommentEntity entity) {
+        Pageable paging = PageRequest.of(page - 1, size, sort);
+        Page<CommentEntity> studentPage = commentRepository.findAll(paging);
+
+        List<CommentEntity> entityList = studentPage.getContent();
+        Long totalElements = studentPage.getTotalElements();
+
+        List<CommentToDTO> dtoList = new LinkedList<>();
+        for (CommentEntity entity : entityList) {
+            dtoList.add(toPageDTO(entity));
+        }
+        return new PageImpl<>(dtoList, paging, totalElements);
+    }
+
+    public PageImpl<CommentDTO> filter(CommentFilterDTO filter, int page, int size) {
+        PaginationResultDTO<CommentEntity> paginationResult = commentCustomRepository.filter(filter, page, size);
+
+        List<CommentDTO> dtoList = new LinkedList<>();
+        for (CommentEntity entity : paginationResult.getList()) {
+            dtoList.add(toDTO(entity));
+        }
+        Pageable paging = PageRequest.of(page - 1, size);
+        return new PageImpl<>(dtoList, paging, paginationResult.getTotalSize());
+    }
+
+    public CommentToDTO toPageDTO(CommentEntity entity) {
+        CommentToDTO dto = new CommentToDTO();
+        dto.setId(entity.getId());
+        dto.setCreatedDate(entity.getCreatedDate());
+        dto.setUpdateDate(entity.getUpdatedDate());
+        dto.setProfileId(entity.getProfileId());
+        dto.setName(entity.getProfile().getName());
+        dto.setSurname(entity.getProfile().getSurname());
+        dto.setContent(entity.getContent());
+        dto.setArticleId(entity.getArticleId());
+        dto.setTitle(entity.getArticle().getTitle());
+        dto.setReplyId(entity.getReplyId());
+        return dto;
+    }
+
+    public CommentListDTO toListDTO(CommentEntity entity) {
         CommentListDTO dto = new CommentListDTO();
         dto.setId(entity.getId());
         dto.setCreatedDate(entity.getCreatedDate());
@@ -74,6 +122,18 @@ public class CommentService {
         dto.setUpdatedDate(entity.getUpdatedDate());
         dto.setName(entity.getProfile().getName());
         dto.setSurname(entity.getProfile().getSurname());
+        return dto;
+    }
+
+    public CommentDTO toDTO(CommentEntity entity) {
+        CommentDTO dto = new CommentDTO();
+        dto.setId(entity.getId());
+        dto.setCreatedDate(entity.getCreatedDate());
+        dto.setUpdateDate(entity.getUpdatedDate());
+        dto.setProfileId(entity.getProfileId());
+        dto.setContent(entity.getContent());
+        dto.setArticleId(entity.getArticleId());
+        dto.setReplyId(entity.getReplyId());
         return dto;
     }
 }

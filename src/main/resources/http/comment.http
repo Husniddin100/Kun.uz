@@ -24,6 +24,18 @@ PUT localhost:8081/comment/visibleUpdate/1
 ###get list
 GET localhost:8081/comment/commentList/d7731674-9175-4d52-978d-dbc205449e65
 
+### get all by Pagination
+GET localhost:8081/comment/getList
 
+### filter
+POST localhost:8081/comment/filter
+Content-Type:application/json
+
+{
+  "id": 1,
+  "createdDate": "2024-02-13 15:17:16.414392",
+  "profileId": 1,
+  "articleId": "d7731674-9175-4d52-978d-dbc205449e65"
+}
 
 

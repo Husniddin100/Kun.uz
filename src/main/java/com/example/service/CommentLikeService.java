@@ -1,15 +1,11 @@
 package com.example.service;
 
-import com.example.dto.CommentLikeDTO;
-import com.example.entity.ArticleLikeEntity;
+import com.example.dto.commentDTO.CommentLikeDTO;
 import com.example.entity.CommentLikeEntity;
-import com.example.enums.LikeStatus;
 import com.example.exp.AppBadException;
 import com.example.repository.CommentLikeRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -28,7 +24,7 @@ public class CommentLikeService {
         }
         Optional<Boolean> optional1 = commentLikeRepository.findByProfileIdAndComment1Id(dto.getProfileId(), dto.getCommentId());
         if (optional1.isPresent()) {
-            remove(dto.getCommentId(),dto.getProfileId());
+            remove(dto.getCommentId(), dto.getProfileId());
         }
 
 

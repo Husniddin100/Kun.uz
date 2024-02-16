@@ -31,4 +31,6 @@ public class ProfileEntity extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private ProfileRole role;
+    @Column(name = "age")
+    private Integer age;
 }

@@ -63,6 +63,10 @@ public class ArticleEntity {
     private LocalDateTime publishedDate;
     @Column
     private Integer viewCount;
+    @Column(name = "like_count")
+    private Integer likeCount;
+    @Column(name = "dislike_count")
+    private Integer dislikeCount;
     @Column
     private Boolean visible = true;
     @OneToMany(fetch = FetchType.LAZY)

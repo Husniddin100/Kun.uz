@@ -12,7 +12,7 @@ import java.util.Optional;
 public interface ProfileRepository extends CrudRepository<ProfileEntity, Integer>, PagingAndSortingRepository<ProfileEntity,Integer> {
     Optional<ProfileEntity> findByEmail(String email);
     Optional<ProfileEntity> findByEmailAndPassword(String email,String password);
-    @Query("update ProfileEntity set visible=FALSE where id=?1")
+    @Query("update ProfileEntity set visible=FALSE  where id=?1")
     void deleteById(Integer id);
     @Transactional
     @Modifying

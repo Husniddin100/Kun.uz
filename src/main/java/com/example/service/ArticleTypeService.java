@@ -1,6 +1,6 @@
 package com.example.service;
 
-import com.example.dto.ArticleTypeDTO;
+import com.example.dto.articleDTO.ArticleTypeDTO;
 import com.example.entity.TypeEntity;
 import com.example.enums.LangEnum;
 import com.example.exp.AppBadException;

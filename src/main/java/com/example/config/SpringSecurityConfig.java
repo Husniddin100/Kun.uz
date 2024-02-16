@@ -49,7 +49,8 @@ public class SpringSecurityConfig {
             "category/adm",
             "comment/commentList/*",
             "comment/update/*",
-            "comment/delete/*"
+            "comment/delete/*",
+            "comment/create"
     };
 
 
@@ -91,6 +92,9 @@ public class SpringSecurityConfig {
                     .requestMatchers("attach/upload").permitAll()
                     .requestMatchers("comment/create").permitAll()
                     .requestMatchers("comment/visibleUpdate/*").permitAll()
+                    .requestMatchers("comment/getList*").permitAll()
+                    .requestMatchers("comment/filter*").permitAll()
+                    .requestMatchers("article/view/*").permitAll()
                     .anyRequest()
                     .authenticated();
         });

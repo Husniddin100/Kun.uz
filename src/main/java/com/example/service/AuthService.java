@@ -1,9 +1,11 @@
 package com.example.service;
 
 import com.example.dto.*;
+import com.example.dto.profileDTO.ProfileDTO;
 import com.example.entity.EmailHistoryEntinty;
 import com.example.entity.ProfileEntity;
 import com.example.entity.SmsHistoryEntity;
+import com.example.enums.LangEnum;
 import com.example.enums.ProfileRole;
 import com.example.enums.ProfileStatus;
 import com.example.enums.SmsStatus;
@@ -33,18 +35,24 @@ public class AuthService {
     private SmsServerServices smsServerService;
     @Autowired
     private SmsHistoryRepository smsHistoryRepository;
+    @Autowired
+    private ResourceBundleService resourceBundleService;
 
-    public ProfileDTO auth(AuthDTO profile) {
+    public ProfileDTO auth(AuthDTO profile, LangEnum langEnum) {
         Optional<ProfileEntity> optional = profileRepository.findByEmailAndPassword(profile.getEmail(),
                 MDUtil.encode(profile.getPassword()));
 
         if (optional.isEmpty()) {
-            throw new AppBadException("Email or Password is wrong");
+            throw new AppBadException(resourceBundleService.getMessage("email.password.wrong",langEnum));
         }
 
         ProfileEntity entity = optional.get();
 
         ProfileDTO dto = new ProfileDTO();
+
+        if (entity.getVisible().equals(false)) {
+            throw new AppBadException("Account not found");
+        }
 
         dto.setName(entity.getName());
         dto.setSurname(entity.getSurname());

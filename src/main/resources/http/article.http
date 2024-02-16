@@ -1,6 +1,7 @@
 ### create article
 POST localhost:8081/article/adm
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc4OTM5MzcsImVtYWlsIjoidWNoYW5hbDEwQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA3OTgwMzM3LCJpc3MiOiJLdW5VelRlc3QifQ.9wku3LBNFkDGQyhSUdhrk3DAEJZrsdFIo1kfVshNeA68UV541MOvxsYFqfEzrQfTLxCp1JegZDRAohS8HB77Ag
 
 {
   "title": "Германияда иш ўринлари, ўқитувчилар ҳақида қонун ва сотилган Magic City — ҳафта дайжести",

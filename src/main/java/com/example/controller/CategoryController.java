@@ -30,23 +30,18 @@ public class CategoryController {
     @PreAuthorize("hasRole('ADMIN')")
     @Operation(summary = "Api for Create Category", description = "this api used for creating category")
     @PostMapping("/adm")
-    public ResponseEntity<CategoryDTO> craete(@RequestBody CategoryDTO dto,
-                                              HttpServletRequest request) {
+    public ResponseEntity<CategoryDTO> craete(@RequestBody CategoryDTO dto) {
         log.info("create category {}", dto.getId());
         return ResponseEntity.ok(categoryService.create(dto));
     }
 
     @PutMapping("/adm/update/{id}")
-    public ResponseEntity<Boolean> updateById(@PathVariable Integer id, @RequestBody CategoryDTO dto,
-                                              HttpServletRequest request) {
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.ROLE_ADMIN, ProfileRole.ROLE_MODERATOR);
+    public ResponseEntity<Boolean> updateById(@PathVariable Integer id, @RequestBody CategoryDTO dto) {
         return ResponseEntity.ok(categoryService.update(id, dto));
     }
 
     @DeleteMapping("/adm/delete/{id}")
-    public ResponseEntity<Boolean> deleteById(@PathVariable Integer id,
-                                              HttpServletRequest request) {
-        HttpRequestUtil.getJWTDTO(request, ProfileRole.ROLE_ADMIN, ProfileRole.ROLE_MODERATOR);
+    public ResponseEntity<Boolean> deleteById(@PathVariable Integer id) {
         return ResponseEntity.ok(categoryService.delete(id));
     }
 

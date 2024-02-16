@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.dto.CommentLikeDTO;
+import com.example.dto.commentDTO.CommentLikeDTO;
 import com.example.service.CommentLikeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

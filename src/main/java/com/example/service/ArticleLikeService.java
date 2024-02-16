@@ -1,6 +1,6 @@
 package com.example.service;
 
-import com.example.dto.ArticleLikeDTO;
+import com.example.dto.articleDTO.ArticleLikeDTO;
 import com.example.entity.ArticleLikeEntity;
 import com.example.exp.AppBadException;
 import com.example.repository.ArticleLikeRepository;
@@ -18,13 +18,13 @@ public class ArticleLikeService {
     private ArticleLikeRepository articleLikeRepository;
 
     public boolean createLike(ArticleLikeDTO dto) {
-        Optional<Boolean> optional = articleLikeRepository.findByProfileIdAndArticleId(dto.getProfileId(), dto.getArticleId(),dto.getStatus());
+        Optional<Boolean> optional = articleLikeRepository.findByProfileIdAndArticleId(dto.getProfileId(), dto.getArticleId(), dto.getStatus());
         if (optional.isPresent()) {
             throw new AppBadException("already liked  this article");
         }
         Optional<Boolean> optional1 = articleLikeRepository.findByProfileIdAndArticleId1(dto.getProfileId(), dto.getArticleId());
         if (optional1.isPresent()) {
-            remove(dto.getArticleId(),dto.getProfileId());
+            remove(dto.getArticleId(), dto.getProfileId());
         }
 
         ArticleLikeEntity entity = new ArticleLikeEntity();

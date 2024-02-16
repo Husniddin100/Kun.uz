@@ -30,4 +30,5 @@ public class ArticleLikeEntity {
     @Enumerated(EnumType.STRING)
     @Column
     private LikeStatus status;
+
 }

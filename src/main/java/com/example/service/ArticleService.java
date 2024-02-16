@@ -1,8 +1,9 @@
 package com.example.service;
 
-import com.example.dto.CreateArticleDTO;
+import com.example.dto.articleDTO.CreateArticleDTO;
 import com.example.entity.*;
 import com.example.enums.ArticleStatus;
+import com.example.enums.LangEnum;
 import com.example.exp.AppBadException;
 import com.example.repository.ArticleRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +22,7 @@ public class ArticleService {
     @Autowired
     private ArticleRepository articleRepository;
 
-    public CreateArticleDTO create(CreateArticleDTO dto) {
+    public CreateArticleDTO create(CreateArticleDTO dto, Integer moderatorId) {
         ArticleEntity entity = new ArticleEntity();
         entity.setId(String.valueOf(UUID.randomUUID()));
         entity.setTitle(dto.getTitle());
@@ -29,17 +30,15 @@ public class ArticleService {
         entity.setContent(dto.getContent());
         entity.setPhotoId(dto.getPhotoId());
         entity.setRegionId(dto.getRegionId());
+        entity.setModeratorId(moderatorId);
         entity.setCreatedDate(LocalDateTime.now());
         entity.setCategoryId(dto.getCategoryId());
         entity.setStatus(ArticleStatus.NotPublished);
-/*
-        entity.setModeratorId(moderatorId);
-*/
         articleRepository.save(entity);
         return dto;
     }
 
-    public CreateArticleDTO update(String id, CreateArticleDTO dto) {
+    public CreateArticleDTO update(String id, CreateArticleDTO dto, LangEnum language) {
         Optional<ArticleEntity> optional = articleRepository.findById(id);
         if (optional.isEmpty()) {
             throw new AppBadException("article not found");
@@ -55,7 +54,7 @@ public class ArticleService {
         return dto;
     }
 
-    public Boolean delete(String id) {
+    public Boolean delete(String id, LangEnum language) {
         Optional<ArticleEntity> optional = articleRepository.findById(id);
         if (optional.isEmpty()) {
             throw new AppBadException("article not found");
@@ -74,7 +73,7 @@ public class ArticleService {
         return true;
     }
 
-    public Boolean changeStatusSave(String id, Integer publisherId, ArticleStatus status) {
+    public Boolean changeStatusSave(String id, Integer publisherId, ArticleStatus status, LangEnum language) {
         Optional<ArticleEntity> optional = articleRepository.findById(id);
         ArticleEntity entity = optional.get();
         entity.setPublishedDate(LocalDateTime.now());
@@ -85,7 +84,7 @@ public class ArticleService {
     }
 
 
-    public List<CreateArticleDTO> getTypeArticleList() {
+    public List<CreateArticleDTO> getTypeArticleList(LangEnum language) {
         List<ArticleEntity> list = articleRepository.getTypeArticleList();
         List<CreateArticleDTO> entityList = new LinkedList<>();
         for (ArticleEntity entity : list) {
@@ -104,5 +103,4 @@ public class ArticleService {
         dto.setPhotoId(entity.getPhotoId());
         return dto;
     }
-
 }

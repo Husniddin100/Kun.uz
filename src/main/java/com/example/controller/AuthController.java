@@ -1,8 +1,9 @@
 package com.example.controller;
 
 import com.example.dto.AuthDTO;
-import com.example.dto.ProfileDTO;
+import com.example.dto.profileDTO.ProfileDTO;
 import com.example.dto.RegistrationDTO;
+import com.example.enums.LangEnum;
 import com.example.service.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -21,11 +22,12 @@ public class AuthController {
     private AuthService authService;
 
     private Logger log = LoggerFactory.getLogger(AuthController.class);
-    @Operation( summary = "Api for login", description = "this api used for authorization")
+
+    @Operation(summary = "Api for login", description = "this api used for authorization")
     @PostMapping("/login")
-    public ResponseEntity<ProfileDTO> login(@Valid @RequestBody AuthDTO auth) {
+    public ResponseEntity<ProfileDTO> login(@Valid @RequestBody AuthDTO auth, @RequestHeader(value = "Accept-Language", defaultValue = "ru") LangEnum language) {
         log.info("Login {} ", auth.getEmail());
-        return ResponseEntity.ok(authService.auth(auth));
+        return ResponseEntity.ok(authService.auth(auth,language));
     }
 
     @PostMapping("/registration")

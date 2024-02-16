@@ -7,7 +7,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public interface SmsHistoryRepository extends CrudRepository<SmsHistoryEntity, Integer> , PagingAndSortingRepository<SmsHistoryEntity,Integer> {
+public interface SmsHistoryRepository extends CrudRepository<SmsHistoryEntity, Integer>, PagingAndSortingRepository<SmsHistoryEntity,Integer> {
     List<SmsHistoryEntity> findByPhone(String phone);
     List<SmsHistoryEntity> findByCreatedDate(LocalDateTime date);
 }

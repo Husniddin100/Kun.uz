@@ -5,10 +5,11 @@ import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.Optional;
 
-public interface CommentRepository extends CrudRepository<CommentEntity, Integer> {
+public interface CommentRepository extends CrudRepository<CommentEntity, Integer>, PagingAndSortingRepository<CommentEntity, Integer> {
     @Query("select count(c)from CommentEntity c where c.profileId=?1 and c.articleId=?2")
     Optional<Boolean> findByProfileIdAndArticleId(Integer profileId, String articleId);
 
@@ -17,8 +18,8 @@ public interface CommentRepository extends CrudRepository<CommentEntity, Integer
     @Query("delete from CommentEntity where profileId=?1 and articleId=?2")
     void deleteLike(Integer profileId, String articleId);
 
-   @Modifying
-   @Transactional
+    @Modifying
+    @Transactional
     @Query("update CommentEntity set visible=FALSE where id=?1")
     void visibleFalse(Integer id);
 

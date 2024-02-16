@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.dto.ArticleLikeDTO;
+import com.example.dto.articleDTO.ArticleLikeDTO;
 import com.example.service.ArticleLikeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

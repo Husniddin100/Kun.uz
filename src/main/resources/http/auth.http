@@ -1,10 +1,11 @@
 ### login
 POST localhost:8081/auth/login
 Content-Type: application/json
+Accept-Language: en
 
 {
   "email": "uchanal10@gmail.com",
-  "password": "12345"
+  "password": "1234"
 }
 
 ###
