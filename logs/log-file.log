@@ -1,53 +1,107 @@
-16 Feb 2024 - 10:59:22.359 INFO  com.example.Application - Starting Application using Java 17.0.9 with PID 20844 (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes started by javox in C:\Users\javox\IdeaProjects\kun.uz_lesson1)
-16 Feb 2024 - 10:59:22.374 DEBUG com.example.Application - Running with Spring Boot v3.2.2, Spring v6.1.3
-16 Feb 2024 - 10:59:22.375 INFO  com.example.Application - No active profile set, falling back to 1 default profile: "default"
-16 Feb 2024 - 10:59:23.300 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-16 Feb 2024 - 10:59:23.373 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 11 JPA repository interfaces.
-16 Feb 2024 - 10:59:23.856 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-16 Feb 2024 - 10:59:23.865 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-16 Feb 2024 - 10:59:23.865 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
-16 Feb 2024 - 10:59:23.921 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-16 Feb 2024 - 10:59:23.921 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1497 ms
-16 Feb 2024 - 10:59:24.081 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-16 Feb 2024 - 10:59:24.185 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-16 Feb 2024 - 10:59:24.232 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-16 Feb 2024 - 10:59:24.548 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-16 Feb 2024 - 10:59:24.574 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-16 Feb 2024 - 10:59:24.745 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@dd20ebc
-16 Feb 2024 - 10:59:24.746 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-16 Feb 2024 - 10:59:26.168 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-16 Feb 2024 - 10:59:26.402 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-16 Feb 2024 - 10:59:26.669 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-16 Feb 2024 - 10:59:27.023 DEBUG com.example.config.JwtTokenFilter - Filter 'jwtTokenFilter' configured for use
-16 Feb 2024 - 10:59:27.435 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-16 Feb 2024 - 10:59:27.711 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2ce987d7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@16a4d5a9, org.springframework.security.web.context.SecurityContextHolderFilter@e8acdfc, org.springframework.security.web.header.HeaderWriterFilter@22265a8d, org.springframework.security.web.authentication.logout.LogoutFilter@158566f8, com.example.config.JwtTokenFilter@4f67d628, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@ef64a8f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a2cc282, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@427b24c0, org.springframework.security.web.access.ExceptionTranslationFilter@1eb21f22, org.springframework.security.web.access.intercept.AuthorizationFilter@1a89d045]
-16 Feb 2024 - 10:59:27.992 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-16 Feb 2024 - 10:59:28.001 INFO  com.example.Application - Started Application in 6.175 seconds (process running for 9.615)
-16 Feb 2024 - 10:59:28.056 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-16 Feb 2024 - 10:59:28.056 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-16 Feb 2024 - 10:59:28.056 INFO  o.f.c.i.license.VersionPrinter - 
-16 Feb 2024 - 10:59:28.074 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun.uz (PostgreSQL 16.1)
-16 Feb 2024 - 10:59:28.080 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
-16 Feb 2024 - 10:59:28.121 INFO  o.f.core.internal.command.DbValidate - Successfully validated 6 migrations (execution time 00:00.028s)
-16 Feb 2024 - 10:59:28.130 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
-16 Feb 2024 - 10:59:28.143 INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "5 - likeTrigger"
-16 Feb 2024 - 10:59:28.180 ERROR o.f.core.internal.command.DbMigrate - Migration of schema "public" to version "5 - likeTrigger" failed! Changes successfully rolled back.
-16 Feb 2024 - 10:59:28.184 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+19 Feb 2024 - 10:25:35.884 INFO  com.example.Application - Starting Application using Java 17.0.9 with PID 2992 (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes started by javox in C:\Users\javox\IdeaProjects\kun.uz_lesson1)
+19 Feb 2024 - 10:25:35.897 DEBUG com.example.Application - Running with Spring Boot v3.2.2, Spring v6.1.3
+19 Feb 2024 - 10:25:35.898 INFO  com.example.Application - No active profile set, falling back to 1 default profile: "default"
+19 Feb 2024 - 10:25:36.686 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+19 Feb 2024 - 10:25:36.755 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 11 JPA repository interfaces.
+19 Feb 2024 - 10:25:37.229 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+19 Feb 2024 - 10:25:37.237 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19 Feb 2024 - 10:25:37.238 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+19 Feb 2024 - 10:25:37.290 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19 Feb 2024 - 10:25:37.291 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1353 ms
+19 Feb 2024 - 10:25:37.381 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+19 Feb 2024 - 10:25:37.433 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+19 Feb 2024 - 10:25:37.478 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+19 Feb 2024 - 10:25:37.722 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+19 Feb 2024 - 10:25:37.743 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19 Feb 2024 - 10:25:37.910 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@277bc3a5
+19 Feb 2024 - 10:25:37.911 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19 Feb 2024 - 10:25:38.954 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+19 Feb 2024 - 10:25:39.139 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+19 Feb 2024 - 10:25:39.303 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+19 Feb 2024 - 10:25:39.617 DEBUG com.example.config.JwtTokenFilter - Filter 'jwtTokenFilter' configured for use
+19 Feb 2024 - 10:25:40.011 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+19 Feb 2024 - 10:25:40.280 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@66cb7a21, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7e941cc8, org.springframework.security.web.context.SecurityContextHolderFilter@427b24c0, org.springframework.security.web.header.HeaderWriterFilter@4d2d0eda, org.springframework.security.web.authentication.logout.LogoutFilter@418f2af3, com.example.config.JwtTokenFilter@3687f6b6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7324d83, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@370bd951, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@78605670, org.springframework.security.web.access.ExceptionTranslationFilter@13b52853, org.springframework.security.web.access.intercept.AuthorizationFilter@608ccfcd]
+19 Feb 2024 - 10:25:40.577 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
+19 Feb 2024 - 10:25:40.584 INFO  com.example.Application - Started Application in 5.021 seconds (process running for 8.314)
+19 Feb 2024 - 10:25:40.634 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+19 Feb 2024 - 10:25:40.635 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+19 Feb 2024 - 10:25:40.635 INFO  o.f.c.i.license.VersionPrinter - 
+19 Feb 2024 - 10:25:40.646 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun.uz (PostgreSQL 16.1)
+19 Feb 2024 - 10:25:40.651 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+19 Feb 2024 - 10:25:40.678 INFO  o.f.core.internal.command.DbValidate - Successfully validated 6 migrations (execution time 00:00.020s)
+19 Feb 2024 - 10:25:40.686 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+19 Feb 2024 - 10:25:40.696 INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "5 - init like"
+19 Feb 2024 - 10:25:40.709 ERROR o.f.core.internal.command.DbMigrate - Migration of schema "public" to version "5 - init like" failed! Changes successfully rolled back.
+19 Feb 2024 - 10:25:40.712 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-16 Feb 2024 - 10:59:28.202 ERROR o.s.boot.SpringApplication - Application run failed
-org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: Migration V5__likeTrigger.sql failed
-------------------------------------
-SQL State  : 42P01
+19 Feb 2024 - 10:25:40.723 ERROR o.s.boot.SpringApplication - Application run failed
+org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: Migration V5__init_like.sql failed
+----------------------------------
+SQL State  : 42601
 Error Code : 0
-Message    : ОШИБКА: отношение "video_like" не существует
-Location   : db/migration/V5__likeTrigger.sql (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes\db\migration\V5__likeTrigger.sql)
-Line       : 43
-Statement  : CREATE TRIGGER update_like
-    AFTER UPDATE
-    ON video_like
+Message    : ОШИБКА: ошибка синтаксиса (примерное положение: "CREATE")
+  Position: 1109
+Location   : db/migration/V5__init_like.sql (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes\db\migration\V5__init_like.sql)
+Line       : 1
+Statement  : CREATE
+OR REPLACE FUNCTION article_like_trigger_function()
+RETURNS TRIGGER
+LANGUAGE PLPGSQL
+AS $$
+BEGIN
+--NEW OLD
+    IF
+TG_OP = 'INSERT' then
+		IF NEW.status = 'LIKE' then
+update article
+set like_count = like_count + 1
+where id = NEW.article_id;
+elseif
+NEW.STATUS = 'DISLIKE' then
+update article
+set dislike_count = dislike_count + 1
+where id = NEW.article_id;
+end if;
+	ELSEIF
+TG_OP = 'UPDATE'then
+		 IF NEW.status = 'LIKE' and OLD.status = 'DISLIKE' then
+update article
+set like_count    = like_count + 1,
+    dislike_count = dislike_count - 1
+where id = NEW.article_id;
+elseif
+NEW.STATUS = 'DISLIKE' and OLD.status = 'LIKE' then
+update article
+set like_count    = like_count - 1,
+    dislike_count = dislike_count + 1
+where id = NEW.article_id;
+end if;
+	ELSEIF
+TG_OP = 'DELETE' then
+		 IF OLD.status = 'LIKE' then
+update article
+set like_count = like_count - 1
+where id = OLD.article_id;
+elseif
+OLD.STATUS = 'DISLIKE' then
+update article
+set dislike_count = dislike_count - 1
+where id = OLD.article_id;
+end if;
+return OLD;
+end if;
+return NEW;
+END; $$
+
+   CREATE
+or REPLACE TRIGGER article_like_trigger
+	BEFORE INSERT OR
+UPDATE OR
+DELETE
+ON article_like
     FOR EACH ROW
-    EXECUTE PROCEDURE like_update_function()
+    EXECUTE PROCEDURE article_like_trigger_function()
 
 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:382)
 	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:272)
@@ -87,18 +141,72 @@ Statement  : CREATE TRIGGER update_like
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
 	at com.example.Application.main(Application.java:10)
-Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Migration V5__likeTrigger.sql failed
-------------------------------------
-SQL State  : 42P01
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Migration V5__init_like.sql failed
+----------------------------------
+SQL State  : 42601
 Error Code : 0
-Message    : ОШИБКА: отношение "video_like" не существует
-Location   : db/migration/V5__likeTrigger.sql (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes\db\migration\V5__likeTrigger.sql)
-Line       : 43
-Statement  : CREATE TRIGGER update_like
-    AFTER UPDATE
-    ON video_like
+Message    : ОШИБКА: ошибка синтаксиса (примерное положение: "CREATE")
+  Position: 1109
+Location   : db/migration/V5__init_like.sql (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes\db\migration\V5__init_like.sql)
+Line       : 1
+Statement  : CREATE
+OR REPLACE FUNCTION article_like_trigger_function()
+RETURNS TRIGGER
+LANGUAGE PLPGSQL
+AS $$
+BEGIN
+--NEW OLD
+    IF
+TG_OP = 'INSERT' then
+		IF NEW.status = 'LIKE' then
+update article
+set like_count = like_count + 1
+where id = NEW.article_id;
+elseif
+NEW.STATUS = 'DISLIKE' then
+update article
+set dislike_count = dislike_count + 1
+where id = NEW.article_id;
+end if;
+	ELSEIF
+TG_OP = 'UPDATE'then
+		 IF NEW.status = 'LIKE' and OLD.status = 'DISLIKE' then
+update article
+set like_count    = like_count + 1,
+    dislike_count = dislike_count - 1
+where id = NEW.article_id;
+elseif
+NEW.STATUS = 'DISLIKE' and OLD.status = 'LIKE' then
+update article
+set like_count    = like_count - 1,
+    dislike_count = dislike_count + 1
+where id = NEW.article_id;
+end if;
+	ELSEIF
+TG_OP = 'DELETE' then
+		 IF OLD.status = 'LIKE' then
+update article
+set like_count = like_count - 1
+where id = OLD.article_id;
+elseif
+OLD.STATUS = 'DISLIKE' then
+update article
+set dislike_count = dislike_count - 1
+where id = OLD.article_id;
+end if;
+return OLD;
+end if;
+return NEW;
+END; $$
+
+   CREATE
+or REPLACE TRIGGER article_like_trigger
+	BEFORE INSERT OR
+UPDATE OR
+DELETE
+ON article_like
     FOR EACH ROW
-    EXECUTE PROCEDURE like_update_function()
+    EXECUTE PROCEDURE article_like_trigger_function()
 
 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:267)
 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:222)
@@ -109,7 +217,8 @@ Statement  : CREATE TRIGGER update_like
 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:56)
 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:374)
 	... 37 common frames omitted
-Caused by: org.postgresql.util.PSQLException: ОШИБКА: отношение "video_like" не существует
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: ошибка синтаксиса (примерное положение: "CREATE")
+  Position: 1109
 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
 	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
@@ -125,276 +234,113 @@ Caused by: org.postgresql.util.PSQLException: ОШИБКА: отношение "
 	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:95)
 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:210)
 	... 43 common frames omitted
-16 Feb 2024 - 10:59:28.222 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-16 Feb 2024 - 10:59:28.225 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-16 Feb 2024 - 10:59:28.228 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-16 Feb 2024 - 11:00:06.726 INFO  com.example.Application - Starting Application using Java 17.0.9 with PID 14948 (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes started by javox in C:\Users\javox\IdeaProjects\kun.uz_lesson1)
-16 Feb 2024 - 11:00:06.735 DEBUG com.example.Application - Running with Spring Boot v3.2.2, Spring v6.1.3
-16 Feb 2024 - 11:00:06.735 INFO  com.example.Application - No active profile set, falling back to 1 default profile: "default"
-16 Feb 2024 - 11:00:07.462 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-16 Feb 2024 - 11:00:07.521 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 53 ms. Found 11 JPA repository interfaces.
-16 Feb 2024 - 11:00:07.932 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-16 Feb 2024 - 11:00:07.939 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-16 Feb 2024 - 11:00:07.940 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
-16 Feb 2024 - 11:00:07.986 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-16 Feb 2024 - 11:00:07.987 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1215 ms
-16 Feb 2024 - 11:00:08.090 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-16 Feb 2024 - 11:00:08.141 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-16 Feb 2024 - 11:00:08.180 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-16 Feb 2024 - 11:00:08.441 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-16 Feb 2024 - 11:00:08.459 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-16 Feb 2024 - 11:00:08.582 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@182e4365
-16 Feb 2024 - 11:00:08.583 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-16 Feb 2024 - 11:00:09.686 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-16 Feb 2024 - 11:00:09.867 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-16 Feb 2024 - 11:00:10.098 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-16 Feb 2024 - 11:00:10.426 DEBUG com.example.config.JwtTokenFilter - Filter 'jwtTokenFilter' configured for use
-16 Feb 2024 - 11:00:10.819 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-16 Feb 2024 - 11:00:11.113 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@28a210fb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8cc7489, org.springframework.security.web.context.SecurityContextHolderFilter@6fe2f6a0, org.springframework.security.web.header.HeaderWriterFilter@4b33b5b0, org.springframework.security.web.authentication.logout.LogoutFilter@3698f2ed, com.example.config.JwtTokenFilter@2975715, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c9542eb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3be94b12, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7553ad52, org.springframework.security.web.access.ExceptionTranslationFilter@2b454886, org.springframework.security.web.access.intercept.AuthorizationFilter@76b17a78]
-16 Feb 2024 - 11:00:11.553 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-16 Feb 2024 - 11:00:11.563 INFO  com.example.Application - Started Application in 5.153 seconds (process running for 5.57)
-16 Feb 2024 - 11:00:11.628 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-16 Feb 2024 - 11:00:11.629 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-16 Feb 2024 - 11:00:11.629 INFO  o.f.c.i.license.VersionPrinter - 
-16 Feb 2024 - 11:00:11.645 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun.uz (PostgreSQL 16.1)
-16 Feb 2024 - 11:00:11.649 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
-16 Feb 2024 - 11:00:11.679 INFO  o.f.core.internal.command.DbValidate - Successfully validated 6 migrations (execution time 00:00.022s)
-16 Feb 2024 - 11:00:11.689 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
-16 Feb 2024 - 11:00:11.699 INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "5 - likeTrigger"
-16 Feb 2024 - 11:00:11.718 INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "public", now at version v5 (execution time 00:00.011s)
-16 Feb 2024 - 11:03:45.564 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-16 Feb 2024 - 11:03:45.566 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-16 Feb 2024 - 11:03:45.571 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-16 Feb 2024 - 11:03:49.269 INFO  com.example.Application - Starting Application using Java 17.0.9 with PID 10748 (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes started by javox in C:\Users\javox\IdeaProjects\kun.uz_lesson1)
-16 Feb 2024 - 11:03:49.279 DEBUG com.example.Application - Running with Spring Boot v3.2.2, Spring v6.1.3
-16 Feb 2024 - 11:03:49.279 INFO  com.example.Application - No active profile set, falling back to 1 default profile: "default"
-16 Feb 2024 - 11:03:49.992 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-16 Feb 2024 - 11:03:50.052 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 11 JPA repository interfaces.
-16 Feb 2024 - 11:03:50.517 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-16 Feb 2024 - 11:03:50.525 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-16 Feb 2024 - 11:03:50.525 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
-16 Feb 2024 - 11:03:50.579 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-16 Feb 2024 - 11:03:50.579 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1267 ms
-16 Feb 2024 - 11:03:50.673 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-16 Feb 2024 - 11:03:50.773 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-16 Feb 2024 - 11:03:50.829 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-16 Feb 2024 - 11:03:51.071 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-16 Feb 2024 - 11:03:51.092 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-16 Feb 2024 - 11:03:51.221 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2520aa05
-16 Feb 2024 - 11:03:51.222 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-16 Feb 2024 - 11:03:52.554 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-16 Feb 2024 - 11:03:52.786 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-16 Feb 2024 - 11:03:53.044 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-16 Feb 2024 - 11:03:53.316 DEBUG com.example.config.JwtTokenFilter - Filter 'jwtTokenFilter' configured for use
-16 Feb 2024 - 11:03:53.708 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-16 Feb 2024 - 11:03:54.006 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3396d2a6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ed43328, org.springframework.security.web.context.SecurityContextHolderFilter@32daccab, org.springframework.security.web.header.HeaderWriterFilter@76b93bb9, org.springframework.security.web.authentication.logout.LogoutFilter@bba6542, com.example.config.JwtTokenFilter@1912ba29, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f34f451, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c3a3d87, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@23216e17, org.springframework.security.web.access.ExceptionTranslationFilter@1752ab9b, org.springframework.security.web.access.intercept.AuthorizationFilter@45bf1ee3]
-16 Feb 2024 - 11:03:54.454 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-16 Feb 2024 - 11:03:54.464 INFO  com.example.Application - Started Application in 5.522 seconds (process running for 6.382)
-16 Feb 2024 - 11:03:54.535 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-16 Feb 2024 - 11:03:54.535 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-16 Feb 2024 - 11:03:54.535 INFO  o.f.c.i.license.VersionPrinter - 
-16 Feb 2024 - 11:03:54.552 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun.uz (PostgreSQL 16.1)
-16 Feb 2024 - 11:03:54.558 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
-16 Feb 2024 - 11:03:54.589 INFO  o.f.core.internal.command.DbValidate - Successfully validated 6 migrations (execution time 00:00.023s)
-16 Feb 2024 - 11:03:54.601 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 5
-16 Feb 2024 - 11:03:54.604 INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
-16 Feb 2024 - 11:13:47.487 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-16 Feb 2024 - 11:13:47.489 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-16 Feb 2024 - 11:13:47.494 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-16 Feb 2024 - 11:13:50.939 INFO  com.example.Application - Starting Application using Java 17.0.9 with PID 15400 (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes started by javox in C:\Users\javox\IdeaProjects\kun.uz_lesson1)
-16 Feb 2024 - 11:13:50.947 DEBUG com.example.Application - Running with Spring Boot v3.2.2, Spring v6.1.3
-16 Feb 2024 - 11:13:50.948 INFO  com.example.Application - No active profile set, falling back to 1 default profile: "default"
-16 Feb 2024 - 11:13:51.590 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-16 Feb 2024 - 11:13:51.644 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 11 JPA repository interfaces.
-16 Feb 2024 - 11:13:52.043 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-16 Feb 2024 - 11:13:52.050 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-16 Feb 2024 - 11:13:52.050 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
-16 Feb 2024 - 11:13:52.101 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-16 Feb 2024 - 11:13:52.102 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1122 ms
-16 Feb 2024 - 11:13:52.177 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-16 Feb 2024 - 11:13:52.212 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-16 Feb 2024 - 11:13:52.233 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-16 Feb 2024 - 11:13:52.405 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-16 Feb 2024 - 11:13:52.423 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-16 Feb 2024 - 11:13:52.540 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@175ac243
-16 Feb 2024 - 11:13:52.541 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-16 Feb 2024 - 11:13:53.466 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-16 Feb 2024 - 11:13:53.602 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-16 Feb 2024 - 11:13:53.763 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-16 Feb 2024 - 11:13:54.037 DEBUG com.example.config.JwtTokenFilter - Filter 'jwtTokenFilter' configured for use
-16 Feb 2024 - 11:13:54.446 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-16 Feb 2024 - 11:13:54.703 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6a2cd5ea, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c68601b, org.springframework.security.web.context.SecurityContextHolderFilter@59e7a6d8, org.springframework.security.web.header.HeaderWriterFilter@44bd11a2, org.springframework.security.web.authentication.logout.LogoutFilter@78f3ce56, com.example.config.JwtTokenFilter@67b5da40, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69503026, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7959d16a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3128be29, org.springframework.security.web.access.ExceptionTranslationFilter@341f2f4c, org.springframework.security.web.access.intercept.AuthorizationFilter@6329d89f]
-16 Feb 2024 - 11:13:54.961 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-16 Feb 2024 - 11:13:54.968 INFO  com.example.Application - Started Application in 4.334 seconds (process running for 4.726)
-16 Feb 2024 - 11:13:55.010 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-16 Feb 2024 - 11:13:55.011 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-16 Feb 2024 - 11:13:55.011 INFO  o.f.c.i.license.VersionPrinter - 
-16 Feb 2024 - 11:13:55.020 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun.uz (PostgreSQL 16.1)
-16 Feb 2024 - 11:13:55.024 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
-16 Feb 2024 - 11:13:55.049 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+19 Feb 2024 - 10:25:40.738 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+19 Feb 2024 - 10:25:40.739 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+19 Feb 2024 - 10:25:40.742 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+19 Feb 2024 - 11:07:13.832 INFO  com.example.Application - Starting Application using Java 17.0.9 with PID 17764 (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes started by javox in C:\Users\javox\IdeaProjects\kun.uz_lesson1)
+19 Feb 2024 - 11:07:13.842 DEBUG com.example.Application - Running with Spring Boot v3.2.2, Spring v6.1.3
+19 Feb 2024 - 11:07:13.842 INFO  com.example.Application - No active profile set, falling back to 1 default profile: "default"
+19 Feb 2024 - 11:07:14.520 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+19 Feb 2024 - 11:07:14.575 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 11 JPA repository interfaces.
+19 Feb 2024 - 11:07:15.017 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+19 Feb 2024 - 11:07:15.024 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19 Feb 2024 - 11:07:15.024 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+19 Feb 2024 - 11:07:15.078 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19 Feb 2024 - 11:07:15.078 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1200 ms
+19 Feb 2024 - 11:07:15.153 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+19 Feb 2024 - 11:07:15.187 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+19 Feb 2024 - 11:07:15.211 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+19 Feb 2024 - 11:07:15.385 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+19 Feb 2024 - 11:07:15.402 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19 Feb 2024 - 11:07:15.530 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7fe87c0e
+19 Feb 2024 - 11:07:15.531 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19 Feb 2024 - 11:07:16.414 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+19 Feb 2024 - 11:07:16.536 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+19 Feb 2024 - 11:07:16.691 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+19 Feb 2024 - 11:07:16.974 DEBUG com.example.config.JwtTokenFilter - Filter 'jwtTokenFilter' configured for use
+19 Feb 2024 - 11:07:17.338 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+19 Feb 2024 - 11:07:17.572 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2a38b5c7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35283b74, org.springframework.security.web.context.SecurityContextHolderFilter@165ec33, org.springframework.security.web.header.HeaderWriterFilter@29d578de, org.springframework.security.web.authentication.logout.LogoutFilter@67710b92, com.example.config.JwtTokenFilter@517d68b8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76b17a78, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@608707d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2bbc6496, org.springframework.security.web.access.ExceptionTranslationFilter@3698f2ed, org.springframework.security.web.access.intercept.AuthorizationFilter@992f314]
+19 Feb 2024 - 11:07:17.826 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
+19 Feb 2024 - 11:07:17.836 INFO  com.example.Application - Started Application in 4.349 seconds (process running for 5.692)
+19 Feb 2024 - 11:07:17.877 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+19 Feb 2024 - 11:07:17.877 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+19 Feb 2024 - 11:07:17.877 INFO  o.f.c.i.license.VersionPrinter - 
+19 Feb 2024 - 11:07:17.886 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun.uz (PostgreSQL 16.1)
+19 Feb 2024 - 11:07:17.890 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+19 Feb 2024 - 11:07:17.912 INFO  o.f.core.internal.command.DbValidate - Successfully validated 6 migrations (execution time 00:00.016s)
+19 Feb 2024 - 11:07:17.918 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+19 Feb 2024 - 11:07:17.927 INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "5 - init like"
+19 Feb 2024 - 11:07:17.934 ERROR o.f.core.internal.command.DbMigrate - Migration of schema "public" to version "5 - init like" failed! Changes successfully rolled back.
+19 Feb 2024 - 11:07:17.937 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-16 Feb 2024 - 11:13:55.060 ERROR o.s.boot.SpringApplication - Application run failed
-org.flywaydb.core.api.exception.FlywayValidateException: Validate failed: Migrations have failed validation
-Migration checksum mismatch for migration version 5
--> Applied to database : 1901660110
--> Resolved locally    : 1078496332
-Either revert the changes to the migration, or run repair to update the schema history.
-Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
-	at org.flywaydb.core.Flyway.lambda$migrate$0(Flyway.java:146)
-	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:213)
-	at org.flywaydb.core.Flyway.migrate(Flyway.java:140)
-	at com.example.service.CommandLineAppStartupRunner.run(CommandLineAppStartupRunner.java:18)
-	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790)
-	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83)
-	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
-	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789)
-	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.example.Application.main(Application.java:10)
-16 Feb 2024 - 11:13:55.073 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-16 Feb 2024 - 11:13:55.074 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-16 Feb 2024 - 11:13:55.078 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-16 Feb 2024 - 11:17:56.645 INFO  com.example.Application - Starting Application using Java 17.0.9 with PID 16840 (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes started by javox in C:\Users\javox\IdeaProjects\kun.uz_lesson1)
-16 Feb 2024 - 11:17:56.654 DEBUG com.example.Application - Running with Spring Boot v3.2.2, Spring v6.1.3
-16 Feb 2024 - 11:17:56.654 INFO  com.example.Application - No active profile set, falling back to 1 default profile: "default"
-16 Feb 2024 - 11:17:57.305 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-16 Feb 2024 - 11:17:57.358 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 11 JPA repository interfaces.
-16 Feb 2024 - 11:17:57.814 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-16 Feb 2024 - 11:17:57.822 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-16 Feb 2024 - 11:17:57.823 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
-16 Feb 2024 - 11:17:57.878 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-16 Feb 2024 - 11:17:57.880 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1189 ms
-16 Feb 2024 - 11:17:57.964 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-16 Feb 2024 - 11:17:58.013 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-16 Feb 2024 - 11:17:58.038 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-16 Feb 2024 - 11:17:58.230 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-16 Feb 2024 - 11:17:58.247 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-16 Feb 2024 - 11:17:58.371 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1073c664
-16 Feb 2024 - 11:17:58.372 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-16 Feb 2024 - 11:17:59.566 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-16 Feb 2024 - 11:17:59.782 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-16 Feb 2024 - 11:18:00.010 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-16 Feb 2024 - 11:18:00.339 DEBUG com.example.config.JwtTokenFilter - Filter 'jwtTokenFilter' configured for use
-16 Feb 2024 - 11:18:00.754 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-16 Feb 2024 - 11:18:01.080 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@f6b85c3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d118651, org.springframework.security.web.context.SecurityContextHolderFilter@337fd6a1, org.springframework.security.web.header.HeaderWriterFilter@6b00587b, org.springframework.security.web.authentication.logout.LogoutFilter@1c68601b, com.example.config.JwtTokenFilter@39068df9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@20c9b155, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@154f5d37, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@138a8c9e, org.springframework.security.web.access.ExceptionTranslationFilter@34dcd7a1, org.springframework.security.web.access.intercept.AuthorizationFilter@12b79055]
-16 Feb 2024 - 11:18:01.448 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-16 Feb 2024 - 11:18:01.456 INFO  com.example.Application - Started Application in 5.162 seconds (process running for 5.562)
-16 Feb 2024 - 11:18:01.517 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-16 Feb 2024 - 11:18:01.517 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-16 Feb 2024 - 11:18:01.517 INFO  o.f.c.i.license.VersionPrinter - 
-16 Feb 2024 - 11:18:01.534 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun.uz (PostgreSQL 16.1)
-16 Feb 2024 - 11:18:01.540 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
-16 Feb 2024 - 11:18:01.578 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-16 Feb 2024 - 11:18:01.596 ERROR o.s.boot.SpringApplication - Application run failed
-org.flywaydb.core.api.exception.FlywayValidateException: Validate failed: Migrations have failed validation
-Migration checksum mismatch for migration version 5
--> Applied to database : 1901660110
--> Resolved locally    : -1631154680
-Either revert the changes to the migration, or run repair to update the schema history.
-Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
-	at org.flywaydb.core.Flyway.lambda$migrate$0(Flyway.java:146)
-	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:213)
-	at org.flywaydb.core.Flyway.migrate(Flyway.java:140)
-	at com.example.service.CommandLineAppStartupRunner.run(CommandLineAppStartupRunner.java:18)
-	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790)
-	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83)
-	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
-	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789)
-	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.example.Application.main(Application.java:10)
-16 Feb 2024 - 11:18:01.611 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-16 Feb 2024 - 11:18:01.612 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-16 Feb 2024 - 11:18:01.615 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-16 Feb 2024 - 11:20:34.801 INFO  com.example.Application - Starting Application using Java 17.0.9 with PID 11472 (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes started by javox in C:\Users\javox\IdeaProjects\kun.uz_lesson1)
-16 Feb 2024 - 11:20:34.810 DEBUG com.example.Application - Running with Spring Boot v3.2.2, Spring v6.1.3
-16 Feb 2024 - 11:20:34.810 INFO  com.example.Application - No active profile set, falling back to 1 default profile: "default"
-16 Feb 2024 - 11:20:35.447 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-16 Feb 2024 - 11:20:35.503 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 11 JPA repository interfaces.
-16 Feb 2024 - 11:20:35.902 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-16 Feb 2024 - 11:20:35.908 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-16 Feb 2024 - 11:20:35.909 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
-16 Feb 2024 - 11:20:35.954 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-16 Feb 2024 - 11:20:35.955 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1111 ms
-16 Feb 2024 - 11:20:36.034 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-16 Feb 2024 - 11:20:36.069 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-16 Feb 2024 - 11:20:36.090 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-16 Feb 2024 - 11:20:36.263 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-16 Feb 2024 - 11:20:36.282 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-16 Feb 2024 - 11:20:36.400 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@152e7703
-16 Feb 2024 - 11:20:36.401 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-16 Feb 2024 - 11:20:37.309 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-16 Feb 2024 - 11:20:37.442 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-16 Feb 2024 - 11:20:37.596 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-16 Feb 2024 - 11:20:37.867 DEBUG com.example.config.JwtTokenFilter - Filter 'jwtTokenFilter' configured for use
-16 Feb 2024 - 11:20:38.242 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-16 Feb 2024 - 11:20:38.469 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3467d540, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@67710b92, org.springframework.security.web.context.SecurityContextHolderFilter@154f5d37, org.springframework.security.web.header.HeaderWriterFilter@337fd6a1, org.springframework.security.web.authentication.logout.LogoutFilter@4da454a7, com.example.config.JwtTokenFilter@7d29fc6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e7227e6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@43dc6864, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@56e32a23, org.springframework.security.web.access.ExceptionTranslationFilter@15ddf775, org.springframework.security.web.access.intercept.AuthorizationFilter@3d118651]
-16 Feb 2024 - 11:20:38.740 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-16 Feb 2024 - 11:20:38.749 INFO  com.example.Application - Started Application in 4.252 seconds (process running for 4.637)
-16 Feb 2024 - 11:20:38.794 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-16 Feb 2024 - 11:20:38.795 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-16 Feb 2024 - 11:20:38.795 INFO  o.f.c.i.license.VersionPrinter - 
-16 Feb 2024 - 11:20:38.806 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun.uz (PostgreSQL 16.1)
-16 Feb 2024 - 11:20:38.821 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
-16 Feb 2024 - 11:20:38.845 INFO  o.f.core.internal.command.DbValidate - Successfully validated 6 migrations (execution time 00:00.016s)
-16 Feb 2024 - 11:20:38.853 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
-16 Feb 2024 - 11:20:38.873 INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "5 - likeTrigger"
-16 Feb 2024 - 11:20:38.896 ERROR o.f.core.internal.command.DbMigrate - Migration of schema "public" to version "5 - likeTrigger" failed! Changes successfully rolled back.
-16 Feb 2024 - 11:20:38.900 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-16 Feb 2024 - 11:20:38.917 ERROR o.s.boot.SpringApplication - Application run failed
-org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: Migration V5__likeTrigger.sql failed
-------------------------------------
-SQL State  : 42723
+19 Feb 2024 - 11:07:17.954 ERROR o.s.boot.SpringApplication - Application run failed
+org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: Migration V5__init_like.sql failed
+----------------------------------
+SQL State  : 42601
 Error Code : 0
-Message    : ОШИБКА: функция "increase_like_function" с аргументами таких типов уже существует
-Location   : db/migration/V5__likeTrigger.sql (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes\db\migration\V5__likeTrigger.sql)
-Line       : 3
-Statement  : -- INCREASE & DECREASE LIKE
--- AFTER CREATE
-CREATE FUNCTION increase_like_function()
-    RETURNS TRIGGER AS
-    $$
+Message    : ОШИБКА: ошибка синтаксиса (примерное положение: "CREATE")
+  Position: 1109
+Location   : db/migration/V5__init_like.sql (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes\db\migration\V5__init_like.sql)
+Line       : 1
+Statement  : CREATE
+OR REPLACE FUNCTION article_like_trigger_function()
+RETURNS TRIGGER
+LANGUAGE PLPGSQL
+AS $$
 BEGIN
-UPDATE article
-SET like_count = like_count + 1
-WHERE id = NEW.article_id
-  and NEW.status = 'LIKE';
-RETURN NEW;
-END;
-$$
+--NEW OLD
+    IF
+TG_OP = 'INSERT' then
+		IF NEW.status = 'LIKE' then
+update article
+set like_count = like_count + 1
+where id = NEW.article_id;
+elseif
+NEW.STATUS = 'DISLIKE' then
+update article
+set dislike_count = dislike_count + 1
+where id = NEW.article_id;
+end if;
+	ELSEIF
+TG_OP = 'UPDATE'then
+		 IF NEW.status = 'LIKE' and OLD.status = 'DISLIKE' then
+update article
+set like_count    = like_count + 1,
+    dislike_count = dislike_count - 1
+where id = NEW.article_id;
+elseif
+NEW.STATUS = 'DISLIKE' and OLD.status = 'LIKE' then
+update article
+set like_count    = like_count - 1,
+    dislike_count = dislike_count + 1
+where id = NEW.article_id;
+end if;
+	ELSEIF
+TG_OP = 'DELETE' then
+		 IF OLD.status = 'LIKE' then
+update article
+set like_count = like_count - 1
+where id = OLD.article_id;
+elseif
+OLD.STATUS = 'DISLIKE' then
+update article
+set dislike_count = dislike_count - 1
+where id = OLD.article_id;
+end if;
+return OLD;
+end if;
+return NEW;
+END; $$
 
-LANGUAGE 'plpgsql'
+   CREATE
+or REPLACE TRIGGER article_like_trigger
+	BEFORE INSERT OR
+UPDATE OR
+DELETE
+ON article_like
+    FOR EACH ROW
+    EXECUTE PROCEDURE article_like_trigger_function()
 
 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:382)
 	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:272)
@@ -434,28 +380,72 @@ LANGUAGE 'plpgsql'
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
 	at com.example.Application.main(Application.java:10)
-Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Migration V5__likeTrigger.sql failed
-------------------------------------
-SQL State  : 42723
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Migration V5__init_like.sql failed
+----------------------------------
+SQL State  : 42601
 Error Code : 0
-Message    : ОШИБКА: функция "increase_like_function" с аргументами таких типов уже существует
-Location   : db/migration/V5__likeTrigger.sql (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes\db\migration\V5__likeTrigger.sql)
-Line       : 3
-Statement  : -- INCREASE & DECREASE LIKE
--- AFTER CREATE
-CREATE FUNCTION increase_like_function()
-    RETURNS TRIGGER AS
-    $$
+Message    : ОШИБКА: ошибка синтаксиса (примерное положение: "CREATE")
+  Position: 1109
+Location   : db/migration/V5__init_like.sql (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes\db\migration\V5__init_like.sql)
+Line       : 1
+Statement  : CREATE
+OR REPLACE FUNCTION article_like_trigger_function()
+RETURNS TRIGGER
+LANGUAGE PLPGSQL
+AS $$
 BEGIN
-UPDATE article
-SET like_count = like_count + 1
-WHERE id = NEW.article_id
-  and NEW.status = 'LIKE';
-RETURN NEW;
-END;
-$$
+--NEW OLD
+    IF
+TG_OP = 'INSERT' then
+		IF NEW.status = 'LIKE' then
+update article
+set like_count = like_count + 1
+where id = NEW.article_id;
+elseif
+NEW.STATUS = 'DISLIKE' then
+update article
+set dislike_count = dislike_count + 1
+where id = NEW.article_id;
+end if;
+	ELSEIF
+TG_OP = 'UPDATE'then
+		 IF NEW.status = 'LIKE' and OLD.status = 'DISLIKE' then
+update article
+set like_count    = like_count + 1,
+    dislike_count = dislike_count - 1
+where id = NEW.article_id;
+elseif
+NEW.STATUS = 'DISLIKE' and OLD.status = 'LIKE' then
+update article
+set like_count    = like_count - 1,
+    dislike_count = dislike_count + 1
+where id = NEW.article_id;
+end if;
+	ELSEIF
+TG_OP = 'DELETE' then
+		 IF OLD.status = 'LIKE' then
+update article
+set like_count = like_count - 1
+where id = OLD.article_id;
+elseif
+OLD.STATUS = 'DISLIKE' then
+update article
+set dislike_count = dislike_count - 1
+where id = OLD.article_id;
+end if;
+return OLD;
+end if;
+return NEW;
+END; $$
 
-LANGUAGE 'plpgsql'
+   CREATE
+or REPLACE TRIGGER article_like_trigger
+	BEFORE INSERT OR
+UPDATE OR
+DELETE
+ON article_like
+    FOR EACH ROW
+    EXECUTE PROCEDURE article_like_trigger_function()
 
 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:267)
 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:222)
@@ -466,7 +456,8 @@ LANGUAGE 'plpgsql'
 	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:56)
 	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:374)
 	... 37 common frames omitted
-Caused by: org.postgresql.util.PSQLException: ОШИБКА: функция "increase_like_function" с аргументами таких типов уже существует
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: ошибка синтаксиса (примерное положение: "CREATE")
+  Position: 1109
 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
 	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
@@ -482,40 +473,522 @@ Caused by: org.postgresql.util.PSQLException: ОШИБКА: функция "incr
 	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:95)
 	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:210)
 	... 43 common frames omitted
-16 Feb 2024 - 11:20:38.933 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-16 Feb 2024 - 11:20:38.934 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-16 Feb 2024 - 11:20:38.936 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-16 Feb 2024 - 11:37:15.305 INFO  com.example.Application - Starting Application using Java 17.0.9 with PID 16280 (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes started by javox in C:\Users\javox\IdeaProjects\kun.uz_lesson1)
-16 Feb 2024 - 11:37:15.314 DEBUG com.example.Application - Running with Spring Boot v3.2.2, Spring v6.1.3
-16 Feb 2024 - 11:37:15.315 INFO  com.example.Application - No active profile set, falling back to 1 default profile: "default"
-16 Feb 2024 - 11:37:15.975 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-16 Feb 2024 - 11:37:16.031 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 11 JPA repository interfaces.
-16 Feb 2024 - 11:37:16.435 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-16 Feb 2024 - 11:37:16.442 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-16 Feb 2024 - 11:37:16.443 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
-16 Feb 2024 - 11:37:16.486 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-16 Feb 2024 - 11:37:16.487 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1138 ms
-16 Feb 2024 - 11:37:16.562 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-16 Feb 2024 - 11:37:16.597 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-16 Feb 2024 - 11:37:16.617 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-16 Feb 2024 - 11:37:16.789 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-16 Feb 2024 - 11:37:16.806 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-16 Feb 2024 - 11:37:16.934 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@182e4365
-16 Feb 2024 - 11:37:16.936 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-16 Feb 2024 - 11:37:17.839 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-16 Feb 2024 - 11:37:17.975 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-16 Feb 2024 - 11:37:18.125 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-16 Feb 2024 - 11:37:18.395 DEBUG com.example.config.JwtTokenFilter - Filter 'jwtTokenFilter' configured for use
-16 Feb 2024 - 11:37:18.767 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-16 Feb 2024 - 11:37:19.013 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@11caa21d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b0db8b1, org.springframework.security.web.context.SecurityContextHolderFilter@43dc6864, org.springframework.security.web.header.HeaderWriterFilter@154f5d37, org.springframework.security.web.authentication.logout.LogoutFilter@7d59e235, com.example.config.JwtTokenFilter@1da53092, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3698f2ed, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@9eaaecf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@74cf0dd9, org.springframework.security.web.access.ExceptionTranslationFilter@5a558335, org.springframework.security.web.access.intercept.AuthorizationFilter@67710b92]
-16 Feb 2024 - 11:37:19.282 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-16 Feb 2024 - 11:37:19.291 INFO  com.example.Application - Started Application in 4.285 seconds (process running for 4.704)
-16 Feb 2024 - 11:37:19.332 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-16 Feb 2024 - 11:37:19.333 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-16 Feb 2024 - 11:37:19.333 INFO  o.f.c.i.license.VersionPrinter - 
-16 Feb 2024 - 11:37:19.343 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun.uz (PostgreSQL 16.1)
-16 Feb 2024 - 11:37:19.347 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
-16 Feb 2024 - 11:37:19.370 INFO  o.f.core.internal.command.DbValidate - Successfully validated 6 migrations (execution time 00:00.017s)
-16 Feb 2024 - 11:37:19.378 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
-16 Feb 2024 - 11:37:19.386 INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "5 - likeTrigger"
-16 Feb 2024 - 11:37:19.397 INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "public", now at version v5 (execution time 00:00.002s)
+19 Feb 2024 - 11:07:17.969 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+19 Feb 2024 - 11:07:17.971 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+19 Feb 2024 - 11:07:17.976 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+19 Feb 2024 - 11:07:39.003 INFO  com.example.Application - Starting Application using Java 17.0.9 with PID 10860 (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes started by javox in C:\Users\javox\IdeaProjects\kun.uz_lesson1)
+19 Feb 2024 - 11:07:39.013 DEBUG com.example.Application - Running with Spring Boot v3.2.2, Spring v6.1.3
+19 Feb 2024 - 11:07:39.013 INFO  com.example.Application - No active profile set, falling back to 1 default profile: "default"
+19 Feb 2024 - 11:07:39.645 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+19 Feb 2024 - 11:07:39.692 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 11 JPA repository interfaces.
+19 Feb 2024 - 11:07:40.083 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+19 Feb 2024 - 11:07:40.083 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19 Feb 2024 - 11:07:40.083 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+19 Feb 2024 - 11:07:40.129 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19 Feb 2024 - 11:07:40.129 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1080 ms
+19 Feb 2024 - 11:07:40.208 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+19 Feb 2024 - 11:07:40.239 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+19 Feb 2024 - 11:07:40.270 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+19 Feb 2024 - 11:07:40.442 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+19 Feb 2024 - 11:07:40.458 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19 Feb 2024 - 11:07:40.567 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@433d93e7
+19 Feb 2024 - 11:07:40.583 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19 Feb 2024 - 11:07:41.455 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+19 Feb 2024 - 11:07:41.587 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+19 Feb 2024 - 11:07:41.735 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+19 Feb 2024 - 11:07:42.015 DEBUG com.example.config.JwtTokenFilter - Filter 'jwtTokenFilter' configured for use
+19 Feb 2024 - 11:07:42.383 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+19 Feb 2024 - 11:07:42.654 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6329d89f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@10fc01e0, org.springframework.security.web.context.SecurityContextHolderFilter@56595dcb, org.springframework.security.web.header.HeaderWriterFilter@341f2f4c, org.springframework.security.web.authentication.logout.LogoutFilter@274d10aa, com.example.config.JwtTokenFilter@63513c1c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@59e7a6d8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@757b8c47, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6a2cd5ea, org.springframework.security.web.access.ExceptionTranslationFilter@345f429, org.springframework.security.web.access.intercept.AuthorizationFilter@33093469]
+19 Feb 2024 - 11:07:42.910 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
+19 Feb 2024 - 11:07:42.920 INFO  com.example.Application - Started Application in 4.215 seconds (process running for 4.598)
+19 Feb 2024 - 11:07:42.960 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+19 Feb 2024 - 11:07:42.960 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+19 Feb 2024 - 11:07:42.960 INFO  o.f.c.i.license.VersionPrinter - 
+19 Feb 2024 - 11:07:42.970 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun.uz (PostgreSQL 16.1)
+19 Feb 2024 - 11:07:42.974 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+19 Feb 2024 - 11:07:42.994 INFO  o.f.core.internal.command.DbValidate - Successfully validated 6 migrations (execution time 00:00.015s)
+19 Feb 2024 - 11:07:43.000 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+19 Feb 2024 - 11:07:43.010 INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "5 - init like"
+19 Feb 2024 - 11:07:43.017 ERROR o.f.core.internal.command.DbMigrate - Migration of schema "public" to version "5 - init like" failed! Changes successfully rolled back.
+19 Feb 2024 - 11:07:43.020 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+19 Feb 2024 - 11:07:43.030 ERROR o.s.boot.SpringApplication - Application run failed
+org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: Migration V5__init_like.sql failed
+----------------------------------
+SQL State  : 42601
+Error Code : 0
+Message    : ОШИБКА: ошибка синтаксиса (примерное положение: "CREATE")
+  Position: 1109
+Location   : db/migration/V5__init_like.sql (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes\db\migration\V5__init_like.sql)
+Line       : 1
+Statement  : CREATE
+OR REPLACE FUNCTION article_like_trigger_function()
+RETURNS TRIGGER
+LANGUAGE PLPGSQL
+AS $$
+BEGIN
+--NEW OLD
+    IF
+TG_OP = 'INSERT' then
+		IF NEW.status = 'LIKE' then
+update article
+set like_count = like_count + 1
+where id = NEW.article_id;
+elseif
+NEW.STATUS = 'DISLIKE' then
+update article
+set dislike_count = dislike_count + 1
+where id = NEW.article_id;
+end if;
+	ELSEIF
+TG_OP = 'UPDATE'then
+		 IF NEW.status = 'LIKE' and OLD.status = 'DISLIKE' then
+update article
+set like_count    = like_count + 1,
+    dislike_count = dislike_count - 1
+where id = NEW.article_id;
+elseif
+NEW.STATUS = 'DISLIKE' and OLD.status = 'LIKE' then
+update article
+set like_count    = like_count - 1,
+    dislike_count = dislike_count + 1
+where id = NEW.article_id;
+end if;
+	ELSEIF
+TG_OP = 'DELETE' then
+		 IF OLD.status = 'LIKE' then
+update article
+set like_count = like_count - 1
+where id = OLD.article_id;
+elseif
+OLD.STATUS = 'DISLIKE' then
+update article
+set dislike_count = dislike_count - 1
+where id = OLD.article_id;
+end if;
+return OLD;
+end if;
+return NEW;
+END; $$
+
+   CREATE
+or REPLACE TRIGGER article_like_trigger
+	BEFORE INSERT OR
+UPDATE OR
+DELETE
+ON article_like
+    FOR EACH ROW
+    EXECUTE PROCEDURE article_like_trigger_function()
+
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:382)
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:272)
+	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:55)
+	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:271)
+	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:244)
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:139)
+	at org.flywaydb.core.internal.database.postgresql.PostgreSQLAdvisoryLockTemplate.execute(PostgreSQLAdvisoryLockTemplate.java:73)
+	at org.flywaydb.core.internal.database.postgresql.PostgreSQLAdvisoryLockTemplate.lambda$execute$0(PostgreSQLAdvisoryLockTemplate.java:56)
+	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:55)
+	at org.flywaydb.core.internal.database.postgresql.PostgreSQLAdvisoryLockTemplate.execute(PostgreSQLAdvisoryLockTemplate.java:56)
+	at org.flywaydb.core.internal.database.postgresql.PostgreSQLConnection.lock(PostgreSQLConnection.java:96)
+	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:144)
+	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:139)
+	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:97)
+	at org.flywaydb.core.Flyway.lambda$migrate$0(Flyway.java:188)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:213)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:140)
+	at com.example.service.CommandLineAppStartupRunner.run(CommandLineAppStartupRunner.java:18)
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790)
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.example.Application.main(Application.java:10)
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Migration V5__init_like.sql failed
+----------------------------------
+SQL State  : 42601
+Error Code : 0
+Message    : ОШИБКА: ошибка синтаксиса (примерное положение: "CREATE")
+  Position: 1109
+Location   : db/migration/V5__init_like.sql (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes\db\migration\V5__init_like.sql)
+Line       : 1
+Statement  : CREATE
+OR REPLACE FUNCTION article_like_trigger_function()
+RETURNS TRIGGER
+LANGUAGE PLPGSQL
+AS $$
+BEGIN
+--NEW OLD
+    IF
+TG_OP = 'INSERT' then
+		IF NEW.status = 'LIKE' then
+update article
+set like_count = like_count + 1
+where id = NEW.article_id;
+elseif
+NEW.STATUS = 'DISLIKE' then
+update article
+set dislike_count = dislike_count + 1
+where id = NEW.article_id;
+end if;
+	ELSEIF
+TG_OP = 'UPDATE'then
+		 IF NEW.status = 'LIKE' and OLD.status = 'DISLIKE' then
+update article
+set like_count    = like_count + 1,
+    dislike_count = dislike_count - 1
+where id = NEW.article_id;
+elseif
+NEW.STATUS = 'DISLIKE' and OLD.status = 'LIKE' then
+update article
+set like_count    = like_count - 1,
+    dislike_count = dislike_count + 1
+where id = NEW.article_id;
+end if;
+	ELSEIF
+TG_OP = 'DELETE' then
+		 IF OLD.status = 'LIKE' then
+update article
+set like_count = like_count - 1
+where id = OLD.article_id;
+elseif
+OLD.STATUS = 'DISLIKE' then
+update article
+set dislike_count = dislike_count - 1
+where id = OLD.article_id;
+end if;
+return OLD;
+end if;
+return NEW;
+END; $$
+
+   CREATE
+or REPLACE TRIGGER article_like_trigger
+	BEFORE INSERT OR
+UPDATE OR
+DELETE
+ON article_like
+    FOR EACH ROW
+    EXECUTE PROCEDURE article_like_trigger_function()
+
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:267)
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:222)
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:126)
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:68)
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:57)
+	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:27)
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:56)
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:374)
+	... 37 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: ошибка синтаксиса (примерное положение: "CREATE")
+  Position: 1109
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:335)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:321)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:297)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:292)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:201)
+	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:95)
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:210)
+	... 43 common frames omitted
+19 Feb 2024 - 11:07:43.044 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+19 Feb 2024 - 11:07:43.045 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+19 Feb 2024 - 11:07:43.055 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+19 Feb 2024 - 11:07:49.263 INFO  com.example.Application - Starting Application using Java 17.0.9 with PID 8008 (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes started by javox in C:\Users\javox\IdeaProjects\kun.uz_lesson1)
+19 Feb 2024 - 11:07:49.272 DEBUG com.example.Application - Running with Spring Boot v3.2.2, Spring v6.1.3
+19 Feb 2024 - 11:07:49.273 INFO  com.example.Application - No active profile set, falling back to 1 default profile: "default"
+19 Feb 2024 - 11:07:49.912 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+19 Feb 2024 - 11:07:49.966 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 11 JPA repository interfaces.
+19 Feb 2024 - 11:07:50.357 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+19 Feb 2024 - 11:07:50.364 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19 Feb 2024 - 11:07:50.364 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+19 Feb 2024 - 11:07:50.411 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19 Feb 2024 - 11:07:50.412 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1106 ms
+19 Feb 2024 - 11:07:50.485 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+19 Feb 2024 - 11:07:50.519 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+19 Feb 2024 - 11:07:50.539 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+19 Feb 2024 - 11:07:50.716 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+19 Feb 2024 - 11:07:50.733 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19 Feb 2024 - 11:07:50.844 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@48106381
+19 Feb 2024 - 11:07:50.845 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19 Feb 2024 - 11:07:51.766 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+19 Feb 2024 - 11:07:51.893 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+19 Feb 2024 - 11:07:52.078 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+19 Feb 2024 - 11:07:52.348 DEBUG com.example.config.JwtTokenFilter - Filter 'jwtTokenFilter' configured for use
+19 Feb 2024 - 11:07:52.792 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+19 Feb 2024 - 11:07:53.038 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3a792bf9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@33093469, org.springframework.security.web.context.SecurityContextHolderFilter@341f2f4c, org.springframework.security.web.header.HeaderWriterFilter@25af233d, org.springframework.security.web.authentication.logout.LogoutFilter@b521697, com.example.config.JwtTokenFilter@4dbeae45, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@44bd11a2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@56595dcb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4967fabe, org.springframework.security.web.access.ExceptionTranslationFilter@9d7d83d, org.springframework.security.web.access.intercept.AuthorizationFilter@62f30cea]
+19 Feb 2024 - 11:07:53.306 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
+19 Feb 2024 - 11:07:53.314 INFO  com.example.Application - Started Application in 4.357 seconds (process running for 4.74)
+19 Feb 2024 - 11:07:53.362 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+19 Feb 2024 - 11:07:53.362 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+19 Feb 2024 - 11:07:53.362 INFO  o.f.c.i.license.VersionPrinter - 
+19 Feb 2024 - 11:07:53.373 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun.uz (PostgreSQL 16.1)
+19 Feb 2024 - 11:07:53.377 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+19 Feb 2024 - 11:07:53.400 INFO  o.f.core.internal.command.DbValidate - Successfully validated 6 migrations (execution time 00:00.016s)
+19 Feb 2024 - 11:07:53.407 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+19 Feb 2024 - 11:07:53.418 INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "5 - init like"
+19 Feb 2024 - 11:07:53.425 ERROR o.f.core.internal.command.DbMigrate - Migration of schema "public" to version "5 - init like" failed! Changes successfully rolled back.
+19 Feb 2024 - 11:07:53.429 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+19 Feb 2024 - 11:07:53.440 ERROR o.s.boot.SpringApplication - Application run failed
+org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: Migration V5__init_like.sql failed
+----------------------------------
+SQL State  : 42601
+Error Code : 0
+Message    : ОШИБКА: ошибка синтаксиса (примерное положение: "CREATE")
+  Position: 1109
+Location   : db/migration/V5__init_like.sql (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes\db\migration\V5__init_like.sql)
+Line       : 1
+Statement  : CREATE
+OR REPLACE FUNCTION article_like_trigger_function()
+RETURNS TRIGGER
+LANGUAGE PLPGSQL
+AS $$
+BEGIN
+--NEW OLD
+    IF
+TG_OP = 'INSERT' then
+		IF NEW.status = 'LIKE' then
+update article
+set like_count = like_count + 1
+where id = NEW.article_id;
+elseif
+NEW.STATUS = 'DISLIKE' then
+update article
+set dislike_count = dislike_count + 1
+where id = NEW.article_id;
+end if;
+	ELSEIF
+TG_OP = 'UPDATE'then
+		 IF NEW.status = 'LIKE' and OLD.status = 'DISLIKE' then
+update article
+set like_count    = like_count + 1,
+    dislike_count = dislike_count - 1
+where id = NEW.article_id;
+elseif
+NEW.STATUS = 'DISLIKE' and OLD.status = 'LIKE' then
+update article
+set like_count    = like_count - 1,
+    dislike_count = dislike_count + 1
+where id = NEW.article_id;
+end if;
+	ELSEIF
+TG_OP = 'DELETE' then
+		 IF OLD.status = 'LIKE' then
+update article
+set like_count = like_count - 1
+where id = OLD.article_id;
+elseif
+OLD.STATUS = 'DISLIKE' then
+update article
+set dislike_count = dislike_count - 1
+where id = OLD.article_id;
+end if;
+return OLD;
+end if;
+return NEW;
+END; $$
+
+   CREATE
+or REPLACE TRIGGER article_like_trigger
+	BEFORE INSERT OR
+UPDATE OR
+DELETE
+ON article_like
+    FOR EACH ROW
+    EXECUTE PROCEDURE article_like_trigger_function()
+
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:382)
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:272)
+	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:55)
+	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:271)
+	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:244)
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:139)
+	at org.flywaydb.core.internal.database.postgresql.PostgreSQLAdvisoryLockTemplate.execute(PostgreSQLAdvisoryLockTemplate.java:73)
+	at org.flywaydb.core.internal.database.postgresql.PostgreSQLAdvisoryLockTemplate.lambda$execute$0(PostgreSQLAdvisoryLockTemplate.java:56)
+	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:55)
+	at org.flywaydb.core.internal.database.postgresql.PostgreSQLAdvisoryLockTemplate.execute(PostgreSQLAdvisoryLockTemplate.java:56)
+	at org.flywaydb.core.internal.database.postgresql.PostgreSQLConnection.lock(PostgreSQLConnection.java:96)
+	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:144)
+	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:139)
+	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:97)
+	at org.flywaydb.core.Flyway.lambda$migrate$0(Flyway.java:188)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:213)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:140)
+	at com.example.service.CommandLineAppStartupRunner.run(CommandLineAppStartupRunner.java:18)
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790)
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.example.Application.main(Application.java:10)
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Migration V5__init_like.sql failed
+----------------------------------
+SQL State  : 42601
+Error Code : 0
+Message    : ОШИБКА: ошибка синтаксиса (примерное положение: "CREATE")
+  Position: 1109
+Location   : db/migration/V5__init_like.sql (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes\db\migration\V5__init_like.sql)
+Line       : 1
+Statement  : CREATE
+OR REPLACE FUNCTION article_like_trigger_function()
+RETURNS TRIGGER
+LANGUAGE PLPGSQL
+AS $$
+BEGIN
+--NEW OLD
+    IF
+TG_OP = 'INSERT' then
+		IF NEW.status = 'LIKE' then
+update article
+set like_count = like_count + 1
+where id = NEW.article_id;
+elseif
+NEW.STATUS = 'DISLIKE' then
+update article
+set dislike_count = dislike_count + 1
+where id = NEW.article_id;
+end if;
+	ELSEIF
+TG_OP = 'UPDATE'then
+		 IF NEW.status = 'LIKE' and OLD.status = 'DISLIKE' then
+update article
+set like_count    = like_count + 1,
+    dislike_count = dislike_count - 1
+where id = NEW.article_id;
+elseif
+NEW.STATUS = 'DISLIKE' and OLD.status = 'LIKE' then
+update article
+set like_count    = like_count - 1,
+    dislike_count = dislike_count + 1
+where id = NEW.article_id;
+end if;
+	ELSEIF
+TG_OP = 'DELETE' then
+		 IF OLD.status = 'LIKE' then
+update article
+set like_count = like_count - 1
+where id = OLD.article_id;
+elseif
+OLD.STATUS = 'DISLIKE' then
+update article
+set dislike_count = dislike_count - 1
+where id = OLD.article_id;
+end if;
+return OLD;
+end if;
+return NEW;
+END; $$
+
+   CREATE
+or REPLACE TRIGGER article_like_trigger
+	BEFORE INSERT OR
+UPDATE OR
+DELETE
+ON article_like
+    FOR EACH ROW
+    EXECUTE PROCEDURE article_like_trigger_function()
+
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:267)
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:222)
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:126)
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:68)
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:57)
+	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:27)
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:56)
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:374)
+	... 37 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: ошибка синтаксиса (примерное положение: "CREATE")
+  Position: 1109
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:335)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:321)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:297)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:292)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:201)
+	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:95)
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:210)
+	... 43 common frames omitted
+19 Feb 2024 - 11:07:53.455 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+19 Feb 2024 - 11:07:53.456 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+19 Feb 2024 - 11:07:53.463 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+19 Feb 2024 - 11:08:36.282 INFO  com.example.Application - Starting Application using Java 17.0.9 with PID 2076 (C:\Users\javox\IdeaProjects\kun.uz_lesson1\target\classes started by javox in C:\Users\javox\IdeaProjects\kun.uz_lesson1)
+19 Feb 2024 - 11:08:36.290 DEBUG com.example.Application - Running with Spring Boot v3.2.2, Spring v6.1.3
+19 Feb 2024 - 11:08:36.291 INFO  com.example.Application - No active profile set, falling back to 1 default profile: "default"
+19 Feb 2024 - 11:08:36.951 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+19 Feb 2024 - 11:08:37.005 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 11 JPA repository interfaces.
+19 Feb 2024 - 11:08:37.402 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+19 Feb 2024 - 11:08:37.409 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19 Feb 2024 - 11:08:37.409 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+19 Feb 2024 - 11:08:37.453 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19 Feb 2024 - 11:08:37.454 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1130 ms
+19 Feb 2024 - 11:08:37.531 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+19 Feb 2024 - 11:08:37.565 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+19 Feb 2024 - 11:08:37.586 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+19 Feb 2024 - 11:08:37.769 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+19 Feb 2024 - 11:08:37.787 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19 Feb 2024 - 11:08:37.898 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@182e4365
+19 Feb 2024 - 11:08:37.899 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19 Feb 2024 - 11:08:38.797 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+19 Feb 2024 - 11:08:38.925 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+19 Feb 2024 - 11:08:39.078 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+19 Feb 2024 - 11:08:39.343 DEBUG com.example.config.JwtTokenFilter - Filter 'jwtTokenFilter' configured for use
+19 Feb 2024 - 11:08:39.715 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+19 Feb 2024 - 11:08:39.956 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@56e32a23, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@11caa21d, org.springframework.security.web.context.SecurityContextHolderFilter@2e7227e6, org.springframework.security.web.header.HeaderWriterFilter@20c9b155, org.springframework.security.web.authentication.logout.LogoutFilter@66beb02d, com.example.config.JwtTokenFilter@1da53092, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c1523cd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3698f2ed, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1b0db8b1, org.springframework.security.web.access.ExceptionTranslationFilter@337fd6a1, org.springframework.security.web.access.intercept.AuthorizationFilter@3467d540]
+19 Feb 2024 - 11:08:40.219 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
+19 Feb 2024 - 11:08:40.232 INFO  com.example.Application - Started Application in 4.251 seconds (process running for 4.638)
+19 Feb 2024 - 11:08:40.274 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+19 Feb 2024 - 11:08:40.274 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+19 Feb 2024 - 11:08:40.274 INFO  o.f.c.i.license.VersionPrinter - 
+19 Feb 2024 - 11:08:40.285 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun.uz (PostgreSQL 16.1)
+19 Feb 2024 - 11:08:40.289 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+19 Feb 2024 - 11:08:40.312 INFO  o.f.core.internal.command.DbValidate - Successfully validated 6 migrations (execution time 00:00.018s)
+19 Feb 2024 - 11:08:40.322 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+19 Feb 2024 - 11:08:40.331 INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "5 - init like"
+19 Feb 2024 - 11:08:40.345 INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "public", now at version v5 (execution time 00:00.002s)
+19 Feb 2024 - 11:31:34.828 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m56s760ms393µs200ns).
+19 Feb 2024 - 12:36:39.383 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+19 Feb 2024 - 12:36:39.394 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+19 Feb 2024 - 12:36:39.396 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

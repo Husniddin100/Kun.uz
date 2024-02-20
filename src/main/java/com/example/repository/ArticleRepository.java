@@ -1,6 +1,8 @@
 package com.example.repository;
 
+import com.example.dto.articleDTO.ArticleShortInfoDTO;
 import com.example.entity.ArticleEntity;
+import com.example.entity.TypeEntity;
 import com.example.enums.ArticleStatus;
 import jakarta.transaction.Transactional;
 import org.jetbrains.annotations.NotNull;
@@ -30,5 +32,8 @@ public interface ArticleRepository extends CrudRepository<ArticleEntity, String>
     @Query("select a from ArticleEntity a where a.id!=?1 order by a.id desc limit 8")
     List<ArticleEntity> getLast8(String[] id);
 
+    @Query(value = "select a.id as id, a.title as title, a.description as description, a.imageId as imageId, a.published_date as publishedDate" +
+            " from ArticleEntity a where a.articleType=?1 and a.status=?2 and a.visible=true order by a.createdDate desc limit 5 ", nativeQuery = true)
+    List<ArticleShortInfoDTO> findTop5(TypeEntity articleType, ArticleStatus status);
 
 }

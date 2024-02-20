@@ -95,6 +95,7 @@ public class SpringSecurityConfig {
                     .requestMatchers("comment/getList*").permitAll()
                     .requestMatchers("comment/filter*").permitAll()
                     .requestMatchers("article/view/*").permitAll()
+                    .requestMatchers("article_like/createLike").permitAll()
                     .anyRequest()
                     .authenticated();
         });

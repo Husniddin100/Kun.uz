@@ -4,7 +4,7 @@ GET localhost:8081/admin/initAdmin
 ### create profile
 POST localhost:8081/profile/adm
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc5MTg2NTIsImVtYWlsIjoidWNoYW5hbDEwQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA4MDA1MDUyLCJpc3MiOiJLdW5VelRlc3QifQ.f3tpySnll0yQWQXp05M_jqbr8gcdcquA6I6SLoMOcY0Xgy5l7ACtoP4OLmJGMhOb4l3yKEv2nJva-zQSz4mCjw
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDgwODk2NjYsImVtYWlsIjoidWNoYW5hbDEwQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA4MTc2MDY2LCJpc3MiOiJLdW5VelRlc3QifQ.DoZH0ow8bUWsTKb-RWaUetHrhmAmRrZpAvu_whkzYsYoHE1BWPwnhFc-Qvgc8RD-FivIb0U_g5HOAQbKxQUBJw
 
 {
   "name": "Moder",
@@ -51,6 +51,6 @@ Content-Type: application/json
   "email": "DD@gmail.com",
   "password": "1234",
   "status": "ACTIVE",
-  "role": "USER"
+  "role": "ROLE_USER"
 }
 

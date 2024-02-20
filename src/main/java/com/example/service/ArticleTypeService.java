@@ -1,11 +1,13 @@
 package com.example.service;
 
 import com.example.dto.articleDTO.ArticleTypeDTO;
+import com.example.entity.ArticleTypesEntity;
 import com.example.entity.TypeEntity;
 import com.example.enums.LangEnum;
 import com.example.exp.AppBadException;
 import com.example.repository.ArticleTypeRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.intellij.lang.annotations.Language;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
@@ -103,6 +105,16 @@ public class ArticleTypeService {
         }
         return list;
     }
+    public TypeEntity getById(Integer id) {
+        Optional<TypeEntity> optional = articleTypeRepository.findById(id);
+
+        if (optional.isEmpty()) {
+            throw new AppBadException("not.found ArticleType" );
+        }
+        return optional.get();
+    }
+
+
 
     public ArticleTypeDTO toDTO(TypeEntity entity) {
         ArticleTypeDTO dto = new ArticleTypeDTO();

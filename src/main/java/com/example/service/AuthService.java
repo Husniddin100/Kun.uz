@@ -43,7 +43,7 @@ public class AuthService {
                 MDUtil.encode(profile.getPassword()));
 
         if (optional.isEmpty()) {
-            throw new AppBadException(resourceBundleService.getMessage("email.password.wrong",langEnum));
+            throw new AppBadException(resourceBundleService.getMessage("email.password.wrong", langEnum));
         }
 
         ProfileEntity entity = optional.get();
@@ -51,7 +51,7 @@ public class AuthService {
         ProfileDTO dto = new ProfileDTO();
 
         if (entity.getVisible().equals(false)) {
-            throw new AppBadException("Account not found");
+            throw new AppBadException(resourceBundleService.getMessage("Account.not.found", langEnum));
         }
 
         dto.setName(entity.getName());

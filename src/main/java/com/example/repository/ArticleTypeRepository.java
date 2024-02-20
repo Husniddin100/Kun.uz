@@ -10,4 +10,5 @@ import java.util.Optional;
 public interface ArticleTypeRepository extends CrudRepository<TypeEntity, Integer>, PagingAndSortingRepository<TypeEntity,Integer> {
     @Query("update TypeEntity set visible=FALSE where id=?1")
      Optional<TypeEntity>delete(Integer id);
+
 }

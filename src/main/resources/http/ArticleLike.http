@@ -3,9 +3,9 @@ POST localhost:8081/article_like/createLike
 Content-Type: application/json
 
 {
-  "articleId": "dc5d523a-d930-4408-a9ad-f473af147948",
-  "profileId": 3,
-  "status": "DISLIKE"
+  "articleId": "2cf23946-008d-481e-8d80-75e92b389540",
+  "profileId": 1,
+  "status": "LIKE"
 }
 ### remove like
 DELETE localhost:8081/article_like/remove/dc5d523a-d930-4408-a9ad-f473af147948/1

@@ -5,11 +5,13 @@ Accept-Language: en
 
 {
   "email": "uchanal10@gmail.com",
-  "password": "1234"
+  "password": "12345"
 }
 
 ###
 POST localhost:8081/auth/registrationSms
+
+
 Content-Type:application/json
 
 {

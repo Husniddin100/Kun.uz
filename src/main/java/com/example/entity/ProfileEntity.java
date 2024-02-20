@@ -23,7 +23,6 @@ public class ProfileEntity extends BaseEntity {
     private String phone;
     @Column(nullable = false)
     private String password;
-
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private ProfileStatus status;
