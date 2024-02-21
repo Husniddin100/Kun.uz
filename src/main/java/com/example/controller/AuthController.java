@@ -38,7 +38,7 @@ public class AuthController {
     @PostMapping("/registrationSms")
     public ResponseEntity<Boolean> registratioPhone(@RequestBody RegistrationDTO dto) {
         log.info("registration {}", dto.getEmail());
-        return ResponseEntity.ok(authService.registrationPone(dto));
+        return ResponseEntity.ok(authService.registrationPhone(dto));
     }
 
     @GetMapping("/verification/email/{jwt}")

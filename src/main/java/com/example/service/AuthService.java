@@ -17,12 +17,14 @@ import com.example.util.JWTUtil;
 import com.example.util.MDUtil;
 import com.example.util.RandomUtil;
 import io.jsonwebtoken.JwtException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
 
+@Slf4j
 @Service
 public class AuthService {
     @Autowired
@@ -108,7 +110,7 @@ public class AuthService {
         return null;
     }
 
-    public Boolean registrationPone(RegistrationDTO dto) {
+    public Boolean registrationPhone(RegistrationDTO dto) {
         Optional<ProfileEntity> optional = profileRepository.findByEmail(dto.getEmail());
         if (optional.isPresent()) {
             if (optional.get().getStatus().equals(ProfileStatus.REGISTRATION)) {
@@ -130,6 +132,7 @@ public class AuthService {
         String code = RandomUtil.getRandomSmsCode();
         String massage = "Haha";
         smsServerService.send(dto.getPhone(), massage, code);
+        log.info("sms code sending {}", dto.getPhone());
         SmsHistoryEntity smsHistoryEntity = new SmsHistoryEntity();
         smsHistoryEntity.setStatus(SmsStatus.USED);
         smsHistoryEntity.setPhone(dto.getPhone());

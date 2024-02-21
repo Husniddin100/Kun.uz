@@ -9,6 +9,7 @@ import com.example.entity.CommentEntity;
 import com.example.exp.AppBadException;
 import com.example.repository.CommentCustomRepository;
 import com.example.repository.CommentRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
@@ -17,7 +18,7 @@ import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
-
+@Slf4j
 @Service
 public class CommentService {
     @Autowired
@@ -56,6 +57,7 @@ public class CommentService {
         if (optional.isEmpty()) {
             throw new AppBadException("comment not found");
         }
+        log.info("comment deleted {}",id);
         commentRepository.visibleFalse(id);
         return true;
     }

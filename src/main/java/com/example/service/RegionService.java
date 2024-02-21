@@ -5,13 +5,14 @@ import com.example.entity.RegionEntity;
 import com.example.enums.LangEnum;
 import com.example.exp.AppBadException;
 import com.example.repository.RegionRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
-
+@Slf4j
 @Service
 public class RegionService {
     @Autowired
@@ -53,6 +54,7 @@ public class RegionService {
         if (optional.isEmpty()) {
             throw new AppBadException("not found");
         }
+        log.info("region created {}",id);
         regionRepository.delete(id);
         return true;
     }

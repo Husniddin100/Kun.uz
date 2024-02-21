@@ -8,6 +8,7 @@ import com.example.exp.AppBadException;
 import com.example.repository.ProfileCustomRepository;
 import com.example.repository.ProfileRepository;
 import com.example.util.MDUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ import org.springframework.stereotype.Service;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
-
+@Slf4j
 @Service
 public class ProfileService {
     @Autowired
@@ -37,6 +38,7 @@ public class ProfileService {
         entity.setRole(dto.getRole());
         profileRepository.save(entity);
 
+        log.info("profile created {}",dto.getName());
         dto.setId(entity.getId());
         dto.setCreatedDate(entity.getCreatedDate());
         dto.setVisible(entity.getVisible());
@@ -97,6 +99,7 @@ public class ProfileService {
         if (optional.isEmpty()){
             throw new AppBadException("profile not found");
         }
+        log.warn("profile deleted {}",id);
         profileRepository.deleteById(id);
         return true;
     }
