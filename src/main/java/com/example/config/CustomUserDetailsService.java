@@ -25,7 +25,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         }
 
         ProfileEntity profile = optional.get();
-        return new CustomUserDetails(profile.getId(), profile.getEmail(),
+        return new CustomUserDetails(profile.getName(),profile.getId(), profile.getEmail(),
                 profile.getPassword(), profile.getStatus(), profile.getRole());
     }
 }

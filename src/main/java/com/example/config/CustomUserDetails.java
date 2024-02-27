@@ -1,6 +1,5 @@
 package com.example.config;
 
-import com.example.entity.ProfileEntity;
 import com.example.enums.ProfileRole;
 import com.example.enums.ProfileStatus;
 import org.springframework.security.core.GrantedAuthority;
@@ -18,7 +17,7 @@ public class CustomUserDetails implements UserDetails {
     private ProfileStatus status;
     private ProfileRole role;
 
-    public CustomUserDetails(Integer id, String email, String password, ProfileStatus status, ProfileRole role) {
+    public CustomUserDetails(String name, Integer id, String email, String password, ProfileStatus status, ProfileRole role) {
         this.id = id;
         this.email = email;
         this.password = password;

@@ -10,8 +10,6 @@ Accept-Language: en
 
 ###
 POST localhost:8081/auth/registrationSms
-
-
 Content-Type:application/json
 
 {
